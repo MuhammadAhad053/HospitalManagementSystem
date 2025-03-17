@@ -5,13 +5,6 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HospitalManagementSystem", "modernsigninUI\modernsigninUI.vcxproj", "{E78195B9-11C3-0D2A-0C14-2E104050BE4F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Ahad\Downloads\gradient (5).png = C:\Users\Ahad\Downloads\gradient (5).png
-		C:\Users\Ahad\Downloads\gradient (6).png = C:\Users\Ahad\Downloads\gradient (6).png
-		C:\Users\Ahad\Downloads\vecteezy_cross_1194416.ico = C:\Users\Ahad\Downloads\vecteezy_cross_1194416.ico
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
