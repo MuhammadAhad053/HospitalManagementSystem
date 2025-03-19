@@ -1,6 +1,8 @@
 #pragma once
 
-namespace modernsigninUI {
+#include "Patient.h"
+
+namespace HospitalManagement {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -8,14 +10,15 @@ namespace modernsigninUI {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class LoginForm : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		LoginForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +30,7 @@ namespace modernsigninUI {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm()
+		~LoginForm()
 		{
 			if (components)
 			{
@@ -37,23 +40,24 @@ namespace modernsigninUI {
 	private: System::Windows::Forms::Panel^ gradPanelBig;
 	protected:
 
-	private: System::Windows::Forms::Panel^ gradPanelSmall;
-	private: System::Windows::Forms::Label^ logoLabel;
+
+
 	protected:
 
 	protected:
 
 
-	private: System::Windows::Forms::PictureBox^ Logo;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ button1;
+
+
+
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::TextBox^ tbPassword;
-	private: System::Windows::Forms::TextBox^ tbUsername;
+	private: System::Windows::Forms::TextBox^ tbEmail;
+
 	private: System::Windows::Forms::CheckBox^ cbAdmin;
 	private: System::Windows::Forms::Label^ labelRole;
 
@@ -63,10 +67,19 @@ namespace modernsigninUI {
 	private: System::Windows::Forms::CheckBox^ cbDoctor;
 
 	private: System::Windows::Forms::CheckBox^ cbReceptionist;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ btnSignIn;
+
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Panel^ gradPanelSmall;
+	private: System::Windows::Forms::Button^ btnRegister;
+
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ logoLabel;
+	private: System::Windows::Forms::PictureBox^ Logo;
+
 
 
 
@@ -83,12 +96,12 @@ namespace modernsigninUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LoginForm::typeid));
 			this->gradPanelBig = (gcnew System::Windows::Forms::Panel());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->btnSignIn = (gcnew System::Windows::Forms::Button());
 			this->cbPatient = (gcnew System::Windows::Forms::CheckBox());
 			this->cbDoctor = (gcnew System::Windows::Forms::CheckBox());
 			this->cbReceptionist = (gcnew System::Windows::Forms::CheckBox());
@@ -97,11 +110,11 @@ namespace modernsigninUI {
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->tbPassword = (gcnew System::Windows::Forms::TextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->tbUsername = (gcnew System::Windows::Forms::TextBox());
+			this->tbEmail = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->gradPanelSmall = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->btnRegister = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->logoLabel = (gcnew System::Windows::Forms::Label());
@@ -119,7 +132,7 @@ namespace modernsigninUI {
 			this->gradPanelBig->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"gradPanelBig.BackgroundImage")));
 			this->gradPanelBig->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->gradPanelBig->Controls->Add(this->panel3);
-			this->gradPanelBig->Controls->Add(this->button2);
+			this->gradPanelBig->Controls->Add(this->btnSignIn);
 			this->gradPanelBig->Controls->Add(this->cbPatient);
 			this->gradPanelBig->Controls->Add(this->cbDoctor);
 			this->gradPanelBig->Controls->Add(this->cbReceptionist);
@@ -130,7 +143,7 @@ namespace modernsigninUI {
 			this->gradPanelBig->Controls->Add(this->label4);
 			this->gradPanelBig->Controls->Add(this->label3);
 			this->gradPanelBig->Dock = System::Windows::Forms::DockStyle::Right;
-			this->gradPanelBig->Location = System::Drawing::Point(408, 0);
+			this->gradPanelBig->Location = System::Drawing::Point(404, 0);
 			this->gradPanelBig->Name = L"gradPanelBig";
 			this->gradPanelBig->Size = System::Drawing::Size(780, 681);
 			this->gradPanelBig->TabIndex = 0;
@@ -145,7 +158,6 @@ namespace modernsigninUI {
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(780, 151);
 			this->panel3->TabIndex = 13;
-			this->panel3->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
 			// 
 			// label6
 			// 
@@ -164,27 +176,27 @@ namespace modernsigninUI {
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 10.25F));
-			this->label7->Location = System::Drawing::Point(45, 59);
+			this->label7->Location = System::Drawing::Point(45, 71);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(704, 38);
 			this->label7->TabIndex = 2;
 			this->label7->Text = resources->GetString(L"label7.Text");
 			// 
-			// button2
+			// btnSignIn
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(86)), static_cast<System::Int32>(static_cast<System::Byte>(206)),
+			this->btnSignIn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(86)), static_cast<System::Int32>(static_cast<System::Byte>(206)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
-			this->button2->ForeColor = System::Drawing::Color::Black;
-			this->button2->Location = System::Drawing::Point(215, 416);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(357, 33);
-			this->button2->TabIndex = 4;
-			this->button2->Text = L"Sign in";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
+			this->btnSignIn->FlatAppearance->BorderSize = 0;
+			this->btnSignIn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSignIn->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
+			this->btnSignIn->ForeColor = System::Drawing::Color::Black;
+			this->btnSignIn->Location = System::Drawing::Point(215, 416);
+			this->btnSignIn->Name = L"btnSignIn";
+			this->btnSignIn->Size = System::Drawing::Size(357, 33);
+			this->btnSignIn->TabIndex = 4;
+			this->btnSignIn->Text = L"Sign in";
+			this->btnSignIn->UseVisualStyleBackColor = false;
+			this->btnSignIn->Click += gcnew System::EventHandler(this, &LoginForm::btnSignIn_Click);
 			// 
 			// cbPatient
 			// 
@@ -198,7 +210,7 @@ namespace modernsigninUI {
 			this->cbPatient->Text = L"Patient";
 			this->cbPatient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->cbPatient->UseVisualStyleBackColor = false;
-			this->cbPatient->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
+			this->cbPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
 			// 
 			// cbDoctor
 			// 
@@ -212,7 +224,7 @@ namespace modernsigninUI {
 			this->cbDoctor->Text = L"Doctor";
 			this->cbDoctor->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->cbDoctor->UseVisualStyleBackColor = false;
-			this->cbDoctor->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
+			this->cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
 			// 
 			// cbReceptionist
 			// 
@@ -226,7 +238,7 @@ namespace modernsigninUI {
 			this->cbReceptionist->Text = L"Receptionist";
 			this->cbReceptionist->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->cbReceptionist->UseVisualStyleBackColor = false;
-			this->cbReceptionist->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
+			this->cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
 			// 
 			// labelRole
 			// 
@@ -239,7 +251,6 @@ namespace modernsigninUI {
 			this->labelRole->Size = System::Drawing::Size(143, 15);
 			this->labelRole->TabIndex = 9;
 			this->labelRole->Text = L"*Who are you signing in as \?";
-			this->labelRole->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
 			// 
 			// cbAdmin
 			// 
@@ -253,8 +264,7 @@ namespace modernsigninUI {
 			this->cbAdmin->Text = L"Admin";
 			this->cbAdmin->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->cbAdmin->UseVisualStyleBackColor = false;
-			this->cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbAdmin_CheckedChanged);
-			this->cbAdmin->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
+			this->cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
 			// 
 			// panel2
 			// 
@@ -279,31 +289,33 @@ namespace modernsigninUI {
 			this->tbPassword->TabIndex = 0;
 			this->tbPassword->Text = L"Password";
 			this->tbPassword->UseSystemPasswordChar = true;
-			this->tbPassword->Click += gcnew System::EventHandler(this, &MyForm::tbPassword_Click);
+			this->tbPassword->Enter += gcnew System::EventHandler(this, &LoginForm::tbPassword_Enter);
+			this->tbPassword->Leave += gcnew System::EventHandler(this, &LoginForm::tbPassword_Leave);
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel1->Controls->Add(this->tbUsername);
+			this->panel1->Controls->Add(this->tbEmail);
 			this->panel1->Location = System::Drawing::Point(215, 303);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(357, 44);
 			this->panel1->TabIndex = 6;
 			// 
-			// tbUsername
+			// tbEmail
 			// 
-			this->tbUsername->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->tbEmail->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbUsername->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbUsername->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
-			this->tbUsername->ForeColor = System::Drawing::Color::Silver;
-			this->tbUsername->Location = System::Drawing::Point(13, 9);
-			this->tbUsername->Name = L"tbUsername";
-			this->tbUsername->Size = System::Drawing::Size(332, 22);
-			this->tbUsername->TabIndex = 0;
-			this->tbUsername->Text = L"Username";
-			this->tbUsername->Click += gcnew System::EventHandler(this, &MyForm::tbUsername_Click);
+			this->tbEmail->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbEmail->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
+			this->tbEmail->ForeColor = System::Drawing::Color::Silver;
+			this->tbEmail->Location = System::Drawing::Point(13, 9);
+			this->tbEmail->Name = L"tbEmail";
+			this->tbEmail->Size = System::Drawing::Size(332, 22);
+			this->tbEmail->TabIndex = 0;
+			this->tbEmail->Text = L"Email";
+			this->tbEmail->Enter += gcnew System::EventHandler(this, &LoginForm::tbUsername_Enter);
+			this->tbEmail->Leave += gcnew System::EventHandler(this, &LoginForm::tbUsername_Leave);
 			// 
 			// label4
 			// 
@@ -315,7 +327,6 @@ namespace modernsigninUI {
 			this->label4->Size = System::Drawing::Size(361, 22);
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Sign in to your account to continue your work";
-			this->label4->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
 			// 
 			// label3
 			// 
@@ -328,13 +339,12 @@ namespace modernsigninUI {
 			this->label3->Size = System::Drawing::Size(164, 58);
 			this->label3->TabIndex = 5;
 			this->label3->Text = L"Sign in";
-			this->label3->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
 			// 
 			// gradPanelSmall
 			// 
 			this->gradPanelSmall->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"gradPanelSmall.BackgroundImage")));
 			this->gradPanelSmall->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->gradPanelSmall->Controls->Add(this->button1);
+			this->gradPanelSmall->Controls->Add(this->btnRegister);
 			this->gradPanelSmall->Controls->Add(this->label2);
 			this->gradPanelSmall->Controls->Add(this->label1);
 			this->gradPanelSmall->Controls->Add(this->logoLabel);
@@ -342,24 +352,24 @@ namespace modernsigninUI {
 			this->gradPanelSmall->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->gradPanelSmall->Location = System::Drawing::Point(0, 0);
 			this->gradPanelSmall->Name = L"gradPanelSmall";
-			this->gradPanelSmall->Size = System::Drawing::Size(408, 681);
-			this->gradPanelSmall->TabIndex = 1;
+			this->gradPanelSmall->Size = System::Drawing::Size(404, 681);
+			this->gradPanelSmall->TabIndex = 2;
 			// 
-			// button1
+			// btnRegister
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(86)), static_cast<System::Int32>(static_cast<System::Byte>(206)),
+			this->btnRegister->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(86)), static_cast<System::Int32>(static_cast<System::Byte>(206)),
 				static_cast<System::Int32>(static_cast<System::Byte>(222)));
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
-			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(126, 482);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(130, 33);
-			this->button1->TabIndex = 4;
-			this->button1->Text = L"Register";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
+			this->btnRegister->FlatAppearance->BorderSize = 0;
+			this->btnRegister->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnRegister->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
+			this->btnRegister->ForeColor = System::Drawing::Color::Black;
+			this->btnRegister->Location = System::Drawing::Point(126, 482);
+			this->btnRegister->Name = L"btnRegister";
+			this->btnRegister->Size = System::Drawing::Size(130, 33);
+			this->btnRegister->TabIndex = 4;
+			this->btnRegister->Text = L"Register";
+			this->btnRegister->UseVisualStyleBackColor = false;
+			this->btnRegister->Click += gcnew System::EventHandler(this, &LoginForm::button1_Click);
 			// 
 			// label2
 			// 
@@ -373,7 +383,6 @@ namespace modernsigninUI {
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"No Account \?";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label2->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
 			// 
 			// label1
 			// 
@@ -386,7 +395,6 @@ namespace modernsigninUI {
 			this->label1->Size = System::Drawing::Size(212, 26);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Its about helping others";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
 			// 
 			// logoLabel
 			// 
@@ -399,7 +407,6 @@ namespace modernsigninUI {
 			this->logoLabel->TabIndex = 1;
 			this->logoLabel->Text = L"HOSPITAL MANAGEMENT\r\nSYSTEM";
 			this->logoLabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->logoLabel->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
 			// 
 			// Logo
 			// 
@@ -411,13 +418,12 @@ namespace modernsigninUI {
 			this->Logo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->Logo->TabIndex = 0;
 			this->Logo->TabStop = false;
-			this->Logo->Click += gcnew System::EventHandler(this, &MyForm::otherClick);
 			// 
-			// MyForm
+			// LoginForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 15);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1188, 681);
+			this->ClientSize = System::Drawing::Size(1184, 681);
 			this->Controls->Add(this->gradPanelSmall);
 			this->Controls->Add(this->gradPanelBig);
 			this->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -425,7 +431,7 @@ namespace modernsigninUI {
 			this->ForeColor = System::Drawing::Color::White;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"MyForm";
+			this->Name = L"LoginForm";
 			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Hide;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"SignInPage";
@@ -443,103 +449,159 @@ namespace modernsigninUI {
 			this->ResumeLayout(false);
 
 		}
-#pragma endregion
+#pragma endregion  
+	private: System::Void cbAdmin_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (cbAdmin->Checked) {
+			labelRole->Text = "Signing in as Admin";
+			labelRole->ForeColor = System::Drawing::Color::Silver;
 
-private: System::Void tbUsername_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (tbUsername->Text == "Username")
-		tbUsername->Text = ""; 
-	if (tbPassword->Text == "")
-		tbPassword->Text = "Password";
-}
-private: System::Void tbPassword_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (tbPassword->Text == "Password")
-		tbPassword->Text = "";
-	if (tbUsername->Text == "")
-		tbUsername->Text = "Username";
-}
-private: System::Void otherClick(System::Object^ sender, System::EventArgs^ e) {
-	if(tbUsername->Text == "")
-		tbUsername->Text = "Username";
-	if (tbPassword->Text == "")
-		tbPassword->Text = "Password";
-}	   
-private: System::Void cbAdmin_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (cbAdmin->Checked) {
-		labelRole->Text = "Signing in as Admin";
-		labelRole->ForeColor = System::Drawing::Color::Silver;
+			// Temporarily disable event handling
+			cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
+			cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
+			cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
 
-		// Temporarily disable event handling
-		cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbReceptionist_CheckedChanged);
-		cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbDoctor_CheckedChanged);
-		cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbPatient_CheckedChanged);
+			cbReceptionist->Checked = false;
+			cbDoctor->Checked = false;
+			cbPatient->Checked = false;
 
-		cbReceptionist->Checked = false;
-		cbDoctor->Checked = false;
-		cbPatient->Checked = false;
-
-		// Re-enable event handling
-		cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbReceptionist_CheckedChanged);
-		cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbDoctor_CheckedChanged);
-		cbPatient->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbPatient_CheckedChanged);
+			// Re-enable event handling
+			cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
+			cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
+			cbPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
+		}
 	}
-}
 
-private: System::Void cbReceptionist_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (cbReceptionist->Checked) {
-		labelRole->Text = "Signing in as Receptionist";
-		labelRole->ForeColor = System::Drawing::Color::Silver;
+	private: System::Void cbReceptionist_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (cbReceptionist->Checked) {
+			labelRole->Text = "Signing in as Receptionist";
+			labelRole->ForeColor = System::Drawing::Color::Silver;
 
-		cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbAdmin_CheckedChanged);
-		cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbDoctor_CheckedChanged);
-		cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbPatient_CheckedChanged);
+			cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
+			cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
+			cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
 
-		cbAdmin->Checked = false;
-		cbDoctor->Checked = false;
-		cbPatient->Checked = false;
+			cbAdmin->Checked = false;
+			cbDoctor->Checked = false;
+			cbPatient->Checked = false;
 
-		cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbAdmin_CheckedChanged);
-		cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbDoctor_CheckedChanged);
-		cbPatient->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbPatient_CheckedChanged);
+			cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
+			cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
+			cbPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
+		}
 	}
-}
 
-private: System::Void cbDoctor_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (cbDoctor->Checked) {
-		labelRole->Text = "Signing in as Doctor";
-		labelRole->ForeColor = System::Drawing::Color::Silver;
+	private: System::Void cbDoctor_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (cbDoctor->Checked) {
+			labelRole->Text = "Signing in as Doctor";
+			labelRole->ForeColor = System::Drawing::Color::Silver;
 
-		cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbAdmin_CheckedChanged);
-		cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbReceptionist_CheckedChanged);
-		cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbPatient_CheckedChanged);
+			cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
+			cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
+			cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
 
-		cbAdmin->Checked = false;
-		cbReceptionist->Checked = false;
-		cbPatient->Checked = false;
+			cbAdmin->Checked = false;
+			cbReceptionist->Checked = false;
+			cbPatient->Checked = false;
 
-		cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbAdmin_CheckedChanged);
-		cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbReceptionist_CheckedChanged);
-		cbPatient->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbPatient_CheckedChanged);
+			cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
+			cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
+			cbPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
+		}
 	}
-}
 
-private: System::Void cbPatient_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (cbPatient->Checked) {
-		labelRole->Text = "Signing in as Patient";
-		labelRole->ForeColor = System::Drawing::Color::Silver;
+	private: System::Void cbPatient_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (cbPatient->Checked) {
+			labelRole->Text = "Signing in as Patient";
+			labelRole->ForeColor = System::Drawing::Color::Silver;
 
-		cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbAdmin_CheckedChanged);
-		cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbReceptionist_CheckedChanged);
-		cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &MyForm::cbDoctor_CheckedChanged);
+			cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
+			cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
+			cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
 
-		cbAdmin->Checked = false;
-		cbReceptionist->Checked = false;
-		cbDoctor->Checked = false;
+			cbAdmin->Checked = false;
+			cbReceptionist->Checked = false;
+			cbDoctor->Checked = false;
 
-		cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbAdmin_CheckedChanged);
-		cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbReceptionist_CheckedChanged);
-		cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &MyForm::cbDoctor_CheckedChanged);
+			cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
+			cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
+			cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
+		}
 	}
-}
+	private: System::Void tbUsername_Enter(System::Object^ sender, System::EventArgs^ e) {
+		if (tbEmail->Text == "Email") {
+			tbEmail->Text = "";
+		}
+	}
+	private: System::Void tbUsername_Leave(System::Object^ sender, System::EventArgs^ e) {
+		if (tbEmail->Text == "") {
+			tbEmail->Text = "Email";
+		}
+	}
+	private: System::Void tbPassword_Enter(System::Object^ sender, System::EventArgs^ e) {
+		if (tbPassword->Text == "Password") {
+			tbPassword->Text = "";
+			tbPassword->UseSystemPasswordChar = true;  // Hide password characters
+		}
+	}
+	private: System::Void tbPassword_Leave(System::Object^ sender, System::EventArgs^ e) {
+		if (tbPassword->Text == "") {
+			tbPassword->Text = "Password";
+			tbPassword->UseSystemPasswordChar = false;  // Show placeholder text normally
+		}
+	}
 
+
+
+	public: bool switchtoRegister = false;
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		switchtoRegister = true;
+		this->Close();
+	}
+	public: Patient^ patient = nullptr;
+	private: System::Void btnSignIn_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ email = tbEmail->Text;
+		String^ password = tbPassword->Text;
+
+		if (email == "Email" || password == "Password") {
+			MessageBox::Show("Kindly Input All Fields",
+				"Invalid Arguments", MessageBoxButtons::OK);
+		}
+		try {
+			String^ connString = "Data Source=localhost\\sqlexpress;Initial Catalog=test;Integrated Security=True;";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+
+			String^ sqlQuery = "SELECT * FROM Patient WHERE email = @email AND password = @pwd;";
+			SqlCommand command(sqlQuery, % sqlConn);
+
+			command.Parameters->AddWithValue("@email", email);
+			command.Parameters->AddWithValue("@pwd", password);
+
+			SqlDataReader^ reader = command.ExecuteReader();
+
+			if (reader->Read()) {
+				patient = gcnew Patient;
+				patient->id = reader->GetInt32(0);
+				patient->firstName = reader->GetString(1);
+				patient->lastName = reader->GetString(2);
+				patient->phoneNumber = reader->GetString(5);
+				patient->email = reader->GetString(6);
+				patient->password = reader->GetString(7);
+
+				MessageBox::Show(patient->lastName + " has logged in!",
+					"Success", MessageBoxButtons::OK);
+
+				this->Close();
+			}
+			else {
+				MessageBox::Show("Invalid Username or Password",
+					"Failed", MessageBoxButtons::OK);
+			}
+		}
+		catch (Exception^ e) {
+			MessageBox::Show("Couldn't Connect to DataBase\n"+e->Message,
+				"Connection Problem", MessageBoxButtons::OK);
+		}
+	}
 };
 }
