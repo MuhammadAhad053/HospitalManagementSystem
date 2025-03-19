@@ -2,6 +2,7 @@
 #include "RegisterForm.h"
 #include "Patient.h"
 #include "PatientDashboard.h"
+#include "DoctorDashboard.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
