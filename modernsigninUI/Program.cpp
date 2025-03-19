@@ -3,6 +3,7 @@
 #include "Patient.h"
 #include "PatientDashboard.h"
 #include "DoctorDashboard.h"
+#include "ReceptionistDashboard.h"
 
 using namespace System;
 using namespace System::Windows::Forms;

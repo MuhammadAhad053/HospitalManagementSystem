@@ -124,6 +124,7 @@
     <ClCompile Include="DoctorDashboard.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PatientDashboard.cpp" />
+    <ClCompile Include="ReceptionistDashboard.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="RegisterForm.cpp" />
   </ItemGroup>
@@ -136,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="Patient.h" />
     <ClInclude Include="PatientDashboard.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ReceptionistDashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="RegisterForm.h">
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PatientDashboard.resx">
       <DependentUpon>PatientDashboard.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceptionistDashboard.resx">
+      <DependentUpon>ReceptionistDashboard.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.h</DependentUpon>
