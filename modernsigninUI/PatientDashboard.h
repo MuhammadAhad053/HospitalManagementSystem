@@ -1,6 +1,6 @@
 #pragma once
 
-namespace modernsigninUI {
+namespace HospitalManagement {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -95,21 +95,21 @@ namespace modernsigninUI {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->btnDoctor = (gcnew System::Windows::Forms::Button());
 			this->panelProfile = (gcnew System::Windows::Forms::Panel());
+			this->labelUserID = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->labelName = (gcnew System::Windows::Forms::Label());
-			this->labelGender = (gcnew System::Windows::Forms::Label());
-			this->labelDOB = (gcnew System::Windows::Forms::Label());
-			this->labelEmail = (gcnew System::Windows::Forms::Label());
 			this->labelPhone = (gcnew System::Windows::Forms::Label());
+			this->labelEmail = (gcnew System::Windows::Forms::Label());
+			this->labelDOB = (gcnew System::Windows::Forms::Label());
+			this->labelGender = (gcnew System::Windows::Forms::Label());
 			this->labelAge = (gcnew System::Windows::Forms::Label());
-			this->labelUserID = (gcnew System::Windows::Forms::Label());
+			this->labelName = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panelTop->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panelMain->SuspendLayout();
@@ -241,6 +241,28 @@ namespace modernsigninUI {
 			this->label7->Text = L"You can now book an appointment with the doctor of your choice, click on the Doct"
 				L"ors button to view the availablity of every doctor.\r\n";
 			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::Transparent;
+			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->button3->FlatAppearance->BorderSize = 2;
+			this->button3->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->button3->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->button3->ForeColor = System::Drawing::Color::White;
+			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
+			this->button3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->button3->Location = System::Drawing::Point(414, 269);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(785, 160);
+			this->button3->TabIndex = 0;
+			this->button3->Text = L"View your wallet \r\n";
+			this->button3->UseVisualStyleBackColor = false;
+			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::Transparent;
@@ -262,6 +284,28 @@ namespace modernsigninUI {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"View your wallet \r\n";
 			this->button1->UseVisualStyleBackColor = false;
+			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->button2->FlatAppearance->BorderSize = 2;
+			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->button2->ForeColor = System::Drawing::Color::White;
+			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
+			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->button2->Location = System::Drawing::Point(414, 58);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(785, 160);
+			this->button2->TabIndex = 0;
+			this->button2->Text = L"View list of available Doctors\r\n";
+			this->button2->UseVisualStyleBackColor = false;
 			// 
 			// btnDoctor
 			// 
@@ -306,6 +350,19 @@ namespace modernsigninUI {
 			this->panelProfile->Size = System::Drawing::Size(341, 611);
 			this->panelProfile->TabIndex = 2;
 			// 
+			// labelUserID
+			// 
+			this->labelUserID->AutoSize = true;
+			this->labelUserID->BackColor = System::Drawing::Color::Transparent;
+			this->labelUserID->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 10));
+			this->labelUserID->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelUserID->Location = System::Drawing::Point(146, 161);
+			this->labelUserID->Name = L"labelUserID";
+			this->labelUserID->Size = System::Drawing::Size(20, 19);
+			this->labelUserID->TabIndex = 5;
+			this->labelUserID->Text = L"id";
+			this->labelUserID->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
@@ -331,101 +388,18 @@ namespace modernsigninUI {
 			this->label3->Text = L"userID : ";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// label1
+			// labelPhone
 			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
-			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label1->Location = System::Drawing::Point(27, 216);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(86, 156);
-			this->label1->TabIndex = 3;
-			this->label1->Text = L"Name : \r\nAge :\r\nGender : \r\nDOB :\r\nEmail :\r\nPhone :\r\n";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// button2
-			// 
-			this->button2->BackColor = System::Drawing::Color::Transparent;
-			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button2->FlatAppearance->BorderSize = 2;
-			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->button2->ForeColor = System::Drawing::Color::White;
-			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
-			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button2->Location = System::Drawing::Point(414, 58);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(785, 160);
-			this->button2->TabIndex = 0;
-			this->button2->Text = L"View list of available Doctors\r\n";
-			this->button2->UseVisualStyleBackColor = false;
-			// 
-			// button3
-			// 
-			this->button3->BackColor = System::Drawing::Color::Transparent;
-			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button3->FlatAppearance->BorderSize = 2;
-			this->button3->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->button3->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->button3->ForeColor = System::Drawing::Color::White;
-			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button3->Location = System::Drawing::Point(414, 269);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(785, 160);
-			this->button3->TabIndex = 0;
-			this->button3->Text = L"View your wallet \r\n";
-			this->button3->UseVisualStyleBackColor = false;
-			// 
-			// labelName
-			// 
-			this->labelName->AutoSize = true;
-			this->labelName->BackColor = System::Drawing::Color::Transparent;
-			this->labelName->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
-			this->labelName->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelName->Location = System::Drawing::Point(92, 216);
-			this->labelName->Name = L"labelName";
-			this->labelName->Size = System::Drawing::Size(57, 26);
-			this->labelName->TabIndex = 3;
-			this->labelName->Text = L"name";
-			this->labelName->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// labelGender
-			// 
-			this->labelGender->AutoSize = true;
-			this->labelGender->BackColor = System::Drawing::Color::Transparent;
-			this->labelGender->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
-			this->labelGender->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelGender->Location = System::Drawing::Point(105, 268);
-			this->labelGender->Name = L"labelGender";
-			this->labelGender->Size = System::Drawing::Size(70, 26);
-			this->labelGender->TabIndex = 3;
-			this->labelGender->Text = L"gender";
-			this->labelGender->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// labelDOB
-			// 
-			this->labelDOB->AutoSize = true;
-			this->labelDOB->BackColor = System::Drawing::Color::Transparent;
-			this->labelDOB->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
-			this->labelDOB->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelDOB->Location = System::Drawing::Point(79, 294);
-			this->labelDOB->Name = L"labelDOB";
-			this->labelDOB->Size = System::Drawing::Size(45, 26);
-			this->labelDOB->TabIndex = 3;
-			this->labelDOB->Text = L"dob";
-			this->labelDOB->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->labelPhone->AutoSize = true;
+			this->labelPhone->BackColor = System::Drawing::Color::Transparent;
+			this->labelPhone->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelPhone->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelPhone->Location = System::Drawing::Point(94, 346);
+			this->labelPhone->Name = L"labelPhone";
+			this->labelPhone->Size = System::Drawing::Size(64, 26);
+			this->labelPhone->TabIndex = 3;
+			this->labelPhone->Text = L"phone";
+			this->labelPhone->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// labelEmail
 			// 
@@ -440,18 +414,31 @@ namespace modernsigninUI {
 			this->labelEmail->Text = L"email";
 			this->labelEmail->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// labelPhone
+			// labelDOB
 			// 
-			this->labelPhone->AutoSize = true;
-			this->labelPhone->BackColor = System::Drawing::Color::Transparent;
-			this->labelPhone->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
-			this->labelPhone->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelPhone->Location = System::Drawing::Point(94, 346);
-			this->labelPhone->Name = L"labelPhone";
-			this->labelPhone->Size = System::Drawing::Size(64, 26);
-			this->labelPhone->TabIndex = 3;
-			this->labelPhone->Text = L"phone";
-			this->labelPhone->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->labelDOB->AutoSize = true;
+			this->labelDOB->BackColor = System::Drawing::Color::Transparent;
+			this->labelDOB->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelDOB->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelDOB->Location = System::Drawing::Point(79, 294);
+			this->labelDOB->Name = L"labelDOB";
+			this->labelDOB->Size = System::Drawing::Size(45, 26);
+			this->labelDOB->TabIndex = 3;
+			this->labelDOB->Text = L"dob";
+			this->labelDOB->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// labelGender
+			// 
+			this->labelGender->AutoSize = true;
+			this->labelGender->BackColor = System::Drawing::Color::Transparent;
+			this->labelGender->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelGender->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelGender->Location = System::Drawing::Point(105, 268);
+			this->labelGender->Name = L"labelGender";
+			this->labelGender->Size = System::Drawing::Size(70, 26);
+			this->labelGender->TabIndex = 3;
+			this->labelGender->Text = L"gender";
+			this->labelGender->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// labelAge
 			// 
@@ -466,18 +453,31 @@ namespace modernsigninUI {
 			this->labelAge->Text = L"age";
 			this->labelAge->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// labelUserID
+			// labelName
 			// 
-			this->labelUserID->AutoSize = true;
-			this->labelUserID->BackColor = System::Drawing::Color::Transparent;
-			this->labelUserID->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 10));
-			this->labelUserID->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelUserID->Location = System::Drawing::Point(146, 161);
-			this->labelUserID->Name = L"labelUserID";
-			this->labelUserID->Size = System::Drawing::Size(20, 19);
-			this->labelUserID->TabIndex = 5;
-			this->labelUserID->Text = L"id";
-			this->labelUserID->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->labelName->AutoSize = true;
+			this->labelName->BackColor = System::Drawing::Color::Transparent;
+			this->labelName->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelName->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelName->Location = System::Drawing::Point(92, 216);
+			this->labelName->Name = L"labelName";
+			this->labelName->Size = System::Drawing::Size(57, 26);
+			this->labelName->TabIndex = 3;
+			this->labelName->Text = L"name";
+			this->labelName->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label1->Location = System::Drawing::Point(27, 216);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(86, 156);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"Name : \r\nAge :\r\nGender : \r\nDOB :\r\nEmail :\r\nPhone :\r\n";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// PatientDashboard
 			// 
@@ -487,6 +487,9 @@ namespace modernsigninUI {
 			this->Controls->Add(this->panelProfile);
 			this->Controls->Add(this->panelMain);
 			this->Controls->Add(this->panelTop);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximumSize = System::Drawing::Size(1280, 720);
 			this->Name = L"PatientDashboard";
 			this->Text = L"PatientDashboard";
 			this->panelTop->ResumeLayout(false);
