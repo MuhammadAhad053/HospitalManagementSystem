@@ -58,15 +58,15 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::TextBox^ tbPassword;
 	private: System::Windows::Forms::TextBox^ tbEmail;
 
-	private: System::Windows::Forms::CheckBox^ cbAdmin;
+
 	private: System::Windows::Forms::Label^ labelRole;
 
 
-	private: System::Windows::Forms::CheckBox^ cbPatient;
 
-	private: System::Windows::Forms::CheckBox^ cbDoctor;
 
-	private: System::Windows::Forms::CheckBox^ cbReceptionist;
+
+
+
 	private: System::Windows::Forms::Button^ btnSignIn;
 
 	private: System::Windows::Forms::Panel^ panel3;
@@ -79,6 +79,14 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ logoLabel;
 	private: System::Windows::Forms::PictureBox^ Logo;
+	private: System::Windows::Forms::RadioButton^ rdbtnReceptionist;
+
+	private: System::Windows::Forms::RadioButton^ rdbtnPatient;
+
+	private: System::Windows::Forms::RadioButton^ rdbtnDoctor;
+
+	private: System::Windows::Forms::RadioButton^ rdbtnAdmin;
+
 
 
 
@@ -98,15 +106,15 @@ namespace HospitalManagement {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LoginForm::typeid));
 			this->gradPanelBig = (gcnew System::Windows::Forms::Panel());
+			this->rdbtnReceptionist = (gcnew System::Windows::Forms::RadioButton());
+			this->rdbtnPatient = (gcnew System::Windows::Forms::RadioButton());
+			this->rdbtnDoctor = (gcnew System::Windows::Forms::RadioButton());
+			this->rdbtnAdmin = (gcnew System::Windows::Forms::RadioButton());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->btnSignIn = (gcnew System::Windows::Forms::Button());
-			this->cbPatient = (gcnew System::Windows::Forms::CheckBox());
-			this->cbDoctor = (gcnew System::Windows::Forms::CheckBox());
-			this->cbReceptionist = (gcnew System::Windows::Forms::CheckBox());
 			this->labelRole = (gcnew System::Windows::Forms::Label());
-			this->cbAdmin = (gcnew System::Windows::Forms::CheckBox());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->tbPassword = (gcnew System::Windows::Forms::TextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
@@ -131,13 +139,13 @@ namespace HospitalManagement {
 			// 
 			this->gradPanelBig->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"gradPanelBig.BackgroundImage")));
 			this->gradPanelBig->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->gradPanelBig->Controls->Add(this->rdbtnReceptionist);
+			this->gradPanelBig->Controls->Add(this->rdbtnPatient);
+			this->gradPanelBig->Controls->Add(this->rdbtnDoctor);
+			this->gradPanelBig->Controls->Add(this->rdbtnAdmin);
 			this->gradPanelBig->Controls->Add(this->panel3);
 			this->gradPanelBig->Controls->Add(this->btnSignIn);
-			this->gradPanelBig->Controls->Add(this->cbPatient);
-			this->gradPanelBig->Controls->Add(this->cbDoctor);
-			this->gradPanelBig->Controls->Add(this->cbReceptionist);
 			this->gradPanelBig->Controls->Add(this->labelRole);
-			this->gradPanelBig->Controls->Add(this->cbAdmin);
 			this->gradPanelBig->Controls->Add(this->panel2);
 			this->gradPanelBig->Controls->Add(this->panel1);
 			this->gradPanelBig->Controls->Add(this->label4);
@@ -147,6 +155,66 @@ namespace HospitalManagement {
 			this->gradPanelBig->Name = L"gradPanelBig";
 			this->gradPanelBig->Size = System::Drawing::Size(780, 681);
 			this->gradPanelBig->TabIndex = 0;
+			// 
+			// rdbtnReceptionist
+			// 
+			this->rdbtnReceptionist->AutoSize = true;
+			this->rdbtnReceptionist->BackColor = System::Drawing::Color::Transparent;
+			this->rdbtnReceptionist->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->rdbtnReceptionist->Location = System::Drawing::Point(482, 272);
+			this->rdbtnReceptionist->Name = L"rdbtnReceptionist";
+			this->rdbtnReceptionist->Size = System::Drawing::Size(115, 25);
+			this->rdbtnReceptionist->TabIndex = 17;
+			this->rdbtnReceptionist->TabStop = true;
+			this->rdbtnReceptionist->Text = L"Receptionist";
+			this->rdbtnReceptionist->UseVisualStyleBackColor = false;
+			this->rdbtnReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::rdbtnReceptionist_CheckedChanged);
+			// 
+			// rdbtnPatient
+			// 
+			this->rdbtnPatient->AutoSize = true;
+			this->rdbtnPatient->BackColor = System::Drawing::Color::Transparent;
+			this->rdbtnPatient->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdbtnPatient->Location = System::Drawing::Point(399, 272);
+			this->rdbtnPatient->Name = L"rdbtnPatient";
+			this->rdbtnPatient->Size = System::Drawing::Size(77, 25);
+			this->rdbtnPatient->TabIndex = 16;
+			this->rdbtnPatient->TabStop = true;
+			this->rdbtnPatient->Text = L"Patient";
+			this->rdbtnPatient->UseVisualStyleBackColor = false;
+			this->rdbtnPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::rdbtnPatient_CheckedChanged);
+			// 
+			// rdbtnDoctor
+			// 
+			this->rdbtnDoctor->AutoSize = true;
+			this->rdbtnDoctor->BackColor = System::Drawing::Color::Transparent;
+			this->rdbtnDoctor->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdbtnDoctor->Location = System::Drawing::Point(304, 272);
+			this->rdbtnDoctor->Name = L"rdbtnDoctor";
+			this->rdbtnDoctor->Size = System::Drawing::Size(77, 25);
+			this->rdbtnDoctor->TabIndex = 15;
+			this->rdbtnDoctor->TabStop = true;
+			this->rdbtnDoctor->Text = L"Doctor";
+			this->rdbtnDoctor->UseVisualStyleBackColor = false;
+			this->rdbtnDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::rdbtnDoctor_CheckedChanged);
+			// 
+			// rdbtnAdmin
+			// 
+			this->rdbtnAdmin->AutoSize = true;
+			this->rdbtnAdmin->BackColor = System::Drawing::Color::Transparent;
+			this->rdbtnAdmin->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdbtnAdmin->Location = System::Drawing::Point(215, 270);
+			this->rdbtnAdmin->Name = L"rdbtnAdmin";
+			this->rdbtnAdmin->Size = System::Drawing::Size(74, 25);
+			this->rdbtnAdmin->TabIndex = 14;
+			this->rdbtnAdmin->TabStop = true;
+			this->rdbtnAdmin->Text = L"Admin";
+			this->rdbtnAdmin->UseVisualStyleBackColor = false;
+			this->rdbtnAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::rdbtnAdmin_CheckedChanged);
 			// 
 			// panel3
 			// 
@@ -198,48 +266,6 @@ namespace HospitalManagement {
 			this->btnSignIn->UseVisualStyleBackColor = false;
 			this->btnSignIn->Click += gcnew System::EventHandler(this, &LoginForm::btnSignIn_Click);
 			// 
-			// cbPatient
-			// 
-			this->cbPatient->AutoSize = true;
-			this->cbPatient->BackColor = System::Drawing::Color::Transparent;
-			this->cbPatient->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 10.25F));
-			this->cbPatient->Location = System::Drawing::Point(475, 264);
-			this->cbPatient->Name = L"cbPatient";
-			this->cbPatient->Size = System::Drawing::Size(71, 23);
-			this->cbPatient->TabIndex = 12;
-			this->cbPatient->Text = L"Patient";
-			this->cbPatient->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->cbPatient->UseVisualStyleBackColor = false;
-			this->cbPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
-			// 
-			// cbDoctor
-			// 
-			this->cbDoctor->AutoSize = true;
-			this->cbDoctor->BackColor = System::Drawing::Color::Transparent;
-			this->cbDoctor->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 10.25F));
-			this->cbDoctor->Location = System::Drawing::Point(398, 264);
-			this->cbDoctor->Name = L"cbDoctor";
-			this->cbDoctor->Size = System::Drawing::Size(71, 23);
-			this->cbDoctor->TabIndex = 11;
-			this->cbDoctor->Text = L"Doctor";
-			this->cbDoctor->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->cbDoctor->UseVisualStyleBackColor = false;
-			this->cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
-			// 
-			// cbReceptionist
-			// 
-			this->cbReceptionist->AutoSize = true;
-			this->cbReceptionist->BackColor = System::Drawing::Color::Transparent;
-			this->cbReceptionist->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 10.25F));
-			this->cbReceptionist->Location = System::Drawing::Point(289, 264);
-			this->cbReceptionist->Name = L"cbReceptionist";
-			this->cbReceptionist->Size = System::Drawing::Size(103, 23);
-			this->cbReceptionist->TabIndex = 10;
-			this->cbReceptionist->Text = L"Receptionist";
-			this->cbReceptionist->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->cbReceptionist->UseVisualStyleBackColor = false;
-			this->cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
-			// 
 			// labelRole
 			// 
 			this->labelRole->AutoSize = true;
@@ -251,20 +277,6 @@ namespace HospitalManagement {
 			this->labelRole->Size = System::Drawing::Size(143, 15);
 			this->labelRole->TabIndex = 9;
 			this->labelRole->Text = L"*Who are you signing in as \?";
-			// 
-			// cbAdmin
-			// 
-			this->cbAdmin->AutoSize = true;
-			this->cbAdmin->BackColor = System::Drawing::Color::Transparent;
-			this->cbAdmin->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 10.25F));
-			this->cbAdmin->Location = System::Drawing::Point(215, 264);
-			this->cbAdmin->Name = L"cbAdmin";
-			this->cbAdmin->Size = System::Drawing::Size(68, 23);
-			this->cbAdmin->TabIndex = 8;
-			this->cbAdmin->Text = L"Admin";
-			this->cbAdmin->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->cbAdmin->UseVisualStyleBackColor = false;
-			this->cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
 			// 
 			// panel2
 			// 
@@ -450,83 +462,6 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion  
-	private: System::Void cbAdmin_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (cbAdmin->Checked) {
-			labelRole->Text = "Signing in as Admin";
-			labelRole->ForeColor = System::Drawing::Color::Silver;
-
-			// Temporarily disable event handling
-			cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
-			cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
-			cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
-
-			cbReceptionist->Checked = false;
-			cbDoctor->Checked = false;
-			cbPatient->Checked = false;
-
-			// Re-enable event handling
-			cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
-			cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
-			cbPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
-		}
-	}
-
-	private: System::Void cbReceptionist_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (cbReceptionist->Checked) {
-			labelRole->Text = "Signing in as Receptionist";
-			labelRole->ForeColor = System::Drawing::Color::Silver;
-
-			cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
-			cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
-			cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
-
-			cbAdmin->Checked = false;
-			cbDoctor->Checked = false;
-			cbPatient->Checked = false;
-
-			cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
-			cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
-			cbPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
-		}
-	}
-
-	private: System::Void cbDoctor_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (cbDoctor->Checked) {
-			labelRole->Text = "Signing in as Doctor";
-			labelRole->ForeColor = System::Drawing::Color::Silver;
-
-			cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
-			cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
-			cbPatient->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
-
-			cbAdmin->Checked = false;
-			cbReceptionist->Checked = false;
-			cbPatient->Checked = false;
-
-			cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
-			cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
-			cbPatient->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbPatient_CheckedChanged);
-		}
-	}
-
-	private: System::Void cbPatient_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (cbPatient->Checked) {
-			labelRole->Text = "Signing in as Patient";
-			labelRole->ForeColor = System::Drawing::Color::Silver;
-
-			cbAdmin->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
-			cbReceptionist->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
-			cbDoctor->CheckedChanged -= gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
-
-			cbAdmin->Checked = false;
-			cbReceptionist->Checked = false;
-			cbDoctor->Checked = false;
-
-			cbAdmin->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbAdmin_CheckedChanged);
-			cbReceptionist->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbReceptionist_CheckedChanged);
-			cbDoctor->CheckedChanged += gcnew System::EventHandler(this, &LoginForm::cbDoctor_CheckedChanged);
-		}
-	}
 	private: System::Void tbUsername_Enter(System::Object^ sender, System::EventArgs^ e) {
 		if (tbEmail->Text == "Email") {
 			tbEmail->Text = "";
@@ -549,8 +484,6 @@ namespace HospitalManagement {
 			tbPassword->UseSystemPasswordChar = false;  // Show placeholder text normally
 		}
 	}
-
-
 
 	public: bool switchtoRegister = false;
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -602,6 +535,22 @@ namespace HospitalManagement {
 			MessageBox::Show("Couldn't Connect to DataBase\n"+e->Message,
 				"Connection Problem", MessageBoxButtons::OK);
 		}
+	}
+	private: System::Void rdbtnAdmin_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		labelRole->ForeColor = Color::Silver;
+		labelRole->Text = "Signing In as Admin!";
+	}
+	private: System::Void rdbtnDoctor_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		labelRole->ForeColor = Color::Silver;
+		labelRole->Text = "Signing In as Doctor!";
+	}
+	private: System::Void rdbtnPatient_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		labelRole->ForeColor = Color::Silver;
+		labelRole->Text = "Signing In as Patient!";
+	}
+	private: System::Void rdbtnReceptionist_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		labelRole->ForeColor = Color::Silver;
+		labelRole->Text = "Signing In as Receptionist!";
 	}
 };
 }
