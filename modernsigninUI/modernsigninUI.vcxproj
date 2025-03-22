@@ -130,9 +130,11 @@
     <ClCompile Include="RegisterForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminDashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Doctor.h" />
     <ClInclude Include="DoctorDashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -143,6 +145,8 @@
     <ClInclude Include="PatientDashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="Receptionist.h" />
     <ClInclude Include="ReceptionistDashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>

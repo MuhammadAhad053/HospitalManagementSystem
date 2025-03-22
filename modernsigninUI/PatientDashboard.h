@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Patient.h"
+
 namespace HospitalManagement {
 
 	using namespace System;
@@ -15,12 +17,25 @@ namespace HospitalManagement {
 	public ref class PatientDashboard : public System::Windows::Forms::Form
 	{
 	public:
-		PatientDashboard(void)
+		PatientDashboard(Patient^ patient)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			labelUserID->Text = patient->id.ToString();
+			labelName->Text = patient->firstName + " " + patient->lastName;
+			DateTime today = DateTime::Now;
+			DateTime dob = DateTime::Parse(patient->dateofBirth);
+			int age = today.Year - dob.Year;
+			if (today.Month < dob.Month || (today.Month == dob.Month && today.Day < dob.Day)) {
+				age--; // Adjust if birthday hasn't occurred yet this year
+			}
+			labelAge->Text = age.ToString();
+			labelGender->Text = patient->gender;
+			labelDOB->Text = patient->dateofBirth;
+			labelEmail->Text = patient->email;
+			labelPhone->Text = patient->phoneNumber;
 		}
 
 	protected:
@@ -506,6 +521,7 @@ namespace HospitalManagement {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(1280, 720);
 			this->Name = L"PatientDashboard";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"PatientDashboard";
 			this->panelTop->ResumeLayout(false);
 			this->panelTop->PerformLayout();

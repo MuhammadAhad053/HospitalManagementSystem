@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Doctor.h"
+
 namespace HospitalManagement {
 
 	using namespace System;
@@ -15,12 +17,28 @@ namespace HospitalManagement {
 	public ref class DoctorDashboard : public System::Windows::Forms::Form
 	{
 	public:
-		DoctorDashboard(void)
+		DoctorDashboard(Doctor^ doctor)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			labelUserID->Text = doctor->id.ToString();
+			labelName->Text = doctor->firstName + " " + doctor->lastName;
+			DateTime today = DateTime::Now;
+			DateTime dob = DateTime::Parse(doctor->dateofBirth);
+			int age = today.Year - dob.Year;
+			if (today.Month < dob.Month || (today.Month == dob.Month && today.Day < dob.Day)) {
+				age--; // Adjust if birthday hasn't occurred yet this year
+			}
+			labelAge->Text = age.ToString();
+			labelGender->Text = doctor->gender;
+			labelDOB->Text = doctor->dateofBirth;
+			labelEmail->Text = doctor->email;
+			labelPhone->Text = doctor->phoneNumber;
+			labelDepartment->Text = doctor->department;
+			labelSpecialization->Text = doctor->specialization;
+			labelExperience->Text = doctor->experienceYears.ToString();
 		}
 
 	protected:
@@ -65,6 +83,12 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Label^ labelSchedule;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::Label^ labelExperience;
+
+	private: System::Windows::Forms::Label^ labelSpecialization;
+
+	private: System::Windows::Forms::Label^ labelDepartment;
+
 
 
 
@@ -96,6 +120,7 @@ namespace HospitalManagement {
 			this->btProfile = (gcnew System::Windows::Forms::Button());
 			this->panelMain = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -113,14 +138,16 @@ namespace HospitalManagement {
 			this->labelAge = (gcnew System::Windows::Forms::Label());
 			this->labelName = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->labelDepartment = (gcnew System::Windows::Forms::Label());
+			this->labelSpecialization = (gcnew System::Windows::Forms::Label());
+			this->labelExperience = (gcnew System::Windows::Forms::Label());
 			this->panelTop->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panelMain->SuspendLayout();
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->panelProfile->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panelTop
@@ -220,6 +247,17 @@ namespace HospitalManagement {
 			this->panel1->Size = System::Drawing::Size(1264, 97);
 			this->panel1->TabIndex = 1;
 			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(357, 12);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(76, 73);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox3->TabIndex = 7;
+			this->pictureBox3->TabStop = false;
+			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
@@ -317,6 +355,9 @@ namespace HospitalManagement {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->panelProfile->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelProfile.BackgroundImage")));
 			this->panelProfile->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->panelProfile->Controls->Add(this->labelExperience);
+			this->panelProfile->Controls->Add(this->labelSpecialization);
+			this->panelProfile->Controls->Add(this->labelDepartment);
 			this->panelProfile->Controls->Add(this->labelSchedule);
 			this->panelProfile->Controls->Add(this->labelUserID);
 			this->panelProfile->Controls->Add(this->pictureBox1);
@@ -340,7 +381,7 @@ namespace HospitalManagement {
 			this->labelSchedule->BackColor = System::Drawing::Color::Transparent;
 			this->labelSchedule->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
 			this->labelSchedule->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelSchedule->Location = System::Drawing::Point(130, 372);
+			this->labelSchedule->Location = System::Drawing::Point(132, 450);
 			this->labelSchedule->Name = L"labelSchedule";
 			this->labelSchedule->Size = System::Drawing::Size(82, 26);
 			this->labelSchedule->TabIndex = 6;
@@ -471,21 +512,50 @@ namespace HospitalManagement {
 			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
 			this->label1->Location = System::Drawing::Point(27, 216);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(111, 182);
+			this->label1->Size = System::Drawing::Size(148, 260);
 			this->label1->TabIndex = 3;
-			this->label1->Text = L"Name : \r\nAge :\r\nGender : \r\nDOB :\r\nEmail :\r\nPhone :\r\nAvailability : ";
+			this->label1->Text = L"Name : \r\nAge :\r\nGender : \r\nDOB :\r\nEmail :\r\nPhone :\r\nDepartment:\r\nSpecialization:\r"
+				L"\nExperience Years:\r\nAvailability : ";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// pictureBox3
+			// labelDepartment
 			// 
-			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(357, 12);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(76, 73);
-			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox3->TabIndex = 7;
-			this->pictureBox3->TabStop = false;
+			this->labelDepartment->AutoSize = true;
+			this->labelDepartment->BackColor = System::Drawing::Color::Transparent;
+			this->labelDepartment->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelDepartment->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelDepartment->Location = System::Drawing::Point(141, 372);
+			this->labelDepartment->Name = L"labelDepartment";
+			this->labelDepartment->Size = System::Drawing::Size(107, 26);
+			this->labelDepartment->TabIndex = 7;
+			this->labelDepartment->Text = L"department";
+			this->labelDepartment->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// labelSpecialization
+			// 
+			this->labelSpecialization->AutoSize = true;
+			this->labelSpecialization->BackColor = System::Drawing::Color::Transparent;
+			this->labelSpecialization->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelSpecialization->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelSpecialization->Location = System::Drawing::Point(145, 398);
+			this->labelSpecialization->Name = L"labelSpecialization";
+			this->labelSpecialization->Size = System::Drawing::Size(118, 26);
+			this->labelSpecialization->TabIndex = 8;
+			this->labelSpecialization->Text = L"specialization";
+			this->labelSpecialization->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// labelExperience
+			// 
+			this->labelExperience->AutoSize = true;
+			this->labelExperience->BackColor = System::Drawing::Color::Transparent;
+			this->labelExperience->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelExperience->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelExperience->Location = System::Drawing::Point(170, 424);
+			this->labelExperience->Name = L"labelExperience";
+			this->labelExperience->Size = System::Drawing::Size(99, 26);
+			this->labelExperience->TabIndex = 9;
+			this->labelExperience->Text = L"experience";
+			this->labelExperience->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// DoctorDashboard
 			// 
@@ -506,10 +576,10 @@ namespace HospitalManagement {
 			this->panelMain->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->panelProfile->ResumeLayout(false);
 			this->panelProfile->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 
 		}

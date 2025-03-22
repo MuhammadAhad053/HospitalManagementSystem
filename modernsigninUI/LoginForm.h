@@ -1,6 +1,13 @@
 #pragma once
 
 #include "Patient.h"
+#include "Admin.h"
+#include "Doctor.h"
+#include "Receptionist.h"
+#include "PatientDashboard.h"
+#include "AdminDashboard.h"
+#include "DoctorDashboard.h"
+#include "ReceptionistDashboard.h"
 
 namespace HospitalManagement {
 
@@ -490,12 +497,27 @@ namespace HospitalManagement {
 		switchtoRegister = true;
 		this->Close();
 	}
+
 	public: Patient^ patient = nullptr;
+	public: Admin^ admin = nullptr;
+	public: Doctor^ doctor = nullptr;
+	public: Receptionist^ receptionist = nullptr;
+
 	private: System::Void btnSignIn_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ email = tbEmail->Text;
 		String^ password = tbPassword->Text;
+		String^ role = nullptr;
 
-		if (email == "Email" || password == "Password") {
+		if (rdbtnPatient->Checked)
+			role = "Patient";
+		else if (rdbtnAdmin->Checked)
+			role = "Admin";
+		else if (rdbtnDoctor->Checked)
+			role = "Doctor";
+		else if (rdbtnReceptionist->Checked)
+			role = "Receptionist";
+
+		if (email == "Email" || password == "Password" || role == nullptr) {
 			MessageBox::Show("Kindly Input All Fields",
 				"Invalid Arguments", MessageBoxButtons::OK);
 		}
@@ -504,7 +526,7 @@ namespace HospitalManagement {
 			SqlConnection sqlConn(connString);
 			sqlConn.Open();
 
-			String^ sqlQuery = "SELECT * FROM Patient WHERE email = @email AND password = @pwd;";
+			String^ sqlQuery = "SELECT * FROM " + role + " WHERE email = @email AND password = @pwd;";
 			SqlCommand command(sqlQuery, % sqlConn);
 
 			command.Parameters->AddWithValue("@email", email);
@@ -513,18 +535,71 @@ namespace HospitalManagement {
 			SqlDataReader^ reader = command.ExecuteReader();
 
 			if (reader->Read()) {
-				patient = gcnew Patient;
-				patient->id = reader->GetInt32(0);
-				patient->firstName = reader->GetString(1);
-				patient->lastName = reader->GetString(2);
-				patient->phoneNumber = reader->GetString(5);
-				patient->email = reader->GetString(6);
-				patient->password = reader->GetString(7);
+				if (role == "Admin") {
+					admin = gcnew Admin;
 
-				MessageBox::Show(patient->lastName + " has logged in!",
-					"Success", MessageBoxButtons::OK);
+					admin->id = reader->GetInt32(reader->GetOrdinal("id"));
+					admin->firstName = reader->GetString(reader->GetOrdinal("firstName"));
+					admin->lastName = reader->GetString(reader->GetOrdinal("lastName"));
+					admin->phoneNumber = reader->GetString(reader->GetOrdinal("phoneNumber"));
+					admin->email = reader->GetString(reader->GetOrdinal("email"));
 
-				this->Close();
+					AdminDashboard^ adminDashboard = gcnew AdminDashboard(admin);
+					this->Hide();
+					adminDashboard->ShowDialog();
+					this->Show();
+				}
+				else if (role == "Patient") {
+					patient = gcnew Patient;
+
+					patient->id = reader->GetInt32(reader->GetOrdinal("id"));
+					patient->firstName = reader->GetString(reader->GetOrdinal("firstName"));
+					patient->lastName = reader->GetString(reader->GetOrdinal("lastName"));
+					patient->gender = reader->GetString(reader->GetOrdinal("gender"));
+					patient->dateofBirth = reader->GetDateTime(reader->GetOrdinal("dateofBirth")).ToString("yyyy-MM-dd");
+					patient->phoneNumber = reader->GetString(reader->GetOrdinal("phoneNumber"));
+					patient->email = reader->GetString(reader->GetOrdinal("email"));
+
+					PatientDashboard^ patientDashboard = gcnew PatientDashboard(patient);
+					this->Hide();
+					patientDashboard->ShowDialog();
+					this->Show();
+				}
+				else if (role == "Doctor") {
+					doctor = gcnew Doctor;
+
+					doctor->id = reader->GetInt32(reader->GetOrdinal("id"));
+					doctor->firstName = reader->GetString(reader->GetOrdinal("firstName"));
+					doctor->lastName = reader->GetString(reader->GetOrdinal("lastName"));
+					doctor->gender = reader->GetString(reader->GetOrdinal("gender"));
+					doctor->dateofBirth = reader->GetDateTime(reader->GetOrdinal("dateofBirth")).ToString("yyyy-MM-dd");
+					doctor->phoneNumber = reader->GetString(reader->GetOrdinal("phoneNumber"));
+					doctor->email = reader->GetString(reader->GetOrdinal("email"));
+					doctor->department = reader->GetString(reader->GetOrdinal("department"));
+					doctor->specialization = reader->GetString(reader->GetOrdinal("specialization"));
+					doctor->experienceYears = reader->GetInt32(reader->GetOrdinal("experienceYears"));
+
+					DoctorDashboard^ doctorDashboard = gcnew DoctorDashboard(doctor);
+					this->Hide();
+					doctorDashboard->ShowDialog();
+					this->Show();
+				}
+				else if (role == "Receptionist") {
+					receptionist = gcnew Receptionist;
+
+					receptionist->id = reader->GetInt32(reader->GetOrdinal("id"));
+					receptionist->firstName = reader->GetString(reader->GetOrdinal("firstName"));
+					receptionist->lastName = reader->GetString(reader->GetOrdinal("lastName"));
+					receptionist->gender = reader->GetString(reader->GetOrdinal("gender"));
+					receptionist->dateofBirth = reader->GetDateTime(reader->GetOrdinal("dateofBirth")).ToString("yyyy-MM-dd");
+					receptionist->phoneNumber = reader->GetString(reader->GetOrdinal("phoneNumber"));
+					receptionist->email = reader->GetString(reader->GetOrdinal("email"));
+
+					ReceptionistDashboard^ receptionistDashboard = gcnew ReceptionistDashboard(receptionist);
+					this->Hide();
+					receptionistDashboard->ShowDialog();
+					this->Show();
+				}
 			}
 			else {
 				MessageBox::Show("Invalid Username or Password",

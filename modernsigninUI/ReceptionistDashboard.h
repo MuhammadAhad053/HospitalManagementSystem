@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Receptionist.h"
+
 namespace HospitalManagement {
 
 	using namespace System;
@@ -15,12 +17,25 @@ namespace HospitalManagement {
 	public ref class ReceptionistDashboard : public System::Windows::Forms::Form
 	{
 	public:
-		ReceptionistDashboard(void)
+		ReceptionistDashboard(Receptionist^ receptionist)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			labelUserID->Text = receptionist->id.ToString();
+			labelName->Text = receptionist->firstName + " " + receptionist->lastName;
+			DateTime today = DateTime::Now;
+			DateTime dob = DateTime::Parse(receptionist->dateofBirth);
+			int age = today.Year - dob.Year;
+			if (today.Month < dob.Month || (today.Month == dob.Month && today.Day < dob.Day)) {
+				age--; // Adjust if birthday hasn't occurred yet this year
+			}
+			labelAge->Text = age.ToString();
+			labelGender->Text = receptionist->gender;
+			labelDOB->Text = receptionist->dateofBirth;
+			labelEmail->Text = receptionist->email;
+			labelPhone->Text = receptionist->phoneNumber;
 		}
 
 	protected:
