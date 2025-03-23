@@ -72,6 +72,10 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Timer^ profileTimer;
+
+
+	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -87,7 +91,7 @@ namespace HospitalManagement {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -96,6 +100,7 @@ namespace HospitalManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdminDashboard::typeid));
 			this->panelTop = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
@@ -120,6 +125,7 @@ namespace HospitalManagement {
 			this->labelEmail = (gcnew System::Windows::Forms::Label());
 			this->labelName = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->profileTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelTop->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panelMain->SuspendLayout();
@@ -247,7 +253,7 @@ namespace HospitalManagement {
 			this->label6->BackColor = System::Drawing::Color::Transparent;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold));
 			this->label6->ForeColor = System::Drawing::Color::White;
-			this->label6->Location = System::Drawing::Point(438, 21);
+			this->label6->Location = System::Drawing::Point(438, 12);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(147, 26);
 			this->label6->TabIndex = 5;
@@ -260,7 +266,7 @@ namespace HospitalManagement {
 			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 10.25F));
 			this->label7->ForeColor = System::Drawing::Color::White;
-			this->label7->Location = System::Drawing::Point(439, 56);
+			this->label7->Location = System::Drawing::Point(438, 56);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(119, 19);
 			this->label7->TabIndex = 6;
@@ -369,7 +375,7 @@ namespace HospitalManagement {
 			this->button4->ForeColor = System::Drawing::Color::White;
 			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
 			this->button4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button4->Location = System::Drawing::Point(835, 43);
+			this->button4->Location = System::Drawing::Point(834, 43);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(364, 115);
 			this->button4->TabIndex = 0;
@@ -391,7 +397,7 @@ namespace HospitalManagement {
 			this->button2->ForeColor = System::Drawing::Color::White;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
 			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button2->Location = System::Drawing::Point(415, 43);
+			this->button2->Location = System::Drawing::Point(414, 43);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(364, 115);
 			this->button2->TabIndex = 0;
@@ -410,7 +416,6 @@ namespace HospitalManagement {
 			this->panelProfile->Controls->Add(this->labelEmail);
 			this->panelProfile->Controls->Add(this->labelName);
 			this->panelProfile->Controls->Add(this->label1);
-			this->panelProfile->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelProfile->Location = System::Drawing::Point(0, 70);
 			this->panelProfile->Name = L"panelProfile";
 			this->panelProfile->Size = System::Drawing::Size(341, 611);
@@ -493,6 +498,11 @@ namespace HospitalManagement {
 			this->label1->Text = L"Name : \r\nEmail :";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
+			// profileTimer
+			// 
+			this->profileTimer->Interval = 5;
+			this->profileTimer->Tick += gcnew System::EventHandler(this, &AdminDashboard::profileTimer_Tick);
+			// 
 			// AdminDashboard
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -521,10 +531,105 @@ namespace HospitalManagement {
 		}
 #pragma endregion
 	private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (panelProfile->Visible == true)
-			panelProfile->Visible = false;
-		else
-			panelProfile->Visible = true;
+		profileTimer->Start();
 	}
+
+public:
+	bool profilePanelExpand = true;
+	int panelStep = 40;
+	int buttonMoveSmall = 24;
+	int buttonMoveLarge = 16;
+	int pictureBoxStep = 38;
+	int labelStep = 38;
+
+private:
+	System::Void profileTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
+		if (profilePanelExpand) {
+			// Move Panel
+			int newPanelX = panelProfile->Location.X - panelStep;
+			if (newPanelX < -341) newPanelX = -341;
+			panelProfile->Location = System::Drawing::Point(newPanelX, panelProfile->Location.Y);
+
+			// Move Button1, Button2, Button3
+			int newButtonX = button2->Location.X - buttonMoveSmall;
+			if (newButtonX < 215) newButtonX = 215;
+			button1->Location = System::Drawing::Point(newButtonX, button1->Location.Y);
+			button2->Location = System::Drawing::Point(newButtonX, button2->Location.Y);
+			button3->Location = System::Drawing::Point(newButtonX, button3->Location.Y);
+
+			// Move Button4, Button5, Button6
+			int newButtonBigX = button4->Location.X - buttonMoveLarge;
+			if (newButtonBigX < 701) newButtonBigX = 701;
+			button4->Location = System::Drawing::Point(newButtonBigX, button4->Location.Y);
+			button5->Location = System::Drawing::Point(newButtonBigX, button5->Location.Y);
+			button6->Location = System::Drawing::Point(newButtonBigX, button6->Location.Y);
+
+			// Move PictureBox3
+			int newPictureBoxX = pictureBox3->Location.X - pictureBoxStep;
+			if (newPictureBoxX < 32) newPictureBoxX = 32;
+			pictureBox3->Location = System::Drawing::Point(newPictureBoxX, pictureBox3->Location.Y);
+
+			// Move Label6 and Label7
+			int newLabelX = label6->Location.X - labelStep;
+			if (newLabelX < 114) newLabelX = 114;
+			label6->Location = System::Drawing::Point(newLabelX, label6->Location.Y);
+			label7->Location = System::Drawing::Point(newLabelX, label7->Location.Y);
+
+			// Stop when all elements reach target positions
+			if (newPanelX == -341 && newButtonX == 215 && newButtonBigX == 701 &&
+				newPictureBoxX == 32 && newLabelX == 114) {
+				profilePanelExpand = false;
+				profileTimer->Stop();
+			}
+		}
+		else {
+			// Move Panel
+			int newPanelX = panelProfile->Location.X + panelStep;
+			if (newPanelX > 0) newPanelX = 0;
+			panelProfile->Location = System::Drawing::Point(newPanelX, panelProfile->Location.Y);
+
+			// Move Button1, Button2, Button3
+			int newButtonX = button2->Location.X + buttonMoveSmall;
+			if (newButtonX > 414) newButtonX = 414;
+			button1->Location = System::Drawing::Point(newButtonX, button1->Location.Y);
+			button2->Location = System::Drawing::Point(newButtonX, button2->Location.Y);
+			button3->Location = System::Drawing::Point(newButtonX, button3->Location.Y);
+
+			// Move Button4, Button5, Button6
+			int newButtonBigX = button4->Location.X + buttonMoveLarge;
+			if (newButtonBigX > 835) newButtonBigX = 835;
+			button4->Location = System::Drawing::Point(newButtonBigX, button4->Location.Y);
+			button5->Location = System::Drawing::Point(newButtonBigX, button5->Location.Y);
+			button6->Location = System::Drawing::Point(newButtonBigX, button6->Location.Y);
+
+			// Move PictureBox3
+			int newPictureBoxX = pictureBox3->Location.X + pictureBoxStep;
+			if (newPictureBoxX > 356) newPictureBoxX = 356;
+			pictureBox3->Location = System::Drawing::Point(newPictureBoxX, pictureBox3->Location.Y);
+
+			// Move Label6 and Label7
+			int newLabelX = label6->Location.X + labelStep;
+			if (newLabelX > 438) newLabelX = 438;
+			label6->Location = System::Drawing::Point(newLabelX, label6->Location.Y);
+			label7->Location = System::Drawing::Point(newLabelX, label7->Location.Y);
+
+			// Stop when all elements reach their initial positions
+			if (newPanelX == 0 && newButtonX == 414 && newButtonBigX == 835 &&
+				newPictureBoxX == 356 && newLabelX == 438) {
+				profilePanelExpand = true;
+				profileTimer->Stop();
+			}
+		}
+	}
+
+	// Button click event to start the animation
+	private: System::Void btnToggleMovement_Click(System::Object^ sender, System::EventArgs^ e) {
+		profileTimer->Interval = 20; // Keep smooth & fast animation
+		profileTimer->Start();
+	}
+
+
+
+
 	};
 }
