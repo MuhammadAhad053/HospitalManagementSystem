@@ -3336,10 +3336,10 @@
         PnHUM/X3qSx4/8s7/P9of59CvaZ99AAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAFktJREFUeF7tXQl0XNdZLoUCpS2lSygtS1nKUlq60FKWQoE2DklXSmNCekJDOSkJ
+        DAAACwwBP0AiyAAAFktJREFUeF7tXQl0XNdZLoUCpS2lSygtS1nKUlq60FKWQoE2DklXSmNCekJDOSkJ
         nJxCG0ji1Gka27Xj4GInXmJblmQtlmTtiyUncrxJ8kiWLVm29mVGM9JIo1nevH2Z9+47l/PfuU8a3Rnt
         I2Vkz3/OdyxrNO+++3/3/+////e++970pqxkJStZycp6CMb45zHGv4ox/kOM8Z9gjP8SY/w3GOO/whj/
         Bcb4Exjj38EYvxtj/FPs91cqGONfxBh/EGP8UdoetAFt/hnG+I8xxr+PMf4VjPHPst+9bQUUizF+H8b4
@@ -3437,7 +3437,7 @@
         RAhbIauG5ybT9oh1VrKSlazc4fL/1KHqGU+6yBUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonViewWallet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAABZBJREFUeF7t3UmoHFUUxvEYp6iRgBOKaFaCw0JE3Eh0oxAxDiCIQXHAaaEgCAEF
@@ -3497,7 +3497,7 @@
         4aqw/5haAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonBookAppointment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAACWZJREFUeF7tnXesNkUVhxFFUFCxV9CEgEaiIlYCtiggCGIsCLHFAhgURGNBKeof
@@ -4224,6 +4224,12 @@
         cdNxupa/fwRBwpf/HxSUvcugaydRAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="timerPatientDashboardpanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>263, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAgAEBAAAAEAIABoBAAAhgAAABgYAAABACAAiAkAAO4EAAAgIAAAAQAgAKgQAAB2DgAAMDAAAAEA

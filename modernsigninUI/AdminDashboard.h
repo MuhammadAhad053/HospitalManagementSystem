@@ -420,6 +420,7 @@ namespace HospitalManagement {
 			this->panelProfile->Name = L"panelProfile";
 			this->panelProfile->Size = System::Drawing::Size(341, 611);
 			this->panelProfile->TabIndex = 2;
+			this->panelProfile->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AdminDashboard::panelProfile_Paint);
 			// 
 			// labelUserID
 			// 
@@ -631,5 +632,7 @@ private:
 
 
 
-	};
+	private: System::Void panelProfile_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+};
 }
