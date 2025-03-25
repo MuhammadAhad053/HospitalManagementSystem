@@ -55,11 +55,13 @@ namespace HospitalManagement {
 
 
 
+
+
 	private: System::Windows::Forms::Button^ btProfile;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ btnDoctor;
-	private: System::Windows::Forms::Button^ button1;
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
@@ -82,9 +84,13 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ labelAge;
 	private: System::Windows::Forms::Label^ labelUserID;
 	private: System::Windows::Forms::PictureBox^ pictureBox;
-
-	private: System::Windows::Forms::Timer^ timerPatientDashboardpanel;
 	private: System::Windows::Forms::Timer^ timer1;
+
+
+
+
+
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -124,7 +130,6 @@ namespace HospitalManagement {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->buttonViewWallet = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->buttonBookAppointment = (gcnew System::Windows::Forms::Button());
 			this->btnDoctor = (gcnew System::Windows::Forms::Button());
 			this->panelProfile = (gcnew System::Windows::Forms::Panel());
@@ -138,7 +143,6 @@ namespace HospitalManagement {
 			this->labelAge = (gcnew System::Windows::Forms::Label());
 			this->labelName = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->timerPatientDashboardpanel = (gcnew System::Windows::Forms::Timer(this->components));
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelTop->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
@@ -212,8 +216,8 @@ namespace HospitalManagement {
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
 			this->btProfile->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btProfile->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btProfile->Location = System::Drawing::Point(12, 12);
+			this->btProfile->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btProfile->Location = System::Drawing::Point(12, 15);
 			this->btProfile->Name = L"btProfile";
 			this->btProfile->Size = System::Drawing::Size(47, 42);
 			this->btProfile->TabIndex = 0;
@@ -226,7 +230,6 @@ namespace HospitalManagement {
 			this->panelMain->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->panelMain->Controls->Add(this->panel1);
 			this->panelMain->Controls->Add(this->buttonViewWallet);
-			this->panelMain->Controls->Add(this->button1);
 			this->panelMain->Controls->Add(this->buttonBookAppointment);
 			this->panelMain->Controls->Add(this->btnDoctor);
 			this->panelMain->Location = System::Drawing::Point(0, 70);
@@ -298,34 +301,12 @@ namespace HospitalManagement {
 			this->buttonViewWallet->ForeColor = System::Drawing::Color::White;
 			this->buttonViewWallet->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonViewWallet.Image")));
 			this->buttonViewWallet->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonViewWallet->Location = System::Drawing::Point(414, 269);
+			this->buttonViewWallet->Location = System::Drawing::Point(383, 339);
 			this->buttonViewWallet->Name = L"buttonViewWallet";
-			this->buttonViewWallet->Size = System::Drawing::Size(785, 160);
+			this->buttonViewWallet->Size = System::Drawing::Size(773, 136);
 			this->buttonViewWallet->TabIndex = 0;
 			this->buttonViewWallet->Text = L"View your wallet \r\n";
 			this->buttonViewWallet->UseVisualStyleBackColor = false;
-			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::Color::Transparent;
-			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button1->FlatAppearance->BorderSize = 2;
-			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button1->Location = System::Drawing::Point(414, 269);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(785, 160);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"View your wallet \r\n";
-			this->button1->UseVisualStyleBackColor = false;
 			// 
 			// buttonBookAppointment
 			// 
@@ -342,9 +323,9 @@ namespace HospitalManagement {
 			this->buttonBookAppointment->ForeColor = System::Drawing::Color::White;
 			this->buttonBookAppointment->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonBookAppointment.Image")));
 			this->buttonBookAppointment->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonBookAppointment->Location = System::Drawing::Point(414, 58);
+			this->buttonBookAppointment->Location = System::Drawing::Point(383, 46);
 			this->buttonBookAppointment->Name = L"buttonBookAppointment";
-			this->buttonBookAppointment->Size = System::Drawing::Size(785, 160);
+			this->buttonBookAppointment->Size = System::Drawing::Size(773, 145);
 			this->buttonBookAppointment->TabIndex = 0;
 			this->buttonBookAppointment->Text = L"Book an Appointment with available Doctors";
 			this->buttonBookAppointment->UseVisualStyleBackColor = false;
@@ -364,9 +345,9 @@ namespace HospitalManagement {
 			this->btnDoctor->ForeColor = System::Drawing::Color::White;
 			this->btnDoctor->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnDoctor.Image")));
 			this->btnDoctor->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnDoctor->Location = System::Drawing::Point(414, 58);
+			this->btnDoctor->Location = System::Drawing::Point(383, 197);
 			this->btnDoctor->Name = L"btnDoctor";
-			this->btnDoctor->Size = System::Drawing::Size(785, 160);
+			this->btnDoctor->Size = System::Drawing::Size(773, 136);
 			this->btnDoctor->TabIndex = 0;
 			this->btnDoctor->Text = L"View list of available Doctors\r\n";
 			this->btnDoctor->UseVisualStyleBackColor = false;
@@ -387,7 +368,6 @@ namespace HospitalManagement {
 			this->panelProfile->Controls->Add(this->labelAge);
 			this->panelProfile->Controls->Add(this->labelName);
 			this->panelProfile->Controls->Add(this->label1);
-			this->panelProfile->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelProfile->Location = System::Drawing::Point(0, 70);
 			this->panelProfile->Name = L"panelProfile";
 			this->panelProfile->Size = System::Drawing::Size(341, 611);
@@ -523,9 +503,10 @@ namespace HospitalManagement {
 			this->label1->Text = L"Name : \r\nAge :\r\nGender : \r\nDOB :\r\nEmail :\r\nPhone :\r\n";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// timerPatientDashboardpanel
+			// timer1
 			// 
-			this->timerPatientDashboardpanel->Tick += gcnew System::EventHandler(this, &PatientDashboard::timerPatientDashboardpanel_Tick_1);
+			this->timer1->Interval = 10;
+			this->timer1->Tick += gcnew System::EventHandler(this, &PatientDashboard::timer1_Tick);
 			// 
 			// PatientDashboard
 			// 
@@ -556,88 +537,48 @@ namespace HospitalManagement {
 		}
 #pragma endregion
 
-		// Declare at the class level
-private: bool profilePanelExpand = true; // Store panel state
 
-private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-	timerPatientDashboardpanel->Start();
-}
 
-private: System::Void timerPatientDashboardpanel_Tick_1(System::Object^ sender, System::EventArgs^ e) {
-	int panelStep = 40; // Step size for smooth movement
-	int buttonMoveSmall = 24;  // Adjusted for smoother animation
-	int buttonMoveLarge = 16;
-	int pictureBoxStep = 38;
-	int labelStep = 38;
+	   // Declare panel state globally
+public:
+	bool panelOpen = true;   // Panel is initially open
+	int panelStep = 20;      // Speed of animation
 
-	if (profilePanelExpand) {
+	// Timer Tick Event for Push Transition Animation
+private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+	if (panelOpen) {
 		// Move Panel Left (Collapse)
 		int newPanelX = panelProfile->Location.X - panelStep;
-		if (newPanelX < -341) newPanelX = -341;
+		if (newPanelX < -341) newPanelX = -341;  // Limit position
 		panelProfile->Location = System::Drawing::Point(newPanelX, panelProfile->Location.Y);
 
-		// Move buttonBookAppointment, buttonViewWallet
-		int newButtonX = buttonBookAppointment->Location.X - buttonMoveSmall;
-		if (newButtonX < 215) newButtonX = 215;
-		buttonBookAppointment->Location = System::Drawing::Point(newButtonX, buttonBookAppointment->Location.Y);
-		buttonViewWallet->Location = System::Drawing::Point(newButtonX, buttonViewWallet->Location.Y);
-
-		// Move PictureBox
-		int newPictureBoxX = pictureBox->Location.X - pictureBoxStep;
-		if (newPictureBoxX < 32) newPictureBoxX = 32;
-		pictureBox->Location = System::Drawing::Point(newPictureBoxX, pictureBox->Location.Y);
-
-		// Move Labels
-		int newLabelX = label6->Location.X - labelStep;
-		if (newLabelX < 114) newLabelX = 114;
-		label6->Location = System::Drawing::Point(newLabelX, label6->Location.Y);
-		label7->Location = System::Drawing::Point(newLabelX, label7->Location.Y);
-
-		// Stop Timer when all elements reach target positions
-		if (newPanelX == -341 && newButtonX == 215 && newPictureBoxX == 32 && newLabelX == 114) {
-			profilePanelExpand = false;
-			timerPatientDashboardpanel->Stop();
+		if (newPanelX == -341) { // Stop when fully collapsed
+			panelOpen = false;
+			timer1->Stop();
 		}
 	}
 	else {
 		// Move Panel Right (Expand)
 		int newPanelX = panelProfile->Location.X + panelStep;
-		if (newPanelX > 0) newPanelX = 0;
+		if (newPanelX > 0) newPanelX = 0;  // Limit position
 		panelProfile->Location = System::Drawing::Point(newPanelX, panelProfile->Location.Y);
 
-		// Move buttonBookAppointment, buttonViewWallet
-		int newButtonX = buttonBookAppointment->Location.X + buttonMoveSmall;
-		if (newButtonX > 414) newButtonX = 414;
-		buttonBookAppointment->Location = System::Drawing::Point(newButtonX, buttonBookAppointment->Location.Y);
-		buttonViewWallet->Location = System::Drawing::Point(newButtonX, buttonViewWallet->Location.Y);
-
-		// Move PictureBox
-		int newPictureBoxX = pictureBox->Location.X + pictureBoxStep;
-		if (newPictureBoxX > 356) newPictureBoxX = 356;
-		pictureBox->Location = System::Drawing::Point(newPictureBoxX, pictureBox->Location.Y);
-
-		// Move Labels
-		int newLabelX = label6->Location.X + labelStep;
-		if (newLabelX > 438) newLabelX = 438;
-		label6->Location = System::Drawing::Point(newLabelX, label6->Location.Y);
-		label7->Location = System::Drawing::Point(newLabelX, label7->Location.Y);
-
-		// Stop Timer when all elements reach target positions
-		if (newPanelX == 0 && newButtonX == 414 && newPictureBoxX == 356 && newLabelX == 438) {
-			profilePanelExpand = true;
-			timerPatientDashboardpanel->Stop();
+		if (newPanelX == 0) { // Stop when fully expanded
+			panelOpen = true;
+			timer1->Stop();
 		}
 	}
 }
 
-	   // Button click event to start the animation
-private: System::Void btnTogglePanel_Click(System::Object^ sender, System::EventArgs^ e) {
-	timerPatientDashboardpanel->Interval = 20; // Smooth & fast animation
-	timerPatientDashboardpanel->Start();
+	   // Button Click Event to Start Animation
+private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
+	timer1->Interval = 10; // Smooth animation
+	timer1->Start();
 }
 
-// Panel Paint event (Unused but required)
-private: System::Void panelProfile_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
+
+   private: System::Void panelProfile_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+		   }
+
 };
-}
+	}

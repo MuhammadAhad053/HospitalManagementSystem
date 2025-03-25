@@ -517,6 +517,7 @@ namespace HospitalManagement {
 			this->Name = L"AdminDashboard";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"AdminDashboard";
+			this->Load += gcnew System::EventHandler(this, &AdminDashboard::AdminDashboard_Load);
 			this->panelTop->ResumeLayout(false);
 			this->panelTop->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
@@ -634,5 +635,7 @@ private:
 
 	private: System::Void panelProfile_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
+private: System::Void AdminDashboard_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

@@ -3467,36 +3467,6 @@
         4aqw/5haAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        4aqw/5haAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="buttonBookAppointment.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -4224,11 +4194,8 @@
         cdNxupa/fwRBwpf/HxSUvcugaydRAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="timerPatientDashboardpanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>263, 17</value>
+    <value>17, 17</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
