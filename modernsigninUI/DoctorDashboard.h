@@ -69,8 +69,10 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ buttonWallet;
+
+	private: System::Windows::Forms::Button^ buttonPatientsScheduled;
+
 	private: System::Windows::Forms::Label^ labelName;
 
 
@@ -80,14 +82,19 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ labelGender;
 	private: System::Windows::Forms::Label^ labelAge;
 	private: System::Windows::Forms::Label^ labelUserID;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ buttonScheduleUpdate;
+
 	private: System::Windows::Forms::Label^ labelSchedule;
-	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::PictureBox^ pictureBox;
+
 	private: System::Windows::Forms::Label^ labelExperience;
 
 	private: System::Windows::Forms::Label^ labelSpecialization;
 
 	private: System::Windows::Forms::Label^ labelDepartment;
+	private: System::Windows::Forms::Timer^ timer;
+
+	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -103,7 +110,7 @@ namespace HospitalManagement {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -112,6 +119,7 @@ namespace HospitalManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(DoctorDashboard::typeid));
 			this->panelTop = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
@@ -120,13 +128,16 @@ namespace HospitalManagement {
 			this->btProfile = (gcnew System::Windows::Forms::Button());
 			this->panelMain = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->buttonWallet = (gcnew System::Windows::Forms::Button());
+			this->buttonScheduleUpdate = (gcnew System::Windows::Forms::Button());
+			this->buttonPatientsScheduled = (gcnew System::Windows::Forms::Button());
 			this->panelProfile = (gcnew System::Windows::Forms::Panel());
+			this->labelExperience = (gcnew System::Windows::Forms::Label());
+			this->labelSpecialization = (gcnew System::Windows::Forms::Label());
+			this->labelDepartment = (gcnew System::Windows::Forms::Label());
 			this->labelSchedule = (gcnew System::Windows::Forms::Label());
 			this->labelUserID = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -138,14 +149,12 @@ namespace HospitalManagement {
 			this->labelAge = (gcnew System::Windows::Forms::Label());
 			this->labelName = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->labelDepartment = (gcnew System::Windows::Forms::Label());
-			this->labelSpecialization = (gcnew System::Windows::Forms::Label());
-			this->labelExperience = (gcnew System::Windows::Forms::Label());
+			this->timer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelTop->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panelMain->SuspendLayout();
 			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
 			this->panelProfile->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -226,9 +235,9 @@ namespace HospitalManagement {
 			this->panelMain->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelMain.BackgroundImage")));
 			this->panelMain->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->panelMain->Controls->Add(this->panel1);
-			this->panelMain->Controls->Add(this->button3);
-			this->panelMain->Controls->Add(this->button1);
-			this->panelMain->Controls->Add(this->button2);
+			this->panelMain->Controls->Add(this->buttonWallet);
+			this->panelMain->Controls->Add(this->buttonScheduleUpdate);
+			this->panelMain->Controls->Add(this->buttonPatientsScheduled);
 			this->panelMain->Location = System::Drawing::Point(0, 70);
 			this->panelMain->Name = L"panelMain";
 			this->panelMain->Size = System::Drawing::Size(1264, 611);
@@ -238,7 +247,7 @@ namespace HospitalManagement {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel1->Controls->Add(this->pictureBox3);
+			this->panel1->Controls->Add(this->pictureBox);
 			this->panel1->Controls->Add(this->label6);
 			this->panel1->Controls->Add(this->label7);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Bottom;
@@ -247,16 +256,16 @@ namespace HospitalManagement {
 			this->panel1->Size = System::Drawing::Size(1264, 97);
 			this->panel1->TabIndex = 1;
 			// 
-			// pictureBox3
+			// pictureBox
 			// 
-			this->pictureBox3->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(357, 12);
-			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(76, 73);
-			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox3->TabIndex = 7;
-			this->pictureBox3->TabStop = false;
+			this->pictureBox->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox.Image")));
+			this->pictureBox->Location = System::Drawing::Point(357, 12);
+			this->pictureBox->Name = L"pictureBox";
+			this->pictureBox->Size = System::Drawing::Size(76, 73);
+			this->pictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox->TabIndex = 7;
+			this->pictureBox->TabStop = false;
 			// 
 			// label6
 			// 
@@ -283,71 +292,71 @@ namespace HospitalManagement {
 			this->label7->TabIndex = 6;
 			this->label7->Text = L"Danish is a charya\r\n";
 			// 
-			// button3
+			// buttonWallet
 			// 
-			this->button3->BackColor = System::Drawing::Color::Transparent;
-			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->buttonWallet->BackColor = System::Drawing::Color::Transparent;
+			this->buttonWallet->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button3->FlatAppearance->BorderSize = 2;
-			this->button3->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			this->buttonWallet->FlatAppearance->BorderSize = 2;
+			this->buttonWallet->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->button3->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->buttonWallet->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->button3->ForeColor = System::Drawing::Color::White;
-			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
-			this->button3->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button3->Location = System::Drawing::Point(414, 357);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(785, 115);
-			this->button3->TabIndex = 0;
-			this->button3->Text = L"View your wallet \r\n";
-			this->button3->UseVisualStyleBackColor = false;
+			this->buttonWallet->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonWallet->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->buttonWallet->ForeColor = System::Drawing::Color::White;
+			this->buttonWallet->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonWallet.Image")));
+			this->buttonWallet->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonWallet->Location = System::Drawing::Point(414, 357);
+			this->buttonWallet->Name = L"buttonWallet";
+			this->buttonWallet->Size = System::Drawing::Size(785, 115);
+			this->buttonWallet->TabIndex = 0;
+			this->buttonWallet->Text = L"View your wallet \r\n";
+			this->buttonWallet->UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// buttonScheduleUpdate
 			// 
-			this->button1->BackColor = System::Drawing::Color::Transparent;
-			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->buttonScheduleUpdate->BackColor = System::Drawing::Color::Transparent;
+			this->buttonScheduleUpdate->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button1->FlatAppearance->BorderSize = 2;
-			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			this->buttonScheduleUpdate->FlatAppearance->BorderSize = 2;
+			this->buttonScheduleUpdate->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->buttonScheduleUpdate->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button1->Location = System::Drawing::Point(415, 199);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(785, 115);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Update your Schedule";
-			this->button1->UseVisualStyleBackColor = false;
+			this->buttonScheduleUpdate->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonScheduleUpdate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->buttonScheduleUpdate->ForeColor = System::Drawing::Color::White;
+			this->buttonScheduleUpdate->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonScheduleUpdate.Image")));
+			this->buttonScheduleUpdate->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonScheduleUpdate->Location = System::Drawing::Point(415, 199);
+			this->buttonScheduleUpdate->Name = L"buttonScheduleUpdate";
+			this->buttonScheduleUpdate->Size = System::Drawing::Size(785, 115);
+			this->buttonScheduleUpdate->TabIndex = 0;
+			this->buttonScheduleUpdate->Text = L"Update your Schedule";
+			this->buttonScheduleUpdate->UseVisualStyleBackColor = false;
 			// 
-			// button2
+			// buttonPatientsScheduled
 			// 
-			this->button2->BackColor = System::Drawing::Color::Transparent;
-			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->buttonPatientsScheduled->BackColor = System::Drawing::Color::Transparent;
+			this->buttonPatientsScheduled->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button2->FlatAppearance->BorderSize = 2;
-			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			this->buttonPatientsScheduled->FlatAppearance->BorderSize = 2;
+			this->buttonPatientsScheduled->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->buttonPatientsScheduled->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->button2->ForeColor = System::Drawing::Color::White;
-			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
-			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button2->Location = System::Drawing::Point(415, 43);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(785, 115);
-			this->button2->TabIndex = 0;
-			this->button2->Text = L"View list of scheduled Patients";
-			this->button2->UseVisualStyleBackColor = false;
+			this->buttonPatientsScheduled->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonPatientsScheduled->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->buttonPatientsScheduled->ForeColor = System::Drawing::Color::White;
+			this->buttonPatientsScheduled->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonPatientsScheduled.Image")));
+			this->buttonPatientsScheduled->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonPatientsScheduled->Location = System::Drawing::Point(415, 43);
+			this->buttonPatientsScheduled->Name = L"buttonPatientsScheduled";
+			this->buttonPatientsScheduled->Size = System::Drawing::Size(785, 115);
+			this->buttonPatientsScheduled->TabIndex = 0;
+			this->buttonPatientsScheduled->Text = L"View list of scheduled Patients";
+			this->buttonPatientsScheduled->UseVisualStyleBackColor = false;
 			// 
 			// panelProfile
 			// 
@@ -369,11 +378,50 @@ namespace HospitalManagement {
 			this->panelProfile->Controls->Add(this->labelAge);
 			this->panelProfile->Controls->Add(this->labelName);
 			this->panelProfile->Controls->Add(this->label1);
-			this->panelProfile->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelProfile->Location = System::Drawing::Point(0, 70);
 			this->panelProfile->Name = L"panelProfile";
 			this->panelProfile->Size = System::Drawing::Size(341, 611);
 			this->panelProfile->TabIndex = 2;
+			this->panelProfile->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &DoctorDashboard::panelProfile_Paint);
+			// 
+			// labelExperience
+			// 
+			this->labelExperience->AutoSize = true;
+			this->labelExperience->BackColor = System::Drawing::Color::Transparent;
+			this->labelExperience->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelExperience->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelExperience->Location = System::Drawing::Point(170, 424);
+			this->labelExperience->Name = L"labelExperience";
+			this->labelExperience->Size = System::Drawing::Size(99, 26);
+			this->labelExperience->TabIndex = 9;
+			this->labelExperience->Text = L"experience";
+			this->labelExperience->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// labelSpecialization
+			// 
+			this->labelSpecialization->AutoSize = true;
+			this->labelSpecialization->BackColor = System::Drawing::Color::Transparent;
+			this->labelSpecialization->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelSpecialization->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelSpecialization->Location = System::Drawing::Point(145, 398);
+			this->labelSpecialization->Name = L"labelSpecialization";
+			this->labelSpecialization->Size = System::Drawing::Size(118, 26);
+			this->labelSpecialization->TabIndex = 8;
+			this->labelSpecialization->Text = L"specialization";
+			this->labelSpecialization->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// labelDepartment
+			// 
+			this->labelDepartment->AutoSize = true;
+			this->labelDepartment->BackColor = System::Drawing::Color::Transparent;
+			this->labelDepartment->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
+			this->labelDepartment->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->labelDepartment->Location = System::Drawing::Point(141, 372);
+			this->labelDepartment->Name = L"labelDepartment";
+			this->labelDepartment->Size = System::Drawing::Size(107, 26);
+			this->labelDepartment->TabIndex = 7;
+			this->labelDepartment->Text = L"department";
+			this->labelDepartment->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// labelSchedule
 			// 
@@ -518,44 +566,9 @@ namespace HospitalManagement {
 				L"\nExperience Years:\r\nAvailability : ";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// labelDepartment
+			// timer
 			// 
-			this->labelDepartment->AutoSize = true;
-			this->labelDepartment->BackColor = System::Drawing::Color::Transparent;
-			this->labelDepartment->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
-			this->labelDepartment->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelDepartment->Location = System::Drawing::Point(141, 372);
-			this->labelDepartment->Name = L"labelDepartment";
-			this->labelDepartment->Size = System::Drawing::Size(107, 26);
-			this->labelDepartment->TabIndex = 7;
-			this->labelDepartment->Text = L"department";
-			this->labelDepartment->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// labelSpecialization
-			// 
-			this->labelSpecialization->AutoSize = true;
-			this->labelSpecialization->BackColor = System::Drawing::Color::Transparent;
-			this->labelSpecialization->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
-			this->labelSpecialization->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelSpecialization->Location = System::Drawing::Point(145, 398);
-			this->labelSpecialization->Name = L"labelSpecialization";
-			this->labelSpecialization->Size = System::Drawing::Size(118, 26);
-			this->labelSpecialization->TabIndex = 8;
-			this->labelSpecialization->Text = L"specialization";
-			this->labelSpecialization->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// labelExperience
-			// 
-			this->labelExperience->AutoSize = true;
-			this->labelExperience->BackColor = System::Drawing::Color::Transparent;
-			this->labelExperience->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 14));
-			this->labelExperience->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->labelExperience->Location = System::Drawing::Point(170, 424);
-			this->labelExperience->Name = L"labelExperience";
-			this->labelExperience->Size = System::Drawing::Size(99, 26);
-			this->labelExperience->TabIndex = 9;
-			this->labelExperience->Text = L"experience";
-			this->labelExperience->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->timer->Tick += gcnew System::EventHandler(this, &DoctorDashboard::timer_Tick);
 			// 
 			// DoctorDashboard
 			// 
@@ -576,7 +589,7 @@ namespace HospitalManagement {
 			this->panelMain->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->EndInit();
 			this->panelProfile->ResumeLayout(false);
 			this->panelProfile->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -584,11 +597,88 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion
-	private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (panelProfile->Visible == true)
-			panelProfile->Visible = false;
-		else
-			panelProfile->Visible = true;
+	private: System::Void panelProfile_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
-	};
+
+
+		   // Declare panel state globally
+public:
+	bool panelOpen = true;   // Panel is initially open
+	int panelStep = 40;      // Speed of animation
+	int buttonMoveSmall = 24;
+	int buttonMoveLarge = 16;
+	int pictureBoxStep = 38;
+	int labelStep = 38;
+
+	// Timer Tick Event for Push Transition Animation
+private: System::Void timer_Tick(System::Object^ sender, System::EventArgs^ e) {
+	if (panelOpen) {
+		// Move Panel Left (Collapse)
+		int newPanelX = panelProfile->Location.X - panelStep;
+		if (newPanelX < -341) newPanelX = -341;  // Limit position
+		panelProfile->Location = System::Drawing::Point(newPanelX, panelProfile->Location.Y);
+
+		// Move buttonBookAppointment,buttonDoctorList, buttonWallet
+		int newButtonX = buttonPatientsScheduled->Location.X - buttonMoveSmall;
+		if (newButtonX < 215) newButtonX = 215;
+		buttonPatientsScheduled->Location = System::Drawing::Point(newButtonX, buttonPatientsScheduled->Location.Y);
+		buttonScheduleUpdate->Location = System::Drawing::Point(newButtonX, buttonScheduleUpdate->Location.Y);
+		buttonWallet->Location = System::Drawing::Point(newButtonX, buttonWallet->Location.Y);
+
+		// Move PictureBox
+		int newPictureBoxX = pictureBox->Location.X - pictureBoxStep;
+		if (newPictureBoxX < 32) newPictureBoxX = 32;
+		pictureBox->Location = System::Drawing::Point(newPictureBoxX, pictureBox->Location.Y);
+
+		// Move Label6 and Label7
+		int newLabelX = label6->Location.X - labelStep;
+		if (newLabelX < 114) newLabelX = 114;
+		label6->Location = System::Drawing::Point(newLabelX, label6->Location.Y);
+		label7->Location = System::Drawing::Point(newLabelX, label7->Location.Y);
+
+
+		if (newPanelX == -341 && newButtonX == 215) { // Stop when fully collapsed
+			panelOpen = false;
+			timer->Stop();
+		}
+	}
+	else {
+		// Move Panel Right (Expand)
+		int newPanelX = panelProfile->Location.X + panelStep;
+		if (newPanelX > 0) newPanelX = 0;  // Limit position
+		panelProfile->Location = System::Drawing::Point(newPanelX, panelProfile->Location.Y);
+
+		// Moving  buttonBookAppointment,buttonDoctorList, buttonWallet
+		int newButtonX = buttonPatientsScheduled->Location.X + buttonMoveSmall;
+		if (newButtonX > 414) newButtonX = 414;
+		buttonPatientsScheduled->Location = System::Drawing::Point(newButtonX, buttonPatientsScheduled->Location.Y);
+		buttonScheduleUpdate->Location = System::Drawing::Point(newButtonX, buttonScheduleUpdate->Location.Y);
+		buttonWallet->Location = System::Drawing::Point(newButtonX, buttonWallet->Location.Y);
+
+		// Move PictureBox
+		int newPictureBoxX = pictureBox->Location.X + pictureBoxStep;
+		if (newPictureBoxX > 356) newPictureBoxX = 356;
+		pictureBox->Location = System::Drawing::Point(newPictureBoxX, pictureBox->Location.Y);
+
+		// Move Label6 and Label7
+		int newLabelX = label6->Location.X + labelStep;
+		if (newLabelX > 438) newLabelX = 438;
+		label6->Location = System::Drawing::Point(newLabelX, label6->Location.Y);
+		label7->Location = System::Drawing::Point(newLabelX, label7->Location.Y);
+
+		if (newPanelX == 0 && newButtonX == 414) { // Stop when fully expanded
+			panelOpen = true;
+			timer->Stop();
+		}
+	}
+}
+
+	   // Button Click Event to Start Animation
+private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
+	timer->Interval = 10; // Smooth animation
+	timer->Start();
+}
+
+
+};
 }

@@ -3513,7 +3513,7 @@
         qa3m/kR6oVAoFAqFQqFQKKwm/wf+RuCv4J2+LAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnDoctor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonDoctorList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAACWZJREFUeF7tnXesNkUVhxFFUFCxV9CEgEaiIlYCtiggCGIsCLHFAhgURGNBKeof

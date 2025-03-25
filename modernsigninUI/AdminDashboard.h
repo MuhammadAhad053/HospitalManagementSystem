@@ -221,6 +221,7 @@ namespace HospitalManagement {
 			this->panelMain->Name = L"panelMain";
 			this->panelMain->Size = System::Drawing::Size(1264, 611);
 			this->panelMain->TabIndex = 1;
+			this->panelMain->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AdminDashboard::panelMain_Paint);
 			// 
 			// panel1
 			// 
@@ -636,6 +637,8 @@ private:
 	private: System::Void panelProfile_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
 private: System::Void AdminDashboard_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void panelMain_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }
