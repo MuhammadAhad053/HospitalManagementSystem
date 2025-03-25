@@ -14,18 +14,16 @@ void main(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 
 
-	Doctor^ doc1 = gcnew Doctor;
-	doc1->firstName = "John";
-	doc1->lastName = "Doe";
-	doc1->gender = "male";
-	doc1->dateofBirth = "1990-01-01";
-	doc1->phoneNumber = "1234567890";
-	doc1->email = "random@gmail.com";
-	doc1->department = "Cardiology";
-	doc1->specialization = "Heart";
-	doc1->experienceYears = 5;
-	HospitalManagement::DoctorDashboard^doctorDashboard = gcnew HospitalManagement::DoctorDashboard(doc1);
-	doctorDashboard->ShowDialog();
+	Receptionist^ res1 = gcnew Receptionist;
+	res1->id = 1;
+	res1->firstName = "John";
+	res1->lastName = "Doe";
+	res1->gender = "male";
+	res1->dateofBirth = "1999-01-01";
+	res1->phoneNumber = "1234567890";
+	res1->email = "aaaa";
+	HospitalManagement::ReceptionistDashboard^receptionistDashboard = gcnew HospitalManagement::ReceptionistDashboard(res1);
+	receptionistDashboard->ShowDialog();
 }
 //
 //	Patient^ patient = nullptr;	
