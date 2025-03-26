@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Patient.h"
+#include "Wallet.h"
+
 
 namespace HospitalManagement {
 
@@ -308,6 +310,7 @@ namespace HospitalManagement {
 			this->buttonViewWallet->TabIndex = 0;
 			this->buttonViewWallet->Text = L"View your wallet \r\n";
 			this->buttonViewWallet->UseVisualStyleBackColor = false;
+			this->buttonViewWallet->Click += gcnew System::EventHandler(this, &PatientDashboard::buttonViewWallet_Click);
 			// 
 			// buttonBookAppointment
 			// 
@@ -627,5 +630,11 @@ private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^
    private: System::Void panelProfile_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 		   }
 
+private: System::Void buttonViewWallet_Click(System::Object^ sender, System::EventArgs^ e) {
+	Wallet^ wallet = gcnew Wallet();
+	wallet->Show();
+	this->Hide();
+
+}
 };
 	}

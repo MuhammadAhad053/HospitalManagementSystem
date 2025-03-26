@@ -83,6 +83,7 @@ namespace HospitalManagement {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Wallet::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->btProfile = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -108,7 +109,6 @@ namespace HospitalManagement {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel2->SuspendLayout();
@@ -131,6 +131,19 @@ namespace HospitalManagement {
 			this->panel1->Size = System::Drawing::Size(1264, 70);
 			this->panel1->TabIndex = 0;
 			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 18.25F, System::Drawing::FontStyle::Bold));
+			this->label9->ForeColor = System::Drawing::Color::White;
+			this->label9->Location = System::Drawing::Point(585, 24);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(90, 33);
+			this->label9->TabIndex = 15;
+			this->label9->Text = L"Wallet";
+			this->label9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// btProfile
 			// 
 			this->btProfile->BackColor = System::Drawing::Color::Transparent;
@@ -148,6 +161,7 @@ namespace HospitalManagement {
 			this->btProfile->Size = System::Drawing::Size(47, 42);
 			this->btProfile->TabIndex = 8;
 			this->btProfile->UseVisualStyleBackColor = false;
+			this->btProfile->Click += gcnew System::EventHandler(this, &Wallet::btProfile_Click);
 			// 
 			// pictureBox2
 			// 
@@ -486,19 +500,6 @@ namespace HospitalManagement {
 			this->label1->Text = L"00";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 18.25F, System::Drawing::FontStyle::Bold));
-			this->label9->ForeColor = System::Drawing::Color::White;
-			this->label9->Location = System::Drawing::Point(585, 24);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(90, 33);
-			this->label9->TabIndex = 15;
-			this->label9->Text = L"Wallet";
-			this->label9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// Wallet
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -523,7 +524,12 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion
-	
 
+private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
+	PatientDashboard^ patient = gcnew PatientDashboard();
+	patient->Show();
+	this->Close();
+
+}
 };
 }
