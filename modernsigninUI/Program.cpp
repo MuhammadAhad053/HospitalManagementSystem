@@ -5,6 +5,7 @@
 #include "DoctorDashboard.h"
 #include "ReceptionistDashboard.h"
 #include "AdminDashboard.h"
+#include "Wallet.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -36,4 +37,4 @@ void main(array<String^>^ args) {
 			break;
 		}
 	}
-	}
+}
