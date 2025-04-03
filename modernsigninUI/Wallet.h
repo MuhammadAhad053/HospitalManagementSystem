@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Patient.h"
+
 namespace HospitalManagement {
 
 	using namespace System;
@@ -156,9 +158,9 @@ namespace HospitalManagement {
 			this->btProfile->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->btProfile->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btProfile->Location = System::Drawing::Point(12, 15);
+			this->btProfile->Location = System::Drawing::Point(12, 12);
 			this->btProfile->Name = L"btProfile";
-			this->btProfile->Size = System::Drawing::Size(47, 42);
+			this->btProfile->Size = System::Drawing::Size(55, 50);
 			this->btProfile->TabIndex = 8;
 			this->btProfile->UseVisualStyleBackColor = false;
 			this->btProfile->Click += gcnew System::EventHandler(this, &Wallet::btProfile_Click);
@@ -508,6 +510,7 @@ namespace HospitalManagement {
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"Wallet";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Wallet";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -524,12 +527,8 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion
-
-private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-	PatientDashboard^ patient = gcnew PatientDashboard();
-	patient->Show();
-	this->Close();
-
-}
-};
+		private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->Close();
+		}
+	};
 }
