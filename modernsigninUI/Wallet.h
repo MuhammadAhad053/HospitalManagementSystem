@@ -1,5 +1,7 @@
 #pragma once
 
+#include "PatientDashboard.h"
+
 namespace HospitalManagement {
 
 	using namespace System;
@@ -207,6 +209,7 @@ namespace HospitalManagement {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(1264, 611);
 			this->panel2->TabIndex = 0;
+			this->panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Wallet::panel2_Paint);
 			// 
 			// label8
 			// 
@@ -526,10 +529,13 @@ namespace HospitalManagement {
 #pragma endregion
 
 private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-	PatientDashboard^ patient = gcnew PatientDashboard();
-	patient->Show();
-	this->Close();
-
+//	//PatientDashboard^ patient = gcnew PatientDashboard();
+//	Patient^ patient1 = gcnew Patient;
+//	
+//	this->Close();
+//
+}
+private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 };
 }

@@ -1,7 +1,7 @@
 #pragma once
-
-#include "Patient.h"
 #include "Wallet.h"
+#include "Patient.h"
+
 
 
 namespace HospitalManagement {
@@ -631,9 +631,9 @@ private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^
 		   }
 
 private: System::Void buttonViewWallet_Click(System::Object^ sender, System::EventArgs^ e) {
-	Wallet^ wallet = gcnew Wallet();
-	wallet->Show();
-	this->Hide();
+	/*Wallet^ w1 = gcnew HospitalManagement::Wallet();
+	w1->Show();
+	this->Hide();*/
 
 }
 };
