@@ -81,7 +81,7 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ labelUserID;
 	private: System::Windows::Forms::Button^ buttonAppointments;
 	private: System::Windows::Forms::PictureBox^ pictureBox;
-	private: System::Windows::Forms::Timer^ timer1;
+
 
 
 
@@ -110,7 +110,6 @@ namespace HospitalManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ReceptionistDashboard::typeid));
 			this->panelTop = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
@@ -136,7 +135,6 @@ namespace HospitalManagement {
 			this->labelAge = (gcnew System::Windows::Forms::Label());
 			this->labelName = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panelTop->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panelMain->SuspendLayout();
@@ -365,7 +363,6 @@ namespace HospitalManagement {
 			this->panelProfile->Name = L"panelProfile";
 			this->panelProfile->Size = System::Drawing::Size(341, 611);
 			this->panelProfile->TabIndex = 2;
-			this->panelProfile->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &ReceptionistDashboard::panelProfile_Paint);
 			// 
 			// labelUserID
 			// 
@@ -496,11 +493,6 @@ namespace HospitalManagement {
 			this->label1->Text = L"Name : \r\nAge :\r\nGender : \r\nDOB :\r\nEmail :\r\nPhone :";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// timer1
-			// 
-			this->timer1->Interval = 10;
-			this->timer1->Tick += gcnew System::EventHandler(this, &ReceptionistDashboard::timer1_Tick);
-			// 
 			// ReceptionistDashboard
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -527,74 +519,8 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion
-	private: System::Void panelProfile_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
 	}
-
-public:
-	bool panelOpen = true;   // Panel is initially open
-	int panelStep = 40;      // Speed of animation
-	int buttonMoveStep = 24; // Button movement step
-	int pictureBoxStep = 38; // Picture box movement step
-
-
-
-private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
-	if (panelOpen) {
-		// Move Panel Left (Collapse)
-		int newPanelX = panelProfile->Location.X - panelStep;
-		if (newPanelX < -341) newPanelX = -341;  // Limit position
-		panelProfile->Location = System::Drawing::Point(newPanelX, panelProfile->Location.Y);
-
-		// Move Buttons Left
-		int newButtonX = buttonPatients->Location.X - buttonMoveStep;
-		if (newButtonX < 215) newButtonX = 215;
-		buttonPatients->Location = System::Drawing::Point(newButtonX, buttonPatients->Location.Y);
-		buttonAppointments->Location = System::Drawing::Point(newButtonX, buttonAppointments->Location.Y);
-		buttonBalance->Location = System::Drawing::Point(newButtonX, buttonBalance->Location.Y);
-
-		// Move PictureBox Left
-		int newPictureBoxX = pictureBox->Location.X - pictureBoxStep;
-		if (newPictureBoxX < 32) newPictureBoxX = 32;
-		pictureBox->Location = System::Drawing::Point(newPictureBoxX, pictureBox->Location.Y);
-
-		// Stop animation when fully collapsed
-		if (newPanelX == -341 && newButtonX == 215) {
-			panelOpen = false;
-			timer1->Stop();
-		}
-	}
-	else {
-		// Move Panel Right (Expand)
-		int newPanelX = panelProfile->Location.X + panelStep;
-		if (newPanelX > 0) newPanelX = 0;  // Limit position
-		panelProfile->Location = System::Drawing::Point(newPanelX, panelProfile->Location.Y);
-
-		// Move Buttons Right
-		int newButtonX = buttonPatients->Location.X + buttonMoveStep;
-		if (newButtonX > 414) newButtonX = 414;
-		buttonPatients->Location = System::Drawing::Point(newButtonX, buttonPatients->Location.Y);
-		buttonAppointments->Location = System::Drawing::Point(newButtonX, buttonAppointments->Location.Y);
-		buttonBalance->Location = System::Drawing::Point(newButtonX, buttonBalance->Location.Y);
-
-		// Move PictureBox Right
-		int newPictureBoxX = pictureBox->Location.X + pictureBoxStep;
-		if (newPictureBoxX > 356) newPictureBoxX = 356;
-		pictureBox->Location = System::Drawing::Point(newPictureBoxX, pictureBox->Location.Y);
-
-		// Stop animation when fully expanded
-		if (newPanelX == 0 && newButtonX == 414) {
-			panelOpen = true;
-			timer1->Stop();
-		}
-	}
-}
-
-	   // Button Click Event to Start Animation
-private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-	timer1->Interval = 10;  // Smooth animation
-	timer1->Enabled = true; // Ensure the timer is enabled
-	timer1->Start();
-
-}
 };
 }
