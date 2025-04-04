@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Admin.h"
+#include "PatientList.h"
 
 namespace HospitalManagement {
 
@@ -358,6 +359,7 @@ namespace HospitalManagement {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Manage Patients";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &AdminDashboard::button1_Click);
 			// 
 			// button4
 			// 
@@ -526,6 +528,12 @@ namespace HospitalManagement {
 #pragma endregion
 	private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		PatientList^ patientList = gcnew PatientList();
+		this->Hide();
+		patientList->ShowDialog();
+		this->Show();
 	}
 };
 }
