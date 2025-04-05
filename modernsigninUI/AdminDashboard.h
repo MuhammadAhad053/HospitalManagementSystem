@@ -2,6 +2,7 @@
 
 #include "Admin.h"
 #include "PatientList.h"
+#include "DoctorList.h"
 
 namespace HospitalManagement {
 
@@ -404,6 +405,7 @@ namespace HospitalManagement {
 			this->button2->TabIndex = 0;
 			this->button2->Text = L"Manage Doctors";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &AdminDashboard::button2_Click);
 			// 
 			// panelProfile
 			// 
@@ -533,6 +535,12 @@ namespace HospitalManagement {
 		PatientList^ patientList = gcnew PatientList();
 		this->Hide();
 		patientList->ShowDialog();
+		this->Show();
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		DoctorList^ doctorList = gcnew DoctorList();
+		this->Hide();
+		doctorList->ShowDialog();
 		this->Show();
 	}
 };

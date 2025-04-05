@@ -11,12 +11,12 @@ namespace HospitalManagement {
 	using namespace System::Data::SqlClient;
 
 	/// <summary>
-	/// Summary for List
+	/// Summary for DoctorList
 	/// </summary>
-	public ref class PatientList : public System::Windows::Forms::Form
+	public ref class DoctorList : public System::Windows::Forms::Form
 	{
 	public:
-		PatientList(void)
+		DoctorList(void)
 		{
 			InitializeComponent();
 			//
@@ -28,44 +28,42 @@ namespace HospitalManagement {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~PatientList()
+		~DoctorList()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataGridView^ dataView;
+	private: System::Windows::Forms::Label^ label6;
 	protected:
-
-	private: System::Windows::Forms::Panel^ gradPanelBig;
-	private: System::Windows::Forms::Panel^ panel1;
-
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Button^ btnBack;
-	private: System::Windows::Forms::Button^ btnAdd;
+	private: System::Windows::Forms::Button^ btnSave;
+	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ btnEdit;
-
-
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ btnRemove;
-
-
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Button^ btnSave;
+	private: System::Windows::Forms::Button^ btnAdd;
+
+	private: System::Windows::Forms::Button^ btnBack;
+
+
+
+	private: System::Windows::Forms::Panel^ gradPanelBig;
 
 
 
 
 
 
-	protected:
 
-	protected:
+
+	private: System::Windows::Forms::Panel^ panel2;
+
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::DataGridView^ dataView;
 
 	private:
 		/// <summary>
@@ -80,10 +78,8 @@ namespace HospitalManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(DoctorList::typeid));
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PatientList::typeid));
-			this->dataView = (gcnew System::Windows::Forms::DataGridView());
-			this->gradPanelBig = (gcnew System::Windows::Forms::Panel());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->btnSave = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -92,16 +88,237 @@ namespace HospitalManagement {
 			this->btnRemove = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnAdd = (gcnew System::Windows::Forms::Button());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->btnBack = (gcnew System::Windows::Forms::Button());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataView))->BeginInit();
+			this->gradPanelBig = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->dataView = (gcnew System::Windows::Forms::DataGridView());
 			this->gradPanelBig->SuspendLayout();
-			this->panel1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataView))->BeginInit();
 			this->SuspendLayout();
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::Color::White;
+			this->label6->Location = System::Drawing::Point(939, 155);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(107, 21);
+			this->label6->TabIndex = 26;
+			this->label6->Text = L"Save Changes";
+			// 
+			// btnSave
+			// 
+			this->btnSave->BackColor = System::Drawing::Color::Transparent;
+			this->btnSave->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSave.BackgroundImage")));
+			this->btnSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btnSave->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnSave->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btnSave->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnSave->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSave->Location = System::Drawing::Point(957, 86);
+			this->btnSave->Name = L"btnSave";
+			this->btnSave->Size = System::Drawing::Size(70, 66);
+			this->btnSave->TabIndex = 25;
+			this->btnSave->UseVisualStyleBackColor = false;
+			this->btnSave->Click += gcnew System::EventHandler(this, &DoctorList::btnSave_Click);
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::White;
+			this->label5->Location = System::Drawing::Point(758, 155);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(87, 21);
+			this->label5->TabIndex = 24;
+			this->label5->Text = L"Edit Doctor";
+			// 
+			// btnEdit
+			// 
+			this->btnEdit->BackColor = System::Drawing::Color::Transparent;
+			this->btnEdit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnEdit.BackgroundImage")));
+			this->btnEdit->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btnEdit->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnEdit->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btnEdit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnEdit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnEdit->Location = System::Drawing::Point(775, 86);
+			this->btnEdit->Name = L"btnEdit";
+			this->btnEdit->Size = System::Drawing::Size(70, 66);
+			this->btnEdit->TabIndex = 23;
+			this->btnEdit->UseVisualStyleBackColor = false;
+			this->btnEdit->Click += gcnew System::EventHandler(this, &DoctorList::btnEdit_Click);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::White;
+			this->label3->Location = System::Drawing::Point(539, 155);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(118, 21);
+			this->label3->TabIndex = 22;
+			this->label3->Text = L"Remove Doctor";
+			// 
+			// btnRemove
+			// 
+			this->btnRemove->BackColor = System::Drawing::Color::Transparent;
+			this->btnRemove->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnRemove.BackgroundImage")));
+			this->btnRemove->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btnRemove->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnRemove->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btnRemove->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnRemove->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnRemove->Location = System::Drawing::Point(561, 86);
+			this->btnRemove->Name = L"btnRemove";
+			this->btnRemove->Size = System::Drawing::Size(70, 66);
+			this->btnRemove->TabIndex = 21;
+			this->btnRemove->UseVisualStyleBackColor = false;
+			this->btnRemove->Click += gcnew System::EventHandler(this, &DoctorList::btnRemove_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(341, 155);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(89, 21);
+			this->label1->TabIndex = 20;
+			this->label1->Text = L"Add Doctor";
+			// 
+			// btnAdd
+			// 
+			this->btnAdd->BackColor = System::Drawing::Color::Transparent;
+			this->btnAdd->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAdd.BackgroundImage")));
+			this->btnAdd->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btnAdd->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnAdd->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btnAdd->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnAdd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAdd->Location = System::Drawing::Point(345, 86);
+			this->btnAdd->Name = L"btnAdd";
+			this->btnAdd->Size = System::Drawing::Size(70, 66);
+			this->btnAdd->TabIndex = 19;
+			this->btnAdd->UseVisualStyleBackColor = false;
+			this->btnAdd->Click += gcnew System::EventHandler(this, &DoctorList::btnAdd_Click);
+			// 
+			// btnBack
+			// 
+			this->btnBack->BackColor = System::Drawing::Color::Transparent;
+			this->btnBack->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnBack.BackgroundImage")));
+			this->btnBack->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btnBack->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnBack->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btnBack->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnBack->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnBack->Location = System::Drawing::Point(11, 12);
+			this->btnBack->Name = L"btnBack";
+			this->btnBack->Size = System::Drawing::Size(47, 42);
+			this->btnBack->TabIndex = 9;
+			this->btnBack->UseVisualStyleBackColor = false;
+			this->btnBack->Click += gcnew System::EventHandler(this, &DoctorList::btnBack_Click);
+			// 
+			// gradPanelBig
+			// 
+			this->gradPanelBig->BackColor = System::Drawing::Color::Transparent;
+			this->gradPanelBig->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"gradPanelBig.BackgroundImage")));
+			this->gradPanelBig->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->gradPanelBig->Controls->Add(this->label6);
+			this->gradPanelBig->Controls->Add(this->panel2);
+			this->gradPanelBig->Controls->Add(this->label5);
+			this->gradPanelBig->Controls->Add(this->btnSave);
+			this->gradPanelBig->Controls->Add(this->label1);
+			this->gradPanelBig->Controls->Add(this->label3);
+			this->gradPanelBig->Controls->Add(this->btnEdit);
+			this->gradPanelBig->Controls->Add(this->btnRemove);
+			this->gradPanelBig->Controls->Add(this->btnAdd);
+			this->gradPanelBig->Controls->Add(this->dataView);
+			this->gradPanelBig->Dock = System::Windows::Forms::DockStyle::Right;
+			this->gradPanelBig->Location = System::Drawing::Point(-52, 0);
+			this->gradPanelBig->Name = L"gradPanelBig";
+			this->gradPanelBig->Size = System::Drawing::Size(1316, 681);
+			this->gradPanelBig->TabIndex = 27;
+			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->panel2->Controls->Add(this->btnBack);
+			this->panel2->Controls->Add(this->label11);
+			this->panel2->Controls->Add(this->label12);
+			this->panel2->Controls->Add(this->pictureBox1);
+			this->panel2->Location = System::Drawing::Point(53, 0);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(1264, 70);
+			this->panel2->TabIndex = 1;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::Color::Transparent;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 18.25F, System::Drawing::FontStyle::Bold));
+			this->label11->ForeColor = System::Drawing::Color::White;
+			this->label11->Location = System::Drawing::Point(520, 21);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(187, 33);
+			this->label11->TabIndex = 8;
+			this->label11->Text = L"List of Doctors";
+			this->label11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->BackColor = System::Drawing::Color::Transparent;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 10));
+			this->label12->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label12->Location = System::Drawing::Point(1159, 35);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(37, 19);
+			this->label12->TabIndex = 4;
+			this->label12->Text = L"HMS\r\n";
+			this->label12->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->pictureBox1->Location = System::Drawing::Point(1193, 12);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(58, 45);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
 			// 
 			// dataView
 			// 
@@ -129,246 +346,26 @@ namespace HospitalManagement {
 			this->dataView->Size = System::Drawing::Size(1263, 488);
 			this->dataView->TabIndex = 0;
 			// 
-			// gradPanelBig
-			// 
-			this->gradPanelBig->BackColor = System::Drawing::Color::Transparent;
-			this->gradPanelBig->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"gradPanelBig.BackgroundImage")));
-			this->gradPanelBig->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->gradPanelBig->Controls->Add(this->label6);
-			this->gradPanelBig->Controls->Add(this->btnSave);
-			this->gradPanelBig->Controls->Add(this->label5);
-			this->gradPanelBig->Controls->Add(this->btnEdit);
-			this->gradPanelBig->Controls->Add(this->label3);
-			this->gradPanelBig->Controls->Add(this->btnRemove);
-			this->gradPanelBig->Controls->Add(this->label1);
-			this->gradPanelBig->Controls->Add(this->btnAdd);
-			this->gradPanelBig->Controls->Add(this->panel1);
-			this->gradPanelBig->Controls->Add(this->dataView);
-			this->gradPanelBig->Dock = System::Windows::Forms::DockStyle::Right;
-			this->gradPanelBig->Location = System::Drawing::Point(-52, 0);
-			this->gradPanelBig->Name = L"gradPanelBig";
-			this->gradPanelBig->Size = System::Drawing::Size(1316, 681);
-			this->gradPanelBig->TabIndex = 1;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::Color::White;
-			this->label6->Location = System::Drawing::Point(939, 155);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(107, 21);
-			this->label6->TabIndex = 17;
-			this->label6->Text = L"Save Changes";
-			// 
-			// btnSave
-			// 
-			this->btnSave->BackColor = System::Drawing::Color::Transparent;
-			this->btnSave->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSave.BackgroundImage")));
-			this->btnSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->btnSave->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnSave->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnSave->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnSave->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnSave->Location = System::Drawing::Point(957, 86);
-			this->btnSave->Name = L"btnSave";
-			this->btnSave->Size = System::Drawing::Size(70, 66);
-			this->btnSave->TabIndex = 16;
-			this->btnSave->UseVisualStyleBackColor = false;
-			this->btnSave->Click += gcnew System::EventHandler(this, &PatientList::btnSave_Click);
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->ForeColor = System::Drawing::Color::White;
-			this->label5->Location = System::Drawing::Point(758, 155);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(87, 21);
-			this->label5->TabIndex = 15;
-			this->label5->Text = L"Edit Patient";
-			// 
-			// btnEdit
-			// 
-			this->btnEdit->BackColor = System::Drawing::Color::Transparent;
-			this->btnEdit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnEdit.BackgroundImage")));
-			this->btnEdit->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->btnEdit->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnEdit->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnEdit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnEdit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnEdit->Location = System::Drawing::Point(775, 86);
-			this->btnEdit->Name = L"btnEdit";
-			this->btnEdit->Size = System::Drawing::Size(70, 66);
-			this->btnEdit->TabIndex = 14;
-			this->btnEdit->UseVisualStyleBackColor = false;
-			this->btnEdit->Click += gcnew System::EventHandler(this, &PatientList::btnEdit_Click);
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(539, 155);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(118, 21);
-			this->label3->TabIndex = 13;
-			this->label3->Text = L"Remove Patient";
-			// 
-			// btnRemove
-			// 
-			this->btnRemove->BackColor = System::Drawing::Color::Transparent;
-			this->btnRemove->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnRemove.BackgroundImage")));
-			this->btnRemove->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->btnRemove->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnRemove->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnRemove->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnRemove->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnRemove->Location = System::Drawing::Point(561, 86);
-			this->btnRemove->Name = L"btnRemove";
-			this->btnRemove->Size = System::Drawing::Size(70, 66);
-			this->btnRemove->TabIndex = 12;
-			this->btnRemove->UseVisualStyleBackColor = false;
-			this->btnRemove->Click += gcnew System::EventHandler(this, &PatientList::btnRemove_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(341, 155);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(89, 21);
-			this->label1->TabIndex = 11;
-			this->label1->Text = L"Add Patient";
-			// 
-			// btnAdd
-			// 
-			this->btnAdd->BackColor = System::Drawing::Color::Transparent;
-			this->btnAdd->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAdd.BackgroundImage")));
-			this->btnAdd->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->btnAdd->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnAdd->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnAdd->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnAdd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnAdd->Location = System::Drawing::Point(345, 86);
-			this->btnAdd->Name = L"btnAdd";
-			this->btnAdd->Size = System::Drawing::Size(70, 66);
-			this->btnAdd->TabIndex = 10;
-			this->btnAdd->UseVisualStyleBackColor = false;
-			this->btnAdd->Click += gcnew System::EventHandler(this, &PatientList::btnAdd_Click);
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel1->Controls->Add(this->btnBack);
-			this->panel1->Controls->Add(this->label2);
-			this->panel1->Controls->Add(this->label4);
-			this->panel1->Controls->Add(this->pictureBox2);
-			this->panel1->Location = System::Drawing::Point(53, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1264, 70);
-			this->panel1->TabIndex = 1;
-			// 
-			// btnBack
-			// 
-			this->btnBack->BackColor = System::Drawing::Color::Transparent;
-			this->btnBack->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnBack.BackgroundImage")));
-			this->btnBack->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->btnBack->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnBack->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnBack->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->btnBack->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnBack->Location = System::Drawing::Point(11, 15);
-			this->btnBack->Name = L"btnBack";
-			this->btnBack->Size = System::Drawing::Size(47, 42);
-			this->btnBack->TabIndex = 9;
-			this->btnBack->UseVisualStyleBackColor = false;
-			this->btnBack->Click += gcnew System::EventHandler(this, &PatientList::btnBack_Click);
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 18.25F, System::Drawing::FontStyle::Bold));
-			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(520, 21);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(188, 33);
-			this->label2->TabIndex = 8;
-			this->label2->Text = L"List of Patients";
-			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 10));
-			this->label4->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label4->Location = System::Drawing::Point(1159, 35);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(37, 19);
-			this->label4->TabIndex = 4;
-			this->label4->Text = L"HMS\r\n";
-			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->pictureBox2->Location = System::Drawing::Point(1193, 12);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(58, 45);
-			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox2->TabIndex = 6;
-			this->pictureBox2->TabStop = false;
-			// 
-			// PatientList
+			// DoctorList
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1264, 681);
 			this->Controls->Add(this->gradPanelBig);
-			this->Name = L"PatientList";
+			this->Name = L"DoctorList";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"List";
-			this->Load += gcnew System::EventHandler(this, &PatientList::List_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataView))->EndInit();
+			this->Text = L"DoctorList";
+			this->Load += gcnew System::EventHandler(this, &DoctorList::DoctorList_Load);
 			this->gradPanelBig->ResumeLayout(false);
 			this->gradPanelBig->PerformLayout();
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataView))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-
 		String^ connString = "Data Source=localhost\\sqlexpress;Initial Catalog=test;Integrated Security=True;";
 		SqlConnection^ sqlConn = gcnew SqlConnection(connString);
 		SqlDataAdapter^ adapter;
@@ -376,7 +373,7 @@ namespace HospitalManagement {
 
 		void LoadData() {
 			sqlConn->Open();
-			adapter = gcnew SqlDataAdapter("SELECT * FROM Patient", sqlConn);
+			adapter = gcnew SqlDataAdapter("SELECT * FROM Doctor", sqlConn);
 			SqlCommandBuilder^ builder = gcnew SqlCommandBuilder(adapter);
 
 			table = gcnew DataTable();
@@ -385,8 +382,7 @@ namespace HospitalManagement {
 
 			sqlConn->Close();
 		}
-
-	private: System::Void List_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void DoctorList_Load(System::Object^ sender, System::EventArgs^ e) {
 
 		dataView->EnableHeadersVisualStyles = false;
 
@@ -408,10 +404,11 @@ namespace HospitalManagement {
 				"Could'nt Conect", MessageBoxButtons::OK);
 		}
 	}
+
 	private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-
+		
 	private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 		dataView->ReadOnly = false;
 		dataView->AllowUserToAddRows = true;

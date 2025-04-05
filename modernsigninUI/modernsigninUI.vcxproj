@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClCompile Include="AdminDashboard.cpp" />
     <ClCompile Include="DoctorDashboard.cpp" />
+    <ClCompile Include="DoctorList.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PatientDashboard.cpp" />
@@ -138,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="DoctorDashboard.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DoctorList.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PatientList.h">
@@ -168,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorDashboard.resx">
       <DependentUpon>DoctorDashboard.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorList.resx">
+      <DependentUpon>DoctorList.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientList.resx">
       <DependentUpon>PatientList.h</DependentUpon>

@@ -42,6 +42,9 @@
     <ClCompile Include="List.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="DoctorList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
@@ -81,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PatientList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoctorList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

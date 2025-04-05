@@ -15,10 +15,10 @@ void main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	Patient^ patient = nullptr;	
+	Patient^ patient = nullptr;
 
 	while (true) {
-		HospitalManagement::LoginForm loginForm;	
+		HospitalManagement::LoginForm loginForm;
 		loginForm.ShowDialog();
 		if (loginForm.switchtoRegister) {
 			HospitalManagement::RegisterForm registerForm;
