@@ -134,6 +134,7 @@
     <ClCompile Include="ReceptionistManagement.cpp" />
     <ClCompile Include="RegisterForm.cpp" />
     <ClCompile Include="Wallet.cpp" />
+    <ClCompile Include="WalletManagement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
@@ -177,6 +178,9 @@
     <ClInclude Include="Wallet.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="WalletManagement.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminDashboard.resx">
@@ -216,6 +220,9 @@
     <EmbeddedResource Include="Wallet.resx">
       <DependentUpon>Wallet.h</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WalletManagement.resx">
+      <DependentUpon>WalletManagement.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
