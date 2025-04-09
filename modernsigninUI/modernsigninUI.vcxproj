@@ -128,8 +128,10 @@
     <ClCompile Include="List.cpp" />
     <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="PatientDashboard.cpp" />
+    <ClCompile Include="PatientManagement.cpp" />
     <ClCompile Include="ReceptionistDashboard.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="ReceptionistManagement.cpp" />
     <ClCompile Include="RegisterForm.cpp" />
     <ClCompile Include="Wallet.cpp" />
   </ItemGroup>
@@ -158,9 +160,15 @@
     <ClInclude Include="PatientDashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PatientManagement.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Person.h" />
     <ClInclude Include="Receptionist.h" />
     <ClInclude Include="ReceptionistDashboard.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ReceptionistManagement.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="RegisterForm.h">
@@ -192,8 +200,14 @@
     <EmbeddedResource Include="PatientDashboard.resx">
       <DependentUpon>PatientDashboard.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientManagement.resx">
+      <DependentUpon>PatientManagement.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReceptionistDashboard.resx">
       <DependentUpon>ReceptionistDashboard.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceptionistManagement.resx">
+      <DependentUpon>ReceptionistManagement.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.h</DependentUpon>
