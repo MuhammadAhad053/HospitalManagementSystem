@@ -89,6 +89,7 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::PictureBox^ pictureBox;
 
 	private: System::Windows::Forms::Button^ btBack;
+	private: System::Windows::Forms::Button^ button7;
 
 
 
@@ -147,6 +148,7 @@ namespace HospitalManagement {
 			this->labelAge = (gcnew System::Windows::Forms::Label());
 			this->labelName = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panelTop->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panelMain->SuspendLayout();
@@ -305,9 +307,9 @@ namespace HospitalManagement {
 			this->buttonViewWallet->ForeColor = System::Drawing::Color::White;
 			this->buttonViewWallet->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonViewWallet.Image")));
 			this->buttonViewWallet->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonViewWallet->Location = System::Drawing::Point(383, 339);
+			this->buttonViewWallet->Location = System::Drawing::Point(417, 351);
 			this->buttonViewWallet->Name = L"buttonViewWallet";
-			this->buttonViewWallet->Size = System::Drawing::Size(773, 136);
+			this->buttonViewWallet->Size = System::Drawing::Size(773, 106);
 			this->buttonViewWallet->TabIndex = 0;
 			this->buttonViewWallet->Text = L"View your wallet \r\n";
 			this->buttonViewWallet->UseVisualStyleBackColor = false;
@@ -328,9 +330,9 @@ namespace HospitalManagement {
 			this->buttonBookAppointment->ForeColor = System::Drawing::Color::White;
 			this->buttonBookAppointment->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonBookAppointment.Image")));
 			this->buttonBookAppointment->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonBookAppointment->Location = System::Drawing::Point(383, 46);
+			this->buttonBookAppointment->Location = System::Drawing::Point(417, 43);
 			this->buttonBookAppointment->Name = L"buttonBookAppointment";
-			this->buttonBookAppointment->Size = System::Drawing::Size(773, 145);
+			this->buttonBookAppointment->Size = System::Drawing::Size(773, 115);
 			this->buttonBookAppointment->TabIndex = 0;
 			this->buttonBookAppointment->Text = L"Book an Appointment with available Doctors";
 			this->buttonBookAppointment->UseVisualStyleBackColor = false;
@@ -350,9 +352,9 @@ namespace HospitalManagement {
 			this->buttonDoctorList->ForeColor = System::Drawing::Color::White;
 			this->buttonDoctorList->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonDoctorList.Image")));
 			this->buttonDoctorList->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonDoctorList->Location = System::Drawing::Point(383, 197);
+			this->buttonDoctorList->Location = System::Drawing::Point(417, 203);
 			this->buttonDoctorList->Name = L"buttonDoctorList";
-			this->buttonDoctorList->Size = System::Drawing::Size(773, 136);
+			this->buttonDoctorList->Size = System::Drawing::Size(773, 106);
 			this->buttonDoctorList->TabIndex = 0;
 			this->buttonDoctorList->Text = L"View list of available Doctors\r\n";
 			this->buttonDoctorList->UseVisualStyleBackColor = false;
@@ -363,6 +365,7 @@ namespace HospitalManagement {
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->panelProfile->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panelProfile.BackgroundImage")));
 			this->panelProfile->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->panelProfile->Controls->Add(this->button7);
 			this->panelProfile->Controls->Add(this->labelUserID);
 			this->panelProfile->Controls->Add(this->pictureBox1);
 			this->panelProfile->Controls->Add(this->label3);
@@ -506,6 +509,26 @@ namespace HospitalManagement {
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Name : \r\nAge :\r\nGender : \r\nDOB :\r\nEmail :\r\nPhone :\r\n";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// button7
+			// 
+			this->button7->BackColor = System::Drawing::Color::Transparent;
+			this->button7->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->button7->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->button7->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button7->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Semibold", 11.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button7->ForeColor = System::Drawing::Color::RosyBrown;
+			this->button7->Location = System::Drawing::Point(232, 558);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(92, 36);
+			this->button7->TabIndex = 3;
+			this->button7->Text = L"Log out";
+			this->button7->UseVisualStyleBackColor = false;
 			// 
 			// PatientDashboard
 			// 
