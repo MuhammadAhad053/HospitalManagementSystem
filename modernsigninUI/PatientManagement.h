@@ -8,6 +8,7 @@ namespace HospitalManagement {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for PatientManagement
@@ -44,7 +45,8 @@ namespace HospitalManagement {
 
 
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Button^ btnAddDoctor;
+	private: System::Windows::Forms::Button^ btnAdd;
+
 
 
 
@@ -63,11 +65,15 @@ namespace HospitalManagement {
 
 
 	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Button^ btnRemove;
+	private: System::Windows::Forms::Button^ btnEdit;
+	private: System::Windows::Forms::Button^ btnSave;
+	private: System::Windows::Forms::DataGridView^ dataView;
 
-	private: System::Windows::Forms::Button^ btnRemoveDoctor;
-	private: System::Windows::Forms::Button^ btnEditDoctor;
-	private: System::Windows::Forms::Button^ btnSaveChanges;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
+
+
+
 	private: System::Windows::Forms::Label^ label1;
 
 
@@ -95,17 +101,17 @@ namespace HospitalManagement {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->btnSaveChanges = (gcnew System::Windows::Forms::Button());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->btnSave = (gcnew System::Windows::Forms::Button());
+			this->dataView = (gcnew System::Windows::Forms::DataGridView());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->btnEditDoctor = (gcnew System::Windows::Forms::Button());
-			this->btnRemoveDoctor = (gcnew System::Windows::Forms::Button());
-			this->btnAddDoctor = (gcnew System::Windows::Forms::Button());
+			this->btnEdit = (gcnew System::Windows::Forms::Button());
+			this->btnRemove = (gcnew System::Windows::Forms::Button());
+			this->btnAdd = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataView))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -183,51 +189,58 @@ namespace HospitalManagement {
 			// 
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
 			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel2->Controls->Add(this->btnSaveChanges);
-			this->panel2->Controls->Add(this->dataGridView1);
+			this->panel2->Controls->Add(this->btnSave);
+			this->panel2->Controls->Add(this->dataView);
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->btnEditDoctor);
-			this->panel2->Controls->Add(this->btnRemoveDoctor);
-			this->panel2->Controls->Add(this->btnAddDoctor);
+			this->panel2->Controls->Add(this->btnEdit);
+			this->panel2->Controls->Add(this->btnRemove);
+			this->panel2->Controls->Add(this->btnAdd);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel2->Location = System::Drawing::Point(0, 70);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(1264, 611);
 			this->panel2->TabIndex = 0;
 			// 
-			// btnSaveChanges
+			// btnSave
 			// 
-			this->btnSaveChanges->BackColor = System::Drawing::Color::Transparent;
-			this->btnSaveChanges->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btnSave->BackColor = System::Drawing::Color::Transparent;
+			this->btnSave->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnSaveChanges->FlatAppearance->BorderSize = 2;
-			this->btnSaveChanges->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			this->btnSave->FlatAppearance->BorderSize = 2;
+			this->btnSave->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnSaveChanges->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btnSave->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnSaveChanges->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnSaveChanges->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->btnSaveChanges->ForeColor = System::Drawing::Color::White;
-			this->btnSaveChanges->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSaveChanges.Image")));
-			this->btnSaveChanges->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnSaveChanges->Location = System::Drawing::Point(61, 452);
-			this->btnSaveChanges->Name = L"btnSaveChanges";
-			this->btnSaveChanges->Size = System::Drawing::Size(296, 61);
-			this->btnSaveChanges->TabIndex = 13;
-			this->btnSaveChanges->Text = L"Save Changes";
-			this->btnSaveChanges->UseVisualStyleBackColor = false;
+			this->btnSave->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSave->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->btnSave->ForeColor = System::Drawing::Color::White;
+			this->btnSave->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSave.Image")));
+			this->btnSave->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnSave->Location = System::Drawing::Point(61, 452);
+			this->btnSave->Name = L"btnSave";
+			this->btnSave->Size = System::Drawing::Size(296, 61);
+			this->btnSave->TabIndex = 13;
+			this->btnSave->Text = L"Save Changes";
+			this->btnSave->UseVisualStyleBackColor = false;
+			this->btnSave->Click += gcnew System::EventHandler(this, &PatientManagement::btnSave_Click);
 			// 
-			// dataGridView1
+			// dataView
 			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)),
-				static_cast<System::Int32>(static_cast<System::Byte>(50)), static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(419, 83);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(814, 482);
-			this->dataGridView1->TabIndex = 15;
-
+			this->dataView->AllowUserToAddRows = false;
+			this->dataView->AllowUserToDeleteRows = false;
+			this->dataView->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->dataView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataView->GridColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->dataView->Location = System::Drawing::Point(419, 83);
+			this->dataView->Name = L"dataView";
+			this->dataView->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->dataView->Size = System::Drawing::Size(814, 482);
+			this->dataView->TabIndex = 15;
+			this->dataView->DefaultCellStyle->BackColor = System::Drawing::Color::FromArgb(15, 50, 69);
+			this->dataView->DefaultCellStyle->ForeColor = System::Drawing::Color::Silver;
 			// 
 			// label3
 			// 
@@ -257,71 +270,74 @@ namespace HospitalManagement {
 			this->label1->Text = L"Actions ";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// btnEditDoctor
+			// btnEdit
 			// 
-			this->btnEditDoctor->BackColor = System::Drawing::Color::Transparent;
-			this->btnEditDoctor->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btnEdit->BackColor = System::Drawing::Color::Transparent;
+			this->btnEdit->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnEditDoctor->FlatAppearance->BorderSize = 2;
-			this->btnEditDoctor->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			this->btnEdit->FlatAppearance->BorderSize = 2;
+			this->btnEdit->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnEditDoctor->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btnEdit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnEditDoctor->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnEditDoctor->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->btnEditDoctor->ForeColor = System::Drawing::Color::White;
-			this->btnEditDoctor->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnEditDoctor.Image")));
-			this->btnEditDoctor->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnEditDoctor->Location = System::Drawing::Point(61, 352);
-			this->btnEditDoctor->Name = L"btnEditDoctor";
-			this->btnEditDoctor->Size = System::Drawing::Size(296, 61);
-			this->btnEditDoctor->TabIndex = 12;
-			this->btnEditDoctor->Text = L"Edit a Patient";
-			this->btnEditDoctor->UseVisualStyleBackColor = false;
+			this->btnEdit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnEdit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->btnEdit->ForeColor = System::Drawing::Color::White;
+			this->btnEdit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnEdit.Image")));
+			this->btnEdit->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnEdit->Location = System::Drawing::Point(61, 352);
+			this->btnEdit->Name = L"btnEdit";
+			this->btnEdit->Size = System::Drawing::Size(296, 61);
+			this->btnEdit->TabIndex = 12;
+			this->btnEdit->Text = L"Edit a Patient";
+			this->btnEdit->UseVisualStyleBackColor = false;
+			this->btnEdit->Click += gcnew System::EventHandler(this, &PatientManagement::btnEdit_Click);
 			// 
-			// btnRemoveDoctor
+			// btnRemove
 			// 
-			this->btnRemoveDoctor->BackColor = System::Drawing::Color::Transparent;
-			this->btnRemoveDoctor->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btnRemove->BackColor = System::Drawing::Color::Transparent;
+			this->btnRemove->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnRemoveDoctor->FlatAppearance->BorderSize = 2;
-			this->btnRemoveDoctor->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			this->btnRemove->FlatAppearance->BorderSize = 2;
+			this->btnRemove->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnRemoveDoctor->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btnRemove->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnRemoveDoctor->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnRemoveDoctor->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->btnRemoveDoctor->ForeColor = System::Drawing::Color::White;
-			this->btnRemoveDoctor->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnRemoveDoctor.Image")));
-			this->btnRemoveDoctor->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnRemoveDoctor->Location = System::Drawing::Point(61, 252);
-			this->btnRemoveDoctor->Name = L"btnRemoveDoctor";
-			this->btnRemoveDoctor->Size = System::Drawing::Size(296, 61);
-			this->btnRemoveDoctor->TabIndex = 11;
-			this->btnRemoveDoctor->Text = L"Remove a Patient";
-			this->btnRemoveDoctor->UseVisualStyleBackColor = false;
+			this->btnRemove->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnRemove->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->btnRemove->ForeColor = System::Drawing::Color::White;
+			this->btnRemove->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnRemove.Image")));
+			this->btnRemove->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnRemove->Location = System::Drawing::Point(61, 252);
+			this->btnRemove->Name = L"btnRemove";
+			this->btnRemove->Size = System::Drawing::Size(296, 61);
+			this->btnRemove->TabIndex = 11;
+			this->btnRemove->Text = L"Remove a Patient";
+			this->btnRemove->UseVisualStyleBackColor = false;
+			this->btnRemove->Click += gcnew System::EventHandler(this, &PatientManagement::btnRemove_Click);
 			// 
-			// btnAddDoctor
+			// btnAdd
 			// 
-			this->btnAddDoctor->BackColor = System::Drawing::Color::Transparent;
-			this->btnAddDoctor->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btnAdd->BackColor = System::Drawing::Color::Transparent;
+			this->btnAdd->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnAddDoctor->FlatAppearance->BorderSize = 2;
-			this->btnAddDoctor->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			this->btnAdd->FlatAppearance->BorderSize = 2;
+			this->btnAdd->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnAddDoctor->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btnAdd->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnAddDoctor->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnAddDoctor->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->btnAddDoctor->ForeColor = System::Drawing::Color::White;
-			this->btnAddDoctor->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAddDoctor.Image")));
-			this->btnAddDoctor->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnAddDoctor->Location = System::Drawing::Point(61, 152);
-			this->btnAddDoctor->Name = L"btnAddDoctor";
-			this->btnAddDoctor->Size = System::Drawing::Size(296, 61);
-			this->btnAddDoctor->TabIndex = 9;
-			this->btnAddDoctor->Text = L"Add a Patient";
-			this->btnAddDoctor->UseVisualStyleBackColor = false;
+			this->btnAdd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->btnAdd->ForeColor = System::Drawing::Color::White;
+			this->btnAdd->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAdd.Image")));
+			this->btnAdd->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnAdd->Location = System::Drawing::Point(61, 152);
+			this->btnAdd->Name = L"btnAdd";
+			this->btnAdd->Size = System::Drawing::Size(296, 61);
+			this->btnAdd->TabIndex = 9;
+			this->btnAdd->Text = L"Add a Patient";
+			this->btnAdd->UseVisualStyleBackColor = false;
+			this->btnAdd->Click += gcnew System::EventHandler(this, &PatientManagement::btnAdd_Click);
 			// 
 			// PatientManagement
 			// 
@@ -333,21 +349,85 @@ namespace HospitalManagement {
 			this->Name = L"PatientManagement";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"PatientManagement";
+			this->Load += gcnew System::EventHandler(this, &PatientManagement::PatientManagement_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataView))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+		String^ connString = "Data Source=localhost\\sqlexpress;Initial Catalog=test;Integrated Security=True;";
+		SqlConnection^ sqlConn = gcnew SqlConnection(connString);
+		SqlDataAdapter^ adapter;
+		DataTable^ table;
+
+		void LoadData() {
+			sqlConn->Open();
+			adapter = gcnew SqlDataAdapter("SELECT * FROM Patient", sqlConn);
+			SqlCommandBuilder^ builder = gcnew SqlCommandBuilder(adapter);
+
+			table = gcnew DataTable();
+			adapter->Fill(table);
+			dataView->DataSource = table;
+
+			sqlConn->Close();
+		}
+	private: System::Void PatientManagement_Load(System::Object^ sender, System::EventArgs^ e) {
+		dataView->EnableHeadersVisualStyles = false;
+
+		dataView->ColumnHeadersDefaultCellStyle->BackColor = System::Drawing::Color::FromArgb(86, 206, 222);
+		dataView->ColumnHeadersDefaultCellStyle->ForeColor = System::Drawing::Color::Black;
+		dataView->ColumnHeadersDefaultCellStyle->Font = gcnew System::Drawing::Font("Segoe UI", 10, System::Drawing::FontStyle::Italic);
+
+		dataView->RowHeadersDefaultCellStyle->BackColor = System::Drawing::Color::FromArgb(86, 206, 222);
+		dataView->RowHeadersDefaultCellStyle->ForeColor = System::Drawing::Color::Black;
+
+		dataView->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
+		dataView->AutoSizeRowsMode = DataGridViewAutoSizeRowsMode::AllCells;
+
+		try {
+			LoadData();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Failed to Connect to DataBase",
+				"Could'nt Conect", MessageBoxButtons::OK);
+		}
+	}
 	private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-
-
-
-	};
+	private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+		dataView->ReadOnly = false;
+		dataView->AllowUserToAddRows = true;
+	}
+	private: System::Void btnRemove_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (dataView->SelectedRows->Count > 0) {
+			for each (DataGridViewRow ^ row in dataView->SelectedRows) {
+				dataView->Rows->Remove(row);
+			}
+		}
+		else
+			MessageBox::Show("Select atleast one row");
+	}
+	private: System::Void btnEdit_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (dataView->SelectedRows->Count == 1) {
+			dataView->ReadOnly = false;
+			dataView->BeginEdit(true);
+		}
+		else
+			MessageBox::Show("Select only 1 row");
+	}
+	private: System::Void btnSave_Click(System::Object^ sender, System::EventArgs^ e) {
+		SqlCommandBuilder^ builder = gcnew SqlCommandBuilder(adapter);
+		adapter->Update(table);
+		MessageBox::Show("Changes saved to database.");
+		dataView->ReadOnly = true;
+		dataView->AllowUserToAddRows = false;
+		LoadData();
+	}
+};
 }

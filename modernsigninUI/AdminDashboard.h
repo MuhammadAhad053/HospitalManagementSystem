@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Admin.h"
-#include "PatientList.h"
-#include "DoctorList.h"
+#include "PatientManagement.h"
+#include "DoctorManagement.h"
+#include "ReceptionistManagement.h"
 
 namespace HospitalManagement {
 
@@ -207,7 +208,6 @@ namespace HospitalManagement {
 			this->btnBack->Size = System::Drawing::Size(47, 42);
 			this->btnBack->TabIndex = 0;
 			this->btnBack->UseVisualStyleBackColor = false;
-			this->btnBack->Click += gcnew System::EventHandler(this, &AdminDashboard::btnBack_Click);
 			// 
 			// panelMain
 			// 
@@ -318,6 +318,7 @@ namespace HospitalManagement {
 			this->button3->TabIndex = 0;
 			this->button3->Text = L"Manage Receptionists";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &AdminDashboard::button3_Click);
 			// 
 			// button5
 			// 
@@ -338,6 +339,7 @@ namespace HospitalManagement {
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(364, 115);
 			this->button5->TabIndex = 0;
+			this->button5->Text = L"Manage Appointments";
 			this->button5->UseVisualStyleBackColor = false;
 			this->button5->Click += gcnew System::EventHandler(this, &AdminDashboard::button5_Click);
 			// 
@@ -446,6 +448,7 @@ namespace HospitalManagement {
 			this->button7->TabIndex = 2;
 			this->button7->Text = L"Log out";
 			this->button7->UseVisualStyleBackColor = false;
+			this->button7->Click += gcnew System::EventHandler(this, &AdminDashboard::button7_Click);
 			// 
 			// labelUserID
 			// 
@@ -551,21 +554,26 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion
-	private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		PatientList^ patientList = gcnew PatientList();
+		PatientManagement^ patientManagement = gcnew PatientManagement();
 		this->Hide();
-		patientList->ShowDialog();
+		patientManagement->ShowDialog();
 		this->Show();
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		DoctorList^ doctorList = gcnew DoctorList();
+		DoctorManagement^ doctorManagement = gcnew DoctorManagement();
 		this->Hide();
-		doctorList->ShowDialog();
+		doctorManagement->ShowDialog();
 		this->Show();
 	}
-
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		ReceptionistManagement^ receptionistManagement = gcnew ReceptionistManagement();
+		this->Hide();
+		receptionistManagement->ShowDialog();
+		this->Show();
+	}
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
 };
 }

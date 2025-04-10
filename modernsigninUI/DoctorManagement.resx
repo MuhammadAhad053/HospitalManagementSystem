@@ -3353,10 +3353,10 @@
         PnHUM/X3qSx4/8s7/P9of59CvaZ99AAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnSaveChanges.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAArJJREFUaEPtmr+PTUEUx3ejQGNFQqvQqnYpVH7sInT6JZEobFiNQiLIRiUo/Q8q
+        DgAACw4BQL7hQQAAArJJREFUaEPtmr+PTUEUx3ejQGNFQqvQqnYpVH7sInT6JZEobFiNQiLIRiUo/Q8q
         rUbYYkUtfrUsEoVCREiE9ZGTzCbnfc2ue9+de+8T55NM8eacOed837w7992ZOzYWBEEQBP8mwDiwFzgH
         XHLtMnBN+kq0i8AuraMTgCPAS7rnMzCj9bQKcB5Y0Uo65Dswq3W1QprZPsWu8st+5lpfUdI1qz/j18B8
         +iJmgKdit74mTeMpd4ANWmsR0gLlMbET4rPoHbxtGDQe8Ew+G/eAzTq2McCcJJrP+LQteAJ4JH3GY2Cb
@@ -3371,10 +3371,10 @@
         rkJggg==
 </value>
   </data>
-  <data name="btnEditDoctor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAmdJREFUaEPtmr1qFUEYhiPaqPiTWNsIsfMW1FZL/27ByqggBvEeBPEHhDQqiGXU
+        DAAACwwBP0AiyAAAAmdJREFUaEPtmr1qFUEYhiPaqPiTWNsIsfMW1FZL/27ByqggBvEeBPEHhDQqiGXU
         QlEL2wjiBYhdSKeVCCr4yAezMLzMzM4xcs7M8XtgIZzzzvA9OzM7Zze7sOA4juM42wLYD1wA7gPPwnEv
         fLZP890C7AJuAF/JY9+tWlbbdwWwCLxVuwJvgIPaTxdY4cB7NarATlBfIw0sAR/UBFgHjgO7w2F/21pW
         rmufzZKR/Q1c0+wAcFPyX7q4kBVkVzSrAM+l3XnNNEVG1rii2RTACWl3VzPNUJA1HgM7tY0C7JF265pp
@@ -3387,10 +3387,10 @@
         MCUVW9N2ITtlW5a26ZrwdOMW8GRuRtFxHMdpnD/OWAn9EiLzegAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnRemoveDoctor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRemove.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABDVJREFUaEPtmsvLVVUYxh2URoIXUifmfZAiRkQzzf/BMKJBGugf4b2JWjTSzAti
+        DAAACwwBP0AiyAAABDVJREFUaEPtmsvLVVUYxh2URoIXUifmfZAiRkQzzf/BMKJBGugf4b2JWjTSzAti
         gYJUYyO0ht4GleCFIsSxipY581a/eOjdsHjY+3xn77P3OQvdP9hw+Paz9nrXt9Z617vetaZN6+np6en5
         H2Ax8DHwJfATcBP4C3gSj37rbz+GZjOwyL+TNcASYBfwO835Ddipb/n3swFYA5wCnrn1I/APcAZ4x+ub
         GMAC4CTwr1tbwm3gKnApHv2+46IS9O2vgfle/1gBPoh5WIaMPB9Dcy0wy8sXALNDo6lwYcA/709go5fv
@@ -3411,10 +3411,10 @@
         pnamoqenp+d55j+LFcFjS/CSYwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnAddDoctor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAABJpJREFUaEPtmknLHUUUhrNwQsFEHDZq1GShIURE3EX9D4oiLhwgWYi/wAzqJoni
+        DAAACwwBP0AiyAAABJpJREFUaEPtmknLHUUUhrNwQsFEHDZq1GShIURE3EX9D4oiLhwgWYi/wAzqJoni
         KtFEg6igIOpakajLJLpwQiOKJpJllDju4vjIi6fh8NJ97+3qrpsP7QcaLl+9farO1zWcOlWrVk1MTExM
         /AuwFngQ2A+8BxwHfgJ+j0e/9bd3Q/MAcLXbWdEA1wA7ga8o50tgh2y5/RUDsAl4BfjTWz+Av4A3gVu8
         vrMGcAXwMvC3t7aFU8BnwPvx6Pd3LmpBtl8CLvf6lwpwT4zDNtTIw9E1NwMX+/sNwOrQaCgcmfHP+xG4
