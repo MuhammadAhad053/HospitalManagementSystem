@@ -6,7 +6,6 @@
 #include "DoctorDashboard.h"
 #include "ReceptionistDashboard.h"
 #include "AdminDashboard.h"
-#include "PatientList.h"
 
 using namespace System;
 using namespace System::Windows::Forms;

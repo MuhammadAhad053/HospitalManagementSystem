@@ -136,6 +136,7 @@ namespace HospitalManagement {
 			this->buttonScheduleUpdate = (gcnew System::Windows::Forms::Button());
 			this->buttonPatientsScheduled = (gcnew System::Windows::Forms::Button());
 			this->panelProfile = (gcnew System::Windows::Forms::Panel());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->labelExperience = (gcnew System::Windows::Forms::Label());
 			this->labelSpecialization = (gcnew System::Windows::Forms::Label());
 			this->labelDepartment = (gcnew System::Windows::Forms::Label());
@@ -155,7 +156,6 @@ namespace HospitalManagement {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnBack = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->panelMain->SuspendLayout();
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
@@ -318,6 +318,27 @@ namespace HospitalManagement {
 			this->panelProfile->Name = L"panelProfile";
 			this->panelProfile->Size = System::Drawing::Size(341, 611);
 			this->panelProfile->TabIndex = 2;
+			// 
+			// button7
+			// 
+			this->button7->BackColor = System::Drawing::Color::Transparent;
+			this->button7->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->button7->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->button7->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button7->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Semibold", 11.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button7->ForeColor = System::Drawing::Color::RosyBrown;
+			this->button7->Location = System::Drawing::Point(236, 563);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(92, 36);
+			this->button7->TabIndex = 4;
+			this->button7->Text = L"Log out";
+			this->button7->UseVisualStyleBackColor = false;
+			this->button7->Click += gcnew System::EventHandler(this, &DoctorDashboard::button7_Click);
 			// 
 			// labelExperience
 			// 
@@ -571,26 +592,6 @@ namespace HospitalManagement {
 			this->btnBack->TabIndex = 0;
 			this->btnBack->UseVisualStyleBackColor = false;
 			// 
-			// button7
-			// 
-			this->button7->BackColor = System::Drawing::Color::Transparent;
-			this->button7->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button7->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->button7->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Semibold", 11.25F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->button7->ForeColor = System::Drawing::Color::RosyBrown;
-			this->button7->Location = System::Drawing::Point(236, 563);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(92, 36);
-			this->button7->TabIndex = 4;
-			this->button7->Text = L"Log out";
-			this->button7->UseVisualStyleBackColor = false;
-			// 
 			// DoctorDashboard
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -618,8 +619,7 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion
-
-	private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 };
