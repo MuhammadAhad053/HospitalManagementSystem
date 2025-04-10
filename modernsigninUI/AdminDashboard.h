@@ -341,7 +341,6 @@ namespace HospitalManagement {
 			this->button5->TabIndex = 0;
 			this->button5->Text = L"Manage Appointments";
 			this->button5->UseVisualStyleBackColor = false;
-			this->button5->Click += gcnew System::EventHandler(this, &AdminDashboard::button5_Click);
 			// 
 			// button1
 			// 
