@@ -345,6 +345,7 @@ namespace HospitalManagement {
 			this->dataView->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dataView->Size = System::Drawing::Size(1263, 488);
 			this->dataView->TabIndex = 0;
+			this->dataView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &DoctorList::dataView_CellContentClick);
 			// 
 			// DoctorList
 			// 
@@ -441,5 +442,7 @@ namespace HospitalManagement {
 		dataView->AllowUserToAddRows = false;
 		LoadData();
 	}
+private: System::Void dataView_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
 };
 }

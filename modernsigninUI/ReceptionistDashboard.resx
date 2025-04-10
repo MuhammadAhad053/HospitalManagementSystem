@@ -708,10 +708,10 @@
   </data>
   <data name="btProfile.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABlSURBVGhD7dYxDoAgEAVRjifev9bEeI8xtEtDAwKZ12/y
-        t5uUJEnaCXACN/Mpm3LcWwGeeDmRN+6t7PBABq54OYGy6Yh7JUnaizHXV1MLLf+AMSdJ0m+Mub6aWmj5
-        B4w5SZJG+QDAJW2Me0JftgAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAGVJREFUaEPt1jEOgCAQBVGOJ96/1sR4jzG0S0MDApnXb/K3m5QkSdoJcAI38ymb
+        ctxbAZ54OZE37q3s8EAGrng5gbLpiHslSdqLMddXUwst/4AxJ0nSb4y5vppaaPkHjDlJkkb5AMAlbYx7
+        Ql+2AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="panelMain.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

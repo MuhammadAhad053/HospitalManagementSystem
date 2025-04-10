@@ -227,6 +227,7 @@ namespace HospitalManagement {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(814, 482);
 			this->dataGridView1->TabIndex = 15;
+
 			// 
 			// label3
 			// 

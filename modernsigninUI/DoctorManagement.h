@@ -95,13 +95,13 @@ namespace HospitalManagement {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->btnSaveChanges = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnEditDoctor = (gcnew System::Windows::Forms::Button());
 			this->btnRemoveDoctor = (gcnew System::Windows::Forms::Button());
-			this->btnSaveChanges = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->btnAddDoctor = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel2->SuspendLayout();
@@ -196,6 +196,66 @@ namespace HospitalManagement {
 			this->panel2->Size = System::Drawing::Size(1264, 611);
 			this->panel2->TabIndex = 0;
 			// 
+			// btnSaveChanges
+			// 
+			this->btnSaveChanges->BackColor = System::Drawing::Color::Transparent;
+			this->btnSaveChanges->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->btnSaveChanges->FlatAppearance->BorderSize = 2;
+			this->btnSaveChanges->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btnSaveChanges->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
+			this->btnSaveChanges->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSaveChanges->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->btnSaveChanges->ForeColor = System::Drawing::Color::White;
+			this->btnSaveChanges->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSaveChanges.Image")));
+			this->btnSaveChanges->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->btnSaveChanges->Location = System::Drawing::Point(61, 452);
+			this->btnSaveChanges->Name = L"btnSaveChanges";
+			this->btnSaveChanges->Size = System::Drawing::Size(296, 61);
+			this->btnSaveChanges->TabIndex = 13;
+			this->btnSaveChanges->Text = L"Save Changes";
+			this->btnSaveChanges->UseVisualStyleBackColor = false;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)),
+				static_cast<System::Int32>(static_cast<System::Byte>(50)), static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(419, 83);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(814, 482);
+			this->dataGridView1->TabIndex = 15;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label3->Location = System::Drawing::Point(413, 38);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(220, 32);
+			this->label3->TabIndex = 7;
+			this->label3->Text = L"List of all Doctors ";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label1->Location = System::Drawing::Point(53, 83);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(141, 43);
+			this->label1->TabIndex = 14;
+			this->label1->Text = L"Actions ";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
 			// btnEditDoctor
 			// 
 			this->btnEditDoctor->BackColor = System::Drawing::Color::Transparent;
@@ -240,42 +300,6 @@ namespace HospitalManagement {
 			this->btnRemoveDoctor->Text = L"Remove a Doctor";
 			this->btnRemoveDoctor->UseVisualStyleBackColor = false;
 			// 
-			// btnSaveChanges
-			// 
-			this->btnSaveChanges->BackColor = System::Drawing::Color::Transparent;
-			this->btnSaveChanges->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnSaveChanges->FlatAppearance->BorderSize = 2;
-			this->btnSaveChanges->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->btnSaveChanges->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->btnSaveChanges->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnSaveChanges->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->btnSaveChanges->ForeColor = System::Drawing::Color::White;
-			this->btnSaveChanges->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSaveChanges.Image")));
-			this->btnSaveChanges->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnSaveChanges->Location = System::Drawing::Point(61, 452);
-			this->btnSaveChanges->Name = L"btnSaveChanges";
-			this->btnSaveChanges->Size = System::Drawing::Size(296, 61);
-			this->btnSaveChanges->TabIndex = 13;
-			this->btnSaveChanges->Text = L"Save Changes";
-			this->btnSaveChanges->UseVisualStyleBackColor = false;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label3->Location = System::Drawing::Point(413, 38);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(220, 32);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"List of all Doctors ";
-			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
 			// btnAddDoctor
 			// 
 			this->btnAddDoctor->BackColor = System::Drawing::Color::Transparent;
@@ -297,30 +321,7 @@ namespace HospitalManagement {
 			this->btnAddDoctor->TabIndex = 9;
 			this->btnAddDoctor->Text = L"Add a Doctor";
 			this->btnAddDoctor->UseVisualStyleBackColor = false;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label1->Location = System::Drawing::Point(53, 83);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(141, 43);
-			this->label1->TabIndex = 14;
-			this->label1->Text = L"Actions ";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)),
-				static_cast<System::Int32>(static_cast<System::Byte>(50)), static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(419, 83);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(814, 482);
-			this->dataGridView1->TabIndex = 15;
+			this->btnAddDoctor->Click += gcnew System::EventHandler(this, &DoctorManagement::btnAddDoctor_Click);
 			// 
 			// DoctorManagement
 			// 
@@ -348,5 +349,7 @@ namespace HospitalManagement {
 
 
 
+private: System::Void btnAddDoctor_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
