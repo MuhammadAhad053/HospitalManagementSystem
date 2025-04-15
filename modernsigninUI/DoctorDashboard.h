@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Doctor.h"
+#include "Wallet.h"
 
 namespace HospitalManagement {
 
@@ -16,6 +17,8 @@ namespace HospitalManagement {
 	/// </summary>
 	public ref class DoctorDashboard : public System::Windows::Forms::Form
 	{
+	private: 
+		Doctor^ currentDoctor;
 	public:
 		DoctorDashboard(Doctor^ doctor)
 		{
@@ -39,6 +42,8 @@ namespace HospitalManagement {
 			labelDepartment->Text = doctor->department;
 			labelSpecialization->Text = doctor->specialization;
 			labelExperience->Text = doctor->experienceYears.ToString();
+
+			currentDoctor = doctor;
 		}
 
 	protected:
@@ -248,6 +253,7 @@ namespace HospitalManagement {
 			this->buttonWallet->TabIndex = 0;
 			this->buttonWallet->Text = L"View your wallet \r\n";
 			this->buttonWallet->UseVisualStyleBackColor = false;
+			this->buttonWallet->Click += gcnew System::EventHandler(this, &DoctorDashboard::buttonWallet_Click);
 			// 
 			// buttonScheduleUpdate
 			// 
@@ -604,6 +610,7 @@ namespace HospitalManagement {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(1280, 720);
 			this->Name = L"DoctorDashboard";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"DoctorDashboard";
 			this->panelMain->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
@@ -621,6 +628,12 @@ namespace HospitalManagement {
 #pragma endregion
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+	}
+	private: System::Void buttonWallet_Click(System::Object^ sender, System::EventArgs^ e) {
+		Wallet^ wallet = gcnew Wallet(currentDoctor);
+		this->Hide();
+		wallet->ShowDialog();
+		this->Show();
 	}
 };
 }

@@ -12,4 +12,6 @@ public:
 	String^ phoneNumber;
 	String^ email;
 	String^ password;
+	String^ account;
+	double wallet;
 };

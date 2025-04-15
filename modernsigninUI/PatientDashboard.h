@@ -2,8 +2,6 @@
 #include "Wallet.h"
 #include "Patient.h"
 
-
-
 namespace HospitalManagement {
 
 	using namespace System;
@@ -18,6 +16,8 @@ namespace HospitalManagement {
 	/// </summary>
 	public ref class PatientDashboard : public System::Windows::Forms::Form
 	{
+	private:
+		Patient^ currentPatient;
 	public:
 		PatientDashboard(Patient^ patient)
 		{
@@ -38,6 +38,7 @@ namespace HospitalManagement {
 			labelDOB->Text = patient->dateofBirth;
 			labelEmail->Text = patient->email;
 			labelPhone->Text = patient->phoneNumber;
+			this->currentPatient = patient;
 		}
 
 	protected:
@@ -559,12 +560,11 @@ namespace HospitalManagement {
 		}
 #pragma endregion
 		private: System::Void buttonViewWallet_Click(System::Object^ sender, System::EventArgs^ e) {
-			Wallet^ wallet = gcnew Wallet();
+			Wallet^ wallet = gcnew Wallet(currentPatient);
 			this->Hide();
 			wallet->ShowDialog();
 			this->Show();
 		}
-		
 
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

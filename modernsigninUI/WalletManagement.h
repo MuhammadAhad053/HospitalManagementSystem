@@ -383,7 +383,7 @@ namespace HospitalManagement {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(292, 22);
 			this->textBox2->TabIndex = 0;
-			this->textBox2->Text = L"User ID (eg: 01)";
+			this->textBox2->Text = L"Account (eg: WXYZ-12345)";
 			// 
 			// label10
 			// 
@@ -394,9 +394,9 @@ namespace HospitalManagement {
 			this->label10->ForeColor = System::Drawing::SystemColors::ControlLight;
 			this->label10->Location = System::Drawing::Point(163, 191);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(128, 26);
+			this->label10->Size = System::Drawing::Size(215, 26);
 			this->label10->TabIndex = 21;
-			this->label10->Text = L"Enter User ID";
+			this->label10->Text = L"Enter Account Number";
 			this->label10->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// panel6
@@ -539,7 +539,7 @@ namespace HospitalManagement {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(292, 22);
 			this->textBox1->TabIndex = 0;
-			this->textBox1->Text = L"User ID (eg: 01)";
+			this->textBox1->Text = L"Account (eg: WXYZ-12345)";
 			// 
 			// label6
 			// 
@@ -550,9 +550,9 @@ namespace HospitalManagement {
 			this->label6->ForeColor = System::Drawing::SystemColors::ControlLight;
 			this->label6->Location = System::Drawing::Point(717, 191);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(128, 26);
+			this->label6->Size = System::Drawing::Size(215, 26);
 			this->label6->TabIndex = 10;
-			this->label6->Text = L"Enter User ID";
+			this->label6->Text = L"Enter Account Number";
 			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// panel3

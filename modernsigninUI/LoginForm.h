@@ -559,6 +559,8 @@ namespace HospitalManagement {
 					patient->dateofBirth = reader->GetDateTime(reader->GetOrdinal("dateofBirth")).ToString("yyyy-MM-dd");
 					patient->phoneNumber = reader->GetString(reader->GetOrdinal("phoneNumber"));
 					patient->email = reader->GetString(reader->GetOrdinal("email"));
+					patient->account = reader->GetString(reader->GetOrdinal("account"));
+					patient->wallet = reader->GetDouble(reader->GetOrdinal("wallet"));
 
 					PatientDashboard^ patientDashboard = gcnew PatientDashboard(patient);
 					this->Hide();
@@ -578,6 +580,8 @@ namespace HospitalManagement {
 					doctor->department = reader->GetString(reader->GetOrdinal("department"));
 					doctor->specialization = reader->GetString(reader->GetOrdinal("specialization"));
 					doctor->experienceYears = reader->GetInt32(reader->GetOrdinal("experienceYears"));
+					doctor->account = reader->GetString(reader->GetOrdinal("account"));
+					doctor->wallet = reader->GetDouble(reader->GetOrdinal("wallet"));
 
 					DoctorDashboard^ doctorDashboard = gcnew DoctorDashboard(doctor);
 					this->Hide();
