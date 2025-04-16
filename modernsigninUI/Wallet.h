@@ -371,7 +371,7 @@ namespace HospitalManagement {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 48, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label2->Location = System::Drawing::Point(51, -5);
+			this->label2->Location = System::Drawing::Point(3, -5);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(126, 85);
 			this->label2->TabIndex = 6;
@@ -380,14 +380,13 @@ namespace HospitalManagement {
 			// 
 			// lbAmount
 			// 
-			this->lbAmount->AutoSize = true;
 			this->lbAmount->BackColor = System::Drawing::Color::Transparent;
 			this->lbAmount->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 48, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbAmount->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbAmount->Location = System::Drawing::Point(172, -5);
+			this->lbAmount->Location = System::Drawing::Point(113, -2);
 			this->lbAmount->Name = L"lbAmount";
-			this->lbAmount->Size = System::Drawing::Size(111, 85);
+			this->lbAmount->Size = System::Drawing::Size(226, 85);
 			this->lbAmount->TabIndex = 5;
 			this->lbAmount->Text = L"00";
 			this->lbAmount->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -483,29 +482,46 @@ namespace HospitalManagement {
 		}
 		else {
 			try {
+				System::Windows::Forms::DialogResult result;
 				sqlConn->Open();
 				if(currentPatient != nullptr)
 				{
-					sqlQuery = "UPDATE Doctor SET wallet = wallet + @amount WHERE account = @acc; UPDATE Patient SET wallet = wallet - @amount WHERE Id = @id;";
+					String^ name = nullptr;
+
+					sqlQuery = "SELECT lastName FROM Doctor where account = @acc";
 					SqlCommand^ command = gcnew SqlCommand(sqlQuery, sqlConn);
 
-					command->Parameters->AddWithValue("@amount", amount);
 					command->Parameters->AddWithValue("@acc", accountNumber);
-					command->Parameters->AddWithValue("@id", currentPatient->id);
-
-					int rowsAffected = command->ExecuteNonQuery();
-					sqlConn->Close();
-
-					if (rowsAffected > 0)
-						MessageBox::Show("Amount Paid Successfully");
+					SqlDataReader^ reader = command->ExecuteReader();
+					
+					if (reader->Read()) {
+						name = reader->GetString(reader->GetOrdinal("lastName"));
+						result = MessageBox::Show("Are you sure you wish to Transfer " + amount + " to " + name + "?",
+							"Confirmation",
+							MessageBoxButtons::YesNo);
+						reader->Close();
+					}
 					else
-						MessageBox::Show("No Doctor found with that Account Number");
+						MessageBox::Show("Doctor with the Account Number not found");
 
-					currentPatient->wallet -= amount;
+					if (result == System::Windows::Forms::DialogResult::Yes) {
+						sqlQuery = "UPDATE Doctor SET wallet = wallet + @amount WHERE account = @acc; UPDATE Patient SET wallet = wallet - @amount WHERE Id = @id;";
+						command = gcnew SqlCommand(sqlQuery, sqlConn);
+
+						command->Parameters->AddWithValue("@amount", amount);
+						command->Parameters->AddWithValue("@acc", accountNumber);
+						command->Parameters->AddWithValue("@id", currentPatient->id);
+
+						int rowsAffected = command->ExecuteNonQuery();
+						sqlConn->Close();
+
+						MessageBox::Show("Amount Paid Successfully");
+						currentPatient->wallet -= amount;
+					}
 				}
 			}
 			catch (Exception^ ex) {
-				MessageBox::Show("Could'nt Connect to DataBase");
+				MessageBox::Show("Could'nt Connect to DataBase" + ex->Message);
 			}
 		}
 		if (currentPatient != nullptr)

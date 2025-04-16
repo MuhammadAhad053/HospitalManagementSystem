@@ -92,6 +92,10 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Label^ lbAmount;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::Panel^ panel8;
+	private: System::Windows::Forms::Label^ lbName;
+
 
 
 
@@ -120,6 +124,9 @@ namespace HospitalManagement {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->panel8 = (gcnew System::Windows::Forms::Panel());
+			this->lbName = (gcnew System::Windows::Forms::Label());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
@@ -150,6 +157,7 @@ namespace HospitalManagement {
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel2->SuspendLayout();
+			this->panel8->SuspendLayout();
 			this->panel7->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->panel5->SuspendLayout();
@@ -233,6 +241,8 @@ namespace HospitalManagement {
 			// 
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
 			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->panel2->Controls->Add(this->label14);
+			this->panel2->Controls->Add(this->panel8);
 			this->panel2->Controls->Add(this->label13);
 			this->panel2->Controls->Add(this->panel7);
 			this->panel2->Controls->Add(this->rdPatient1);
@@ -259,6 +269,42 @@ namespace HospitalManagement {
 			this->panel2->Size = System::Drawing::Size(1264, 611);
 			this->panel2->TabIndex = 0;
 			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->BackColor = System::Drawing::Color::Transparent;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label14->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label14->Location = System::Drawing::Point(163, 320);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(222, 26);
+			this->label14->TabIndex = 29;
+			this->label14->Text = L"Account Holder\'s Name";
+			this->label14->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
+			// panel8
+			// 
+			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->panel8->Controls->Add(this->lbName);
+			this->panel8->Location = System::Drawing::Point(168, 358);
+			this->panel8->Name = L"panel8";
+			this->panel8->Size = System::Drawing::Size(342, 35);
+			this->panel8->TabIndex = 28;
+			// 
+			// lbName
+			// 
+			this->lbName->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbName->ForeColor = System::Drawing::Color::Silver;
+			this->lbName->Location = System::Drawing::Point(7, 5);
+			this->lbName->Name = L"lbName";
+			this->lbName->Size = System::Drawing::Size(329, 23);
+			this->lbName->TabIndex = 0;
+			this->lbName->Text = L"XXXXXXXX";
+			this->lbName->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
@@ -266,7 +312,7 @@ namespace HospitalManagement {
 			this->label13->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label13->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label13->Location = System::Drawing::Point(163, 370);
+			this->label13->Location = System::Drawing::Point(163, 396);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(190, 26);
 			this->label13->TabIndex = 27;
@@ -330,7 +376,7 @@ namespace HospitalManagement {
 			this->rdPatient1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->rdPatient1->ForeColor = System::Drawing::Color::White;
-			this->rdPatient1->Location = System::Drawing::Point(434, 153);
+			this->rdPatient1->Location = System::Drawing::Point(434, 112);
 			this->rdPatient1->Name = L"rdPatient1";
 			this->rdPatient1->Size = System::Drawing::Size(77, 25);
 			this->rdPatient1->TabIndex = 25;
@@ -345,7 +391,7 @@ namespace HospitalManagement {
 			this->rdDoctor1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->rdDoctor1->ForeColor = System::Drawing::Color::White;
-			this->rdDoctor1->Location = System::Drawing::Point(351, 153);
+			this->rdDoctor1->Location = System::Drawing::Point(351, 112);
 			this->rdDoctor1->Name = L"rdDoctor1";
 			this->rdDoctor1->Size = System::Drawing::Size(77, 25);
 			this->rdDoctor1->TabIndex = 24;
@@ -360,7 +406,7 @@ namespace HospitalManagement {
 			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label8->Location = System::Drawing::Point(163, 151);
+			this->label8->Location = System::Drawing::Point(163, 110);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(158, 26);
 			this->label8->TabIndex = 23;
@@ -383,7 +429,7 @@ namespace HospitalManagement {
 			this->button1->ForeColor = System::Drawing::Color::White;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->button1->Location = System::Drawing::Point(168, 280);
+			this->button1->Location = System::Drawing::Point(168, 239);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(342, 59);
 			this->button1->TabIndex = 19;
@@ -396,7 +442,7 @@ namespace HospitalManagement {
 			this->panel5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->panel5->Controls->Add(this->tbAccount);
-			this->panel5->Location = System::Drawing::Point(168, 223);
+			this->panel5->Location = System::Drawing::Point(168, 182);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(342, 35);
 			this->panel5->TabIndex = 22;
@@ -423,7 +469,7 @@ namespace HospitalManagement {
 			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label10->Location = System::Drawing::Point(163, 191);
+			this->label10->Location = System::Drawing::Point(163, 150);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(215, 26);
 			this->label10->TabIndex = 21;
@@ -435,7 +481,7 @@ namespace HospitalManagement {
 			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->panel6->Controls->Add(this->lbAmount);
-			this->panel6->Location = System::Drawing::Point(168, 408);
+			this->panel6->Location = System::Drawing::Point(168, 434);
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(342, 35);
 			this->panel6->TabIndex = 20;
@@ -445,7 +491,7 @@ namespace HospitalManagement {
 			this->lbAmount->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbAmount->ForeColor = System::Drawing::Color::Silver;
-			this->lbAmount->Location = System::Drawing::Point(7, 7);
+			this->lbAmount->Location = System::Drawing::Point(7, 6);
 			this->lbAmount->Name = L"lbAmount";
 			this->lbAmount->Size = System::Drawing::Size(329, 23);
 			this->lbAmount->TabIndex = 0;
@@ -459,7 +505,7 @@ namespace HospitalManagement {
 			this->label11->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label11->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label11->Location = System::Drawing::Point(160, 88);
+			this->label11->Location = System::Drawing::Point(160, 47);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(406, 47);
 			this->label11->TabIndex = 18;
@@ -473,7 +519,7 @@ namespace HospitalManagement {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Silver;
-			this->label2->Location = System::Drawing::Point(754, 350);
+			this->label2->Location = System::Drawing::Point(765, 369);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(310, 21);
 			this->label2->TabIndex = 16;
@@ -487,7 +533,7 @@ namespace HospitalManagement {
 			this->rdPatient2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->rdPatient2->ForeColor = System::Drawing::Color::White;
-			this->rdPatient2->Location = System::Drawing::Point(981, 151);
+			this->rdPatient2->Location = System::Drawing::Point(992, 170);
 			this->rdPatient2->Name = L"rdPatient2";
 			this->rdPatient2->Size = System::Drawing::Size(77, 25);
 			this->rdPatient2->TabIndex = 15;
@@ -502,7 +548,7 @@ namespace HospitalManagement {
 			this->rdDoctor2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->rdDoctor2->ForeColor = System::Drawing::Color::White;
-			this->rdDoctor2->Location = System::Drawing::Point(898, 151);
+			this->rdDoctor2->Location = System::Drawing::Point(909, 170);
 			this->rdDoctor2->Name = L"rdDoctor2";
 			this->rdDoctor2->Size = System::Drawing::Size(77, 25);
 			this->rdDoctor2->TabIndex = 14;
@@ -517,7 +563,7 @@ namespace HospitalManagement {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label1->Location = System::Drawing::Point(717, 151);
+			this->label1->Location = System::Drawing::Point(728, 170);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(158, 26);
 			this->label1->TabIndex = 12;
@@ -540,7 +586,7 @@ namespace HospitalManagement {
 			this->button2->ForeColor = System::Drawing::Color::White;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
 			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-			this->button2->Location = System::Drawing::Point(913, 384);
+			this->button2->Location = System::Drawing::Point(924, 403);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(151, 59);
 			this->button2->TabIndex = 9;
@@ -554,7 +600,7 @@ namespace HospitalManagement {
 			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->panel4->Controls->Add(this->tbAccount2);
-			this->panel4->Location = System::Drawing::Point(722, 223);
+			this->panel4->Location = System::Drawing::Point(733, 242);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(342, 35);
 			this->panel4->TabIndex = 11;
@@ -581,7 +627,7 @@ namespace HospitalManagement {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label6->Location = System::Drawing::Point(717, 191);
+			this->label6->Location = System::Drawing::Point(728, 210);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(215, 26);
 			this->label6->TabIndex = 10;
@@ -593,7 +639,7 @@ namespace HospitalManagement {
 			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
 			this->panel3->Controls->Add(this->tbAmount);
-			this->panel3->Location = System::Drawing::Point(722, 312);
+			this->panel3->Location = System::Drawing::Point(733, 331);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(342, 35);
 			this->panel3->TabIndex = 9;
@@ -620,7 +666,7 @@ namespace HospitalManagement {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 26.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label5->Location = System::Drawing::Point(714, 88);
+			this->label5->Location = System::Drawing::Point(725, 107);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(395, 47);
 			this->label5->TabIndex = 8;
@@ -634,7 +680,7 @@ namespace HospitalManagement {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label3->Location = System::Drawing::Point(717, 281);
+			this->label3->Location = System::Drawing::Point(728, 300);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(316, 26);
 			this->label3->TabIndex = 7;
@@ -656,6 +702,7 @@ namespace HospitalManagement {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			this->panel8->ResumeLayout(false);
 			this->panel7->ResumeLayout(false);
 			this->panel7->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -678,6 +725,7 @@ namespace HospitalManagement {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		double^ amount = nullptr;
+		String^ name = nullptr;
 		if ((!rdDoctor1->Checked && !rdPatient1->Checked) || tbAccount->Text == "") {
 			MessageBox::Show("Enter all Fields");
 		}
@@ -690,7 +738,7 @@ namespace HospitalManagement {
 
 			String^ account = tbAccount->Text;
 
-			String^ sqlQuery = "SELECT wallet FROM " + role + " WHERE account = @acc";
+			String^ sqlQuery = "SELECT wallet, lastName FROM " + role + " WHERE account = @acc";
 			SqlCommand^ command = gcnew SqlCommand(sqlQuery, sqlConn);
 
 			sqlConn->Open();
@@ -701,6 +749,7 @@ namespace HospitalManagement {
 
 			if (reader->Read()) {
 				amount = reader->GetDouble(reader->GetOrdinal("wallet"));
+				name = reader->GetString(reader->GetOrdinal("lastName"));
 			}
 			else {
 				MessageBox::Show(role + " not found with the given Account Number");
@@ -708,10 +757,14 @@ namespace HospitalManagement {
 
 			sqlConn->Close();
 		}
-		if (amount != nullptr)
+		if (amount != nullptr) {
 			lbAmount->Text = amount->ToString();
-		else
+			lbName->Text = name;
+		}
+		else {
 			lbAmount->Text = "XXXXXXXX";
+			lbName->Text = "XXXXXXXX";
+		}
 	}
 	private: System::Void tbAccount_Enter(System::Object^ sender, System::EventArgs^ e) {
 		tbAccount->Text = "";
@@ -739,7 +792,7 @@ namespace HospitalManagement {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ account = tbAccount2->Text;
 		String^ amountText = tbAmount->Text;
-		double^ amount = Convert::ToDouble(amountText);
+		double amount = Convert::ToDouble(amountText);
 
 		if ((!rdDoctor2->Checked && !rdPatient2->Checked) || account == "" || amountText == "") {
 			MessageBox::Show("Enter all Fields");
@@ -771,7 +824,10 @@ namespace HospitalManagement {
 
 			if (reader->Read()) {
 				name = reader->GetString(reader->GetOrdinal("lastName"));
-				MessageBox::Show("Successfully Added/Deducted " + amount + " from " + name + "'s Account");
+				if(amount < 0)
+					MessageBox::Show("Successfully Deducted " + (-1 * amount) + " from " + name + "'s Account");
+				else
+					MessageBox::Show("Successfully Added " + amount + " to " + name + "'s Account");
 			}
 			else {
 				MessageBox::Show(role + " not found with the given Account Number");
