@@ -8,6 +8,7 @@ namespace HospitalManagement {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for WalletManagement
@@ -45,9 +46,11 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::TextBox^ tbEmail;
+	private: System::Windows::Forms::TextBox^ tbAmount;
+
 	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ tbAccount2;
+
 	private: System::Windows::Forms::Label^ label6;
 
 
@@ -62,26 +65,35 @@ namespace HospitalManagement {
 
 
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::RadioButton^ radioButton1;
+	private: System::Windows::Forms::RadioButton^ rdDoctor2;
+
 
 
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::RadioButton^ radioButton2;
+	private: System::Windows::Forms::RadioButton^ rdPatient2;
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel7;
-	private: System::Windows::Forms::RadioButton^ radioButton3;
-	private: System::Windows::Forms::RadioButton^ radioButton4;
+	private: System::Windows::Forms::RadioButton^ rdPatient1;
+
+	private: System::Windows::Forms::RadioButton^ rdDoctor1;
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Panel^ panel5;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ tbAccount;
+
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Panel^ panel6;
-	private: System::Windows::Forms::TextBox^ textBox3;
+
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Label^ lbAmount;
+
+
 
 
 
@@ -108,30 +120,31 @@ namespace HospitalManagement {
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
+			this->rdPatient1 = (gcnew System::Windows::Forms::RadioButton());
+			this->rdDoctor1 = (gcnew System::Windows::Forms::RadioButton());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->tbAccount = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->lbAmount = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
+			this->rdPatient2 = (gcnew System::Windows::Forms::RadioButton());
+			this->rdDoctor2 = (gcnew System::Windows::Forms::RadioButton());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tbAccount2 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->tbEmail = (gcnew System::Windows::Forms::TextBox());
+			this->tbAmount = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
@@ -220,9 +233,10 @@ namespace HospitalManagement {
 			// 
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
 			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->panel2->Controls->Add(this->label13);
 			this->panel2->Controls->Add(this->panel7);
-			this->panel2->Controls->Add(this->radioButton3);
-			this->panel2->Controls->Add(this->radioButton4);
+			this->panel2->Controls->Add(this->rdPatient1);
+			this->panel2->Controls->Add(this->rdDoctor1);
 			this->panel2->Controls->Add(this->label8);
 			this->panel2->Controls->Add(this->button1);
 			this->panel2->Controls->Add(this->panel5);
@@ -230,8 +244,8 @@ namespace HospitalManagement {
 			this->panel2->Controls->Add(this->panel6);
 			this->panel2->Controls->Add(this->label11);
 			this->panel2->Controls->Add(this->label2);
-			this->panel2->Controls->Add(this->radioButton2);
-			this->panel2->Controls->Add(this->radioButton1);
+			this->panel2->Controls->Add(this->rdPatient2);
+			this->panel2->Controls->Add(this->rdDoctor2);
 			this->panel2->Controls->Add(this->label1);
 			this->panel2->Controls->Add(this->button2);
 			this->panel2->Controls->Add(this->panel4);
@@ -244,6 +258,20 @@ namespace HospitalManagement {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(1264, 611);
 			this->panel2->TabIndex = 0;
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->BackColor = System::Drawing::Color::Transparent;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label13->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label13->Location = System::Drawing::Point(163, 370);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(190, 26);
+			this->label13->TabIndex = 27;
+			this->label13->Text = L"Amount in Numbers";
+			this->label13->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// panel7
 			// 
@@ -295,35 +323,35 @@ namespace HospitalManagement {
 			this->label12->TabIndex = 9;
 			this->label12->Text = L"Your User ID can be seen from under the avatar in your profile menu.";
 			// 
-			// radioButton3
+			// rdPatient1
 			// 
-			this->radioButton3->AutoSize = true;
-			this->radioButton3->BackColor = System::Drawing::Color::Transparent;
-			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->radioButton3->ForeColor = System::Drawing::Color::White;
-			this->radioButton3->Location = System::Drawing::Point(431, 156);
-			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(66, 21);
-			this->radioButton3->TabIndex = 25;
-			this->radioButton3->TabStop = true;
-			this->radioButton3->Text = L"Patient";
-			this->radioButton3->UseVisualStyleBackColor = false;
+			this->rdPatient1->AutoSize = true;
+			this->rdPatient1->BackColor = System::Drawing::Color::Transparent;
+			this->rdPatient1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdPatient1->ForeColor = System::Drawing::Color::White;
+			this->rdPatient1->Location = System::Drawing::Point(434, 153);
+			this->rdPatient1->Name = L"rdPatient1";
+			this->rdPatient1->Size = System::Drawing::Size(77, 25);
+			this->rdPatient1->TabIndex = 25;
+			this->rdPatient1->TabStop = true;
+			this->rdPatient1->Text = L"Patient";
+			this->rdPatient1->UseVisualStyleBackColor = false;
 			// 
-			// radioButton4
+			// rdDoctor1
 			// 
-			this->radioButton4->AutoSize = true;
-			this->radioButton4->BackColor = System::Drawing::Color::Transparent;
-			this->radioButton4->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->radioButton4->ForeColor = System::Drawing::Color::White;
-			this->radioButton4->Location = System::Drawing::Point(357, 156);
-			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(68, 21);
-			this->radioButton4->TabIndex = 24;
-			this->radioButton4->TabStop = true;
-			this->radioButton4->Text = L"Doctor";
-			this->radioButton4->UseVisualStyleBackColor = false;
+			this->rdDoctor1->AutoSize = true;
+			this->rdDoctor1->BackColor = System::Drawing::Color::Transparent;
+			this->rdDoctor1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdDoctor1->ForeColor = System::Drawing::Color::White;
+			this->rdDoctor1->Location = System::Drawing::Point(351, 153);
+			this->rdDoctor1->Name = L"rdDoctor1";
+			this->rdDoctor1->Size = System::Drawing::Size(77, 25);
+			this->rdDoctor1->TabIndex = 24;
+			this->rdDoctor1->TabStop = true;
+			this->rdDoctor1->Text = L"Doctor";
+			this->rdDoctor1->UseVisualStyleBackColor = false;
 			// 
 			// label8
 			// 
@@ -361,29 +389,32 @@ namespace HospitalManagement {
 			this->button1->TabIndex = 19;
 			this->button1->Text = L"Check";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &WalletManagement::button1_Click);
 			// 
 			// panel5
 			// 
 			this->panel5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel5->Controls->Add(this->textBox2);
+			this->panel5->Controls->Add(this->tbAccount);
 			this->panel5->Location = System::Drawing::Point(168, 223);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(342, 35);
 			this->panel5->TabIndex = 22;
 			// 
-			// textBox2
+			// tbAccount
 			// 
-			this->textBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->tbAccount->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
-			this->textBox2->ForeColor = System::Drawing::Color::Silver;
-			this->textBox2->Location = System::Drawing::Point(12, 5);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(292, 22);
-			this->textBox2->TabIndex = 0;
-			this->textBox2->Text = L"Account (eg: WXYZ-12345)";
+			this->tbAccount->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbAccount->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
+			this->tbAccount->ForeColor = System::Drawing::Color::Silver;
+			this->tbAccount->Location = System::Drawing::Point(12, 5);
+			this->tbAccount->Name = L"tbAccount";
+			this->tbAccount->Size = System::Drawing::Size(292, 22);
+			this->tbAccount->TabIndex = 0;
+			this->tbAccount->Text = L"Account (eg: WXYZ-12345)";
+			this->tbAccount->Enter += gcnew System::EventHandler(this, &WalletManagement::tbAccount_Enter);
+			this->tbAccount->Leave += gcnew System::EventHandler(this, &WalletManagement::tbAccount_Leave);
 			// 
 			// label10
 			// 
@@ -403,24 +434,23 @@ namespace HospitalManagement {
 			// 
 			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel6->Controls->Add(this->textBox3);
-			this->panel6->Location = System::Drawing::Point(168, 364);
+			this->panel6->Controls->Add(this->lbAmount);
+			this->panel6->Location = System::Drawing::Point(168, 408);
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(342, 35);
 			this->panel6->TabIndex = 20;
 			// 
-			// textBox3
+			// lbAmount
 			// 
-			this->textBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
-			this->textBox3->ForeColor = System::Drawing::Color::Silver;
-			this->textBox3->Location = System::Drawing::Point(12, 5);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(292, 22);
-			this->textBox3->TabIndex = 0;
-			this->textBox3->Text = L"Account Balance";
+			this->lbAmount->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbAmount->ForeColor = System::Drawing::Color::Silver;
+			this->lbAmount->Location = System::Drawing::Point(7, 7);
+			this->lbAmount->Name = L"lbAmount";
+			this->lbAmount->Size = System::Drawing::Size(329, 23);
+			this->lbAmount->TabIndex = 0;
+			this->lbAmount->Text = L"XXXXXXXX";
+			this->lbAmount->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// label11
 			// 
@@ -450,35 +480,35 @@ namespace HospitalManagement {
 			this->label2->Text = L"( To deduct balance, enter a negative value )";
 			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// radioButton2
+			// rdPatient2
 			// 
-			this->radioButton2->AutoSize = true;
-			this->radioButton2->BackColor = System::Drawing::Color::Transparent;
-			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->radioButton2->ForeColor = System::Drawing::Color::White;
-			this->radioButton2->Location = System::Drawing::Point(987, 156);
-			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(66, 21);
-			this->radioButton2->TabIndex = 15;
-			this->radioButton2->TabStop = true;
-			this->radioButton2->Text = L"Patient";
-			this->radioButton2->UseVisualStyleBackColor = false;
+			this->rdPatient2->AutoSize = true;
+			this->rdPatient2->BackColor = System::Drawing::Color::Transparent;
+			this->rdPatient2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdPatient2->ForeColor = System::Drawing::Color::White;
+			this->rdPatient2->Location = System::Drawing::Point(981, 151);
+			this->rdPatient2->Name = L"rdPatient2";
+			this->rdPatient2->Size = System::Drawing::Size(77, 25);
+			this->rdPatient2->TabIndex = 15;
+			this->rdPatient2->TabStop = true;
+			this->rdPatient2->Text = L"Patient";
+			this->rdPatient2->UseVisualStyleBackColor = false;
 			// 
-			// radioButton1
+			// rdDoctor2
 			// 
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->BackColor = System::Drawing::Color::Transparent;
-			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->radioButton1->ForeColor = System::Drawing::Color::White;
-			this->radioButton1->Location = System::Drawing::Point(913, 156);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(68, 21);
-			this->radioButton1->TabIndex = 14;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"Doctor";
-			this->radioButton1->UseVisualStyleBackColor = false;
+			this->rdDoctor2->AutoSize = true;
+			this->rdDoctor2->BackColor = System::Drawing::Color::Transparent;
+			this->rdDoctor2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdDoctor2->ForeColor = System::Drawing::Color::White;
+			this->rdDoctor2->Location = System::Drawing::Point(898, 151);
+			this->rdDoctor2->Name = L"rdDoctor2";
+			this->rdDoctor2->Size = System::Drawing::Size(77, 25);
+			this->rdDoctor2->TabIndex = 14;
+			this->rdDoctor2->TabStop = true;
+			this->rdDoctor2->Text = L"Doctor";
+			this->rdDoctor2->UseVisualStyleBackColor = false;
 			// 
 			// label1
 			// 
@@ -517,29 +547,32 @@ namespace HospitalManagement {
 			this->button2->Text = L"Proceed";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &WalletManagement::button2_Click);
 			// 
 			// panel4
 			// 
 			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel4->Controls->Add(this->textBox1);
+			this->panel4->Controls->Add(this->tbAccount2);
 			this->panel4->Location = System::Drawing::Point(722, 223);
 			this->panel4->Name = L"panel4";
 			this->panel4->Size = System::Drawing::Size(342, 35);
 			this->panel4->TabIndex = 11;
 			// 
-			// textBox1
+			// tbAccount2
 			// 
-			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->tbAccount2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
-			this->textBox1->ForeColor = System::Drawing::Color::Silver;
-			this->textBox1->Location = System::Drawing::Point(12, 5);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(292, 22);
-			this->textBox1->TabIndex = 0;
-			this->textBox1->Text = L"Account (eg: WXYZ-12345)";
+			this->tbAccount2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbAccount2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
+			this->tbAccount2->ForeColor = System::Drawing::Color::Silver;
+			this->tbAccount2->Location = System::Drawing::Point(12, 5);
+			this->tbAccount2->Name = L"tbAccount2";
+			this->tbAccount2->Size = System::Drawing::Size(292, 22);
+			this->tbAccount2->TabIndex = 0;
+			this->tbAccount2->Text = L"Account (eg: WXYZ-12345)";
+			this->tbAccount2->Enter += gcnew System::EventHandler(this, &WalletManagement::tbAccount2_Enter);
+			this->tbAccount2->Leave += gcnew System::EventHandler(this, &WalletManagement::tbAccount2_Leave);
 			// 
 			// label6
 			// 
@@ -559,24 +592,26 @@ namespace HospitalManagement {
 			// 
 			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel3->Controls->Add(this->tbEmail);
+			this->panel3->Controls->Add(this->tbAmount);
 			this->panel3->Location = System::Drawing::Point(722, 312);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(342, 35);
 			this->panel3->TabIndex = 9;
 			// 
-			// tbEmail
+			// tbAmount
 			// 
-			this->tbEmail->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->tbAmount->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbEmail->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbEmail->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
-			this->tbEmail->ForeColor = System::Drawing::Color::Silver;
-			this->tbEmail->Location = System::Drawing::Point(12, 5);
-			this->tbEmail->Name = L"tbEmail";
-			this->tbEmail->Size = System::Drawing::Size(292, 22);
-			this->tbEmail->TabIndex = 0;
-			this->tbEmail->Text = L"Amount (in numbers)";
+			this->tbAmount->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbAmount->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
+			this->tbAmount->ForeColor = System::Drawing::Color::Silver;
+			this->tbAmount->Location = System::Drawing::Point(12, 5);
+			this->tbAmount->Name = L"tbAmount";
+			this->tbAmount->Size = System::Drawing::Size(292, 22);
+			this->tbAmount->TabIndex = 0;
+			this->tbAmount->Text = L"Amount (in numbers)";
+			this->tbAmount->Enter += gcnew System::EventHandler(this, &WalletManagement::tbAmount_Enter);
+			this->tbAmount->Leave += gcnew System::EventHandler(this, &WalletManagement::tbAmount_Leave);
 			// 
 			// label5
 			// 
@@ -627,7 +662,6 @@ namespace HospitalManagement {
 			this->panel5->ResumeLayout(false);
 			this->panel5->PerformLayout();
 			this->panel6->ResumeLayout(false);
-			this->panel6->PerformLayout();
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
 			this->panel3->ResumeLayout(false);
@@ -636,8 +670,116 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion
+		String^ connString = "Data Source=localhost\\sqlexpress;Initial Catalog=test;Integrated Security=True;";
+		SqlConnection^ sqlConn = gcnew SqlConnection(connString);
+
 	private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		double^ amount = nullptr;
+		if ((!rdDoctor1->Checked && !rdPatient1->Checked) || tbAccount->Text == "") {
+			MessageBox::Show("Enter all Fields");
+		}
+		else {
+			String^ role = nullptr;
+			if (rdDoctor1->Checked)
+				role = "Doctor";
+			else
+				role = "Patient";
+
+			String^ account = tbAccount->Text;
+
+			String^ sqlQuery = "SELECT wallet FROM " + role + " WHERE account = @acc";
+			SqlCommand^ command = gcnew SqlCommand(sqlQuery, sqlConn);
+
+			sqlConn->Open();
+
+			command->Parameters->AddWithValue("@acc", account);
+				
+			SqlDataReader^ reader = command->ExecuteReader();
+
+			if (reader->Read()) {
+				amount = reader->GetDouble(reader->GetOrdinal("wallet"));
+			}
+			else {
+				MessageBox::Show(role + " not found with the given Account Number");
+			}
+
+			sqlConn->Close();
+		}
+		if (amount != nullptr)
+			lbAmount->Text = amount->ToString();
+		else
+			lbAmount->Text = "XXXXXXXX";
+	}
+	private: System::Void tbAccount_Enter(System::Object^ sender, System::EventArgs^ e) {
+		tbAccount->Text = "";
+	}
+	private: System::Void tbAccount_Leave(System::Object^ sender, System::EventArgs^ e) {
+		if (tbAccount->Text == "")
+			tbAccount->Text = "Account (eg: WXYZ-12345)";
+	}
+
+	private: System::Void tbAccount2_Enter(System::Object^ sender, System::EventArgs^ e) {
+		tbAccount2->Text = "";
+	}
+
+	private: System::Void tbAccount2_Leave(System::Object^ sender, System::EventArgs^ e) {
+		if (tbAccount2->Text == "")
+			tbAccount2->Text = "Account(eg: WXYZ - 12345)";
+	}
+	private: System::Void tbAmount_Enter(System::Object^ sender, System::EventArgs^ e) {
+		tbAmount->Text = "";
+	}
+	private: System::Void tbAmount_Leave(System::Object^ sender, System::EventArgs^ e) {
+		if (tbAmount->Text == "")
+			tbAmount->Text = "Amount (in numbers)";
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ account = tbAccount2->Text;
+		String^ amountText = tbAmount->Text;
+		double^ amount = Convert::ToDouble(amountText);
+
+		if ((!rdDoctor2->Checked && !rdPatient2->Checked) || account == "" || amountText == "") {
+			MessageBox::Show("Enter all Fields");
+		}
+		else {
+			String^ role = nullptr;
+
+			if (rdDoctor2->Checked)
+				role = "Doctor";
+			else
+				role = "Patient";
+
+			String^ sqlQuery = "UPDATE " + role + " SET wallet = wallet + @amount WHERE account = @acc";
+			SqlCommand^ command = gcnew SqlCommand(sqlQuery, sqlConn);
+
+			sqlConn->Open();
+
+			command->Parameters->AddWithValue("@amount", amount);
+			command->Parameters->AddWithValue("@acc", account);
+			command->ExecuteNonQuery();
+
+			sqlQuery = "SELECT lastName FROM " + role + " WHERE account = @acc";
+			command = gcnew SqlCommand(sqlQuery, sqlConn);
+	
+			command->Parameters->AddWithValue("@acc", account);
+			SqlDataReader^ reader = command->ExecuteReader();
+
+			String^ name = nullptr;
+
+			if (reader->Read()) {
+				name = reader->GetString(reader->GetOrdinal("lastName"));
+				MessageBox::Show("Successfully Added/Deducted " + amount + " from " + name + "'s Account");
+			}
+			else {
+				MessageBox::Show(role + " not found with the given Account Number");
+			}
+
+			sqlConn->Close();
+
+		}
 	}
 };
 }

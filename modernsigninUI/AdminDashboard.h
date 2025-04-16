@@ -4,6 +4,7 @@
 #include "PatientManagement.h"
 #include "DoctorManagement.h"
 #include "ReceptionistManagement.h"
+#include "WalletManagement.h"
 
 namespace HospitalManagement {
 
@@ -296,6 +297,7 @@ namespace HospitalManagement {
 			this->button6->TabIndex = 0;
 			this->button6->Text = L"Manage Wallets";
 			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &AdminDashboard::button6_Click);
 			// 
 			// button3
 			// 
@@ -573,6 +575,12 @@ namespace HospitalManagement {
 	}
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		WalletManagement^ walletManagement = gcnew WalletManagement();
+		this->Hide();
+		walletManagement->ShowDialog();
+		this->Show();
 	}
 };
 }

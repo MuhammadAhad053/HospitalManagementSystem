@@ -1,17 +1,9 @@
 #include "LoginForm.h"
 #include "RegisterForm.h"
 #include "Patient.h"
-#include "Wallet.h"
-#include "PatientDashboard.h"
-#include "DoctorDashboard.h"
-#include "ReceptionistDashboard.h"
-#include "AdminDashboard.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
-
-
-
 
 void main(array<String^>^ args) {
 	Application::EnableVisualStyles();
