@@ -69,22 +69,22 @@ namespace HospitalManagement {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Schedule::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->btProfile = (gcnew System::Windows::Forms::Button());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->lbAmount = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->btnTransfer = (gcnew System::Windows::Forms::Button());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->tbAccount = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->lbAmount = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel2->SuspendLayout();
 			this->panel4->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -102,34 +102,30 @@ namespace HospitalManagement {
 			this->panel1->Size = System::Drawing::Size(1264, 70);
 			this->panel1->TabIndex = 0;
 			// 
-			// panel2
+			// pictureBox2
 			// 
-			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
-			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel2->Controls->Add(this->btnTransfer);
-			this->panel2->Controls->Add(this->panel4);
-			this->panel2->Controls->Add(this->label6);
-			this->panel2->Controls->Add(this->label5);
-			this->panel2->Controls->Add(this->lbAmount);
-			this->panel2->Controls->Add(this->label8);
-			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panel2->Location = System::Drawing::Point(0, 70);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1264, 611);
-			this->panel2->TabIndex = 1;
+			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
+			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->pictureBox2->Location = System::Drawing::Point(1194, 12);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(58, 45);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 27;
+			this->pictureBox2->TabStop = false;
 			// 
-			// label9
+			// label4
 			// 
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 18.25F, System::Drawing::FontStyle::Bold));
-			this->label9->ForeColor = System::Drawing::Color::White;
-			this->label9->Location = System::Drawing::Point(553, 22);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(124, 33);
-			this->label9->TabIndex = 16;
-			this->label9->Text = L"Schedule";
-			this->label9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 10));
+			this->label4->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label4->Location = System::Drawing::Point(1162, 38);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(37, 19);
+			this->label4->TabIndex = 26;
+			this->label4->Text = L"HMS\r\n";
+			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// btProfile
 			// 
@@ -149,33 +145,34 @@ namespace HospitalManagement {
 			this->btProfile->TabIndex = 17;
 			this->btProfile->UseVisualStyleBackColor = false;
 			// 
-			// label8
+			// label9
 			// 
-			this->label8->AutoSize = true;
-			this->label8->BackColor = System::Drawing::Color::Transparent;
-			this->label8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label8->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label8->Location = System::Drawing::Point(148, 206);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(349, 64);
-			this->label8->TabIndex = 19;
-			this->label8->Text = L"Your Schedule";
-			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 18.25F, System::Drawing::FontStyle::Bold));
+			this->label9->ForeColor = System::Drawing::Color::White;
+			this->label9->Location = System::Drawing::Point(553, 22);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(124, 33);
+			this->label9->TabIndex = 16;
+			this->label9->Text = L"Schedule";
+			this->label9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// lbAmount
+			// panel2
 			// 
-			this->lbAmount->BackColor = System::Drawing::Color::Transparent;
-			this->lbAmount->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 48, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lbAmount->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbAmount->Location = System::Drawing::Point(128, 270);
-			this->lbAmount->Name = L"lbAmount";
-			this->lbAmount->Size = System::Drawing::Size(398, 85);
-			this->lbAmount->TabIndex = 5;
-			this->lbAmount->Text = L"10am - 4pm";
-			this->lbAmount->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
+			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->panel2->Controls->Add(this->btnTransfer);
+			this->panel2->Controls->Add(this->panel4);
+			this->panel2->Controls->Add(this->label6);
+			this->panel2->Controls->Add(this->label5);
+			this->panel2->Controls->Add(this->lbAmount);
+			this->panel2->Controls->Add(this->label8);
+			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panel2->Location = System::Drawing::Point(0, 70);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(1264, 611);
+			this->panel2->TabIndex = 1;
 			// 
 			// btnTransfer
 			// 
@@ -196,7 +193,7 @@ namespace HospitalManagement {
 			this->btnTransfer->Name = L"btnTransfer";
 			this->btnTransfer->Size = System::Drawing::Size(134, 46);
 			this->btnTransfer->TabIndex = 22;
-			this->btnTransfer->Text = L"Change";
+			this->btnTransfer->Text = L"Update";
 			this->btnTransfer->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnTransfer->UseVisualStyleBackColor = false;
 			// 
@@ -246,35 +243,38 @@ namespace HospitalManagement {
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlLight;
 			this->label5->Location = System::Drawing::Point(705, 188);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(391, 47);
+			this->label5->Size = System::Drawing::Size(385, 47);
 			this->label5->TabIndex = 21;
-			this->label5->Text = L"Change your Schedule";
+			this->label5->Text = L"Update your Schedule";
 			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// pictureBox2
+			// lbAmount
 			// 
-			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->pictureBox2->Location = System::Drawing::Point(1194, 12);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(58, 45);
-			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox2->TabIndex = 27;
-			this->pictureBox2->TabStop = false;
+			this->lbAmount->BackColor = System::Drawing::Color::Transparent;
+			this->lbAmount->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 48, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbAmount->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->lbAmount->Location = System::Drawing::Point(128, 270);
+			this->lbAmount->Name = L"lbAmount";
+			this->lbAmount->Size = System::Drawing::Size(398, 85);
+			this->lbAmount->TabIndex = 5;
+			this->lbAmount->Text = L"10am - 4pm";
+			this->lbAmount->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// label4
+			// label8
 			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text Light", 10));
-			this->label4->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label4->Location = System::Drawing::Point(1162, 38);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(37, 19);
-			this->label4->TabIndex = 26;
-			this->label4->Text = L"HMS\r\n";
-			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->label8->AutoSize = true;
+			this->label8->BackColor = System::Drawing::Color::Transparent;
+			this->label8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label8->Location = System::Drawing::Point(148, 206);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(349, 64);
+			this->label8->TabIndex = 19;
+			this->label8->Text = L"Your Schedule";
+			this->label8->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// Schedule
 			// 
@@ -287,11 +287,11 @@ namespace HospitalManagement {
 			this->Text = L"Schedule";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->ResumeLayout(false);
 
 		}

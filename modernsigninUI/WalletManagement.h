@@ -327,9 +327,9 @@ namespace HospitalManagement {
 			this->panel7->Controls->Add(this->label7);
 			this->panel7->Controls->Add(this->label12);
 			this->panel7->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->panel7->Location = System::Drawing::Point(0, 513);
+			this->panel7->Location = System::Drawing::Point(0, 516);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(1264, 98);
+			this->panel7->Size = System::Drawing::Size(1264, 95);
 			this->panel7->TabIndex = 26;
 			// 
 			// pictureBox3

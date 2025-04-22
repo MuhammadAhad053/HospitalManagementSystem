@@ -134,6 +134,7 @@
     <ClCompile Include="ReceptionistManagement.cpp" />
     <ClCompile Include="RegisterForm.cpp" />
     <ClCompile Include="Schedule.cpp" />
+    <ClCompile Include="ScheduleManagement.cpp" />
     <ClCompile Include="Wallet.cpp" />
     <ClCompile Include="WalletManagement.cpp" />
   </ItemGroup>
@@ -177,6 +178,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Schedule.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ScheduleManagement.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Wallet.h">
@@ -223,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Schedule.resx">
       <DependentUpon>Schedule.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleManagement.resx">
+      <DependentUpon>ScheduleManagement.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wallet.resx">
       <DependentUpon>Wallet.h</DependentUpon>
