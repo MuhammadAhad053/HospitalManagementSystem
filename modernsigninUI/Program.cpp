@@ -1,6 +1,8 @@
 #include "LoginForm.h"
 #include "RegisterForm.h"
 #include "Patient.h"
+#include "Doctor.h"
+#include "Schedule.h"
 
 using namespace System;
 using namespace System::Windows::Forms;

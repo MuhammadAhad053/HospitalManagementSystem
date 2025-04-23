@@ -2,6 +2,7 @@
 
 #include "Doctor.h"
 #include "Wallet.h"
+#include "Schedule.h"
 
 namespace HospitalManagement {
 
@@ -276,6 +277,7 @@ namespace HospitalManagement {
 			this->buttonScheduleUpdate->TabIndex = 0;
 			this->buttonScheduleUpdate->Text = L"Update your Schedule";
 			this->buttonScheduleUpdate->UseVisualStyleBackColor = false;
+			this->buttonScheduleUpdate->Click += gcnew System::EventHandler(this, &DoctorDashboard::buttonScheduleUpdate_Click);
 			// 
 			// buttonPatientsScheduled
 			// 
@@ -633,6 +635,12 @@ namespace HospitalManagement {
 		Wallet^ wallet = gcnew Wallet(currentDoctor);
 		this->Hide();
 		wallet->ShowDialog();
+		this->Show();
+	}
+	private: System::Void buttonScheduleUpdate_Click(System::Object^ sender, System::EventArgs^ e) {
+		Schedule^ schedule = gcnew Schedule(currentDoctor);
+		this->Hide();
+		schedule->ShowDialog();
 		this->Show();
 	}
 };

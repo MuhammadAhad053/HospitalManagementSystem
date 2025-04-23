@@ -583,6 +583,14 @@ namespace HospitalManagement {
 					doctor->account = reader->GetString(reader->GetOrdinal("account"));
 					doctor->wallet = reader->GetDouble(reader->GetOrdinal("wallet"));
 
+					doctor->mon = reader->GetString(reader->GetOrdinal("monday"));
+					doctor->tue = reader->GetString(reader->GetOrdinal("tuesday"));
+					doctor->wed = reader->GetString(reader->GetOrdinal("wednesday"));
+					doctor->thur = reader->GetString(reader->GetOrdinal("thursday"));
+					doctor->fri = reader->GetString(reader->GetOrdinal("friday"));
+					doctor->sat = reader->GetString(reader->GetOrdinal("saturday"));
+					doctor->sun = reader->GetString(reader->GetOrdinal("sunday"));
+
 					DoctorDashboard^ doctorDashboard = gcnew DoctorDashboard(doctor);
 					this->Hide();
 					doctorDashboard->ShowDialog();
