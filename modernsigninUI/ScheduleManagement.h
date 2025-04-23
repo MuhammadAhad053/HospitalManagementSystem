@@ -1,5 +1,8 @@
 #pragma once
 
+#include "Schedule.h"
+#include "Doctor.h"
+
 namespace HospitalManagement {
 
 	using namespace System;
@@ -8,6 +11,7 @@ namespace HospitalManagement {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for ScheduleManagement
@@ -54,7 +58,8 @@ namespace HospitalManagement {
 
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Panel^ panel5;
-	private: System::Windows::Forms::TextBox^ tbAccount;
+	private: System::Windows::Forms::TextBox^ tbUserId;
+
 	private: System::Windows::Forms::Label^ label10;
 
 
@@ -125,7 +130,7 @@ namespace HospitalManagement {
 			this->lbName = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->tbAccount = (gcnew System::Windows::Forms::TextBox());
+			this->tbUserId = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
@@ -181,6 +186,7 @@ namespace HospitalManagement {
 			this->btProfile->Size = System::Drawing::Size(55, 50);
 			this->btProfile->TabIndex = 8;
 			this->btProfile->UseVisualStyleBackColor = false;
+			this->btProfile->Click += gcnew System::EventHandler(this, &ScheduleManagement::btProfile_Click);
 			// 
 			// pictureBox2
 			// 
@@ -297,6 +303,7 @@ namespace HospitalManagement {
 			this->button2->TabIndex = 41;
 			this->button2->Text = L"View Schedule";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &ScheduleManagement::button2_Click);
 			// 
 			// label14
 			// 
@@ -356,29 +363,32 @@ namespace HospitalManagement {
 			this->button1->TabIndex = 31;
 			this->button1->Text = L"Check";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &ScheduleManagement::button1_Click);
 			// 
 			// panel5
 			// 
 			this->panel5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel5->Controls->Add(this->tbAccount);
+			this->panel5->Controls->Add(this->tbUserId);
 			this->panel5->Location = System::Drawing::Point(459, 160);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(342, 35);
 			this->panel5->TabIndex = 34;
 			// 
-			// tbAccount
+			// tbUserId
 			// 
-			this->tbAccount->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+			this->tbUserId->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
 				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbAccount->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbAccount->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
-			this->tbAccount->ForeColor = System::Drawing::Color::Silver;
-			this->tbAccount->Location = System::Drawing::Point(12, 5);
-			this->tbAccount->Name = L"tbAccount";
-			this->tbAccount->Size = System::Drawing::Size(292, 22);
-			this->tbAccount->TabIndex = 0;
-			this->tbAccount->Text = L"User ID (eg: 101)";
+			this->tbUserId->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->tbUserId->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12.25F));
+			this->tbUserId->ForeColor = System::Drawing::Color::Silver;
+			this->tbUserId->Location = System::Drawing::Point(12, 5);
+			this->tbUserId->Name = L"tbUserId";
+			this->tbUserId->Size = System::Drawing::Size(292, 22);
+			this->tbUserId->TabIndex = 0;
+			this->tbUserId->Text = L"User ID (eg: 101)";
+			this->tbUserId->Enter += gcnew System::EventHandler(this, &ScheduleManagement::tbUserId_Enter);
+			this->tbUserId->Leave += gcnew System::EventHandler(this, &ScheduleManagement::tbUserId_Leave);
 			// 
 			// label10
 			// 
@@ -417,6 +427,7 @@ namespace HospitalManagement {
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"ScheduleManagement";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ScheduleManagement";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -433,7 +444,64 @@ namespace HospitalManagement {
 
 		}
 #pragma endregion
+	private: System::Void tbUserId_Enter(System::Object^ sender, System::EventArgs^ e) {
+		if (tbUserId->Text == "User ID (eg: 101)")
+			tbUserId->Text = "";
+	}
+	private: System::Void tbUserId_Leave(System::Object^ sender, System::EventArgs^ e) {
+		if (tbUserId->Text == "")
+			tbUserId->Text = "User ID (eg: 101)";
+	}
+	private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private:
+		Doctor^ doctor = gcnew Doctor();
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		int id = Convert::ToInt32(tbUserId->Text);
+		String^ connString = "Data Source=localhost\\sqlexpress;Initial Catalog=test;Integrated Security=True;";
+		SqlConnection^ sqlConn = gcnew SqlConnection(connString);
+		
+		sqlConn->Open();
 
+		String^ sqlQuery = "SELECT * FROM Doctor WHERE Id = @id";
+		SqlCommand^ command = gcnew SqlCommand(sqlQuery, sqlConn);
 
+		command->Parameters->AddWithValue("@id", id);
+		SqlDataReader^ reader = command->ExecuteReader();
+
+		if (reader->Read()) {
+			doctor->id = reader->GetInt32(reader->GetOrdinal("id"));
+			doctor->firstName = reader->GetString(reader->GetOrdinal("firstName"));
+			doctor->lastName = reader->GetString(reader->GetOrdinal("lastName"));
+			doctor->gender = reader->GetString(reader->GetOrdinal("gender"));
+			doctor->dateofBirth = reader->GetDateTime(reader->GetOrdinal("dateofBirth")).ToString("yyyy-MM-dd");
+			doctor->phoneNumber = reader->GetString(reader->GetOrdinal("phoneNumber"));
+			doctor->email = reader->GetString(reader->GetOrdinal("email"));
+			doctor->department = reader->GetString(reader->GetOrdinal("department"));
+			doctor->specialization = reader->GetString(reader->GetOrdinal("specialization"));
+			doctor->experienceYears = reader->GetInt32(reader->GetOrdinal("experienceYears"));
+			doctor->account = reader->GetString(reader->GetOrdinal("account"));
+			doctor->wallet = reader->GetDouble(reader->GetOrdinal("wallet"));
+
+			doctor->mon = reader->GetString(reader->GetOrdinal("monday"));
+			doctor->tue = reader->GetString(reader->GetOrdinal("tuesday"));
+			doctor->wed = reader->GetString(reader->GetOrdinal("wednesday"));
+			doctor->thur = reader->GetString(reader->GetOrdinal("thursday"));
+			doctor->fri = reader->GetString(reader->GetOrdinal("friday"));
+			doctor->sat = reader->GetString(reader->GetOrdinal("saturday"));
+			doctor->sun = reader->GetString(reader->GetOrdinal("sunday"));
+		}
+		else {
+			MessageBox::Show("Doctor not found with the given ID");
+		}
+		lbName->Text = doctor->lastName;
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		Schedule^ schedule = gcnew Schedule(doctor);
+		this->Hide();
+		schedule->ShowDialog();
+		this->Show();
+	}
 };
 }
