@@ -60,8 +60,8 @@ namespace HospitalManagement {
 
 
 
-	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::TextBox^ tbMon;
+
+
 
 
 
@@ -69,15 +69,22 @@ namespace HospitalManagement {
 
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ lbTue;
 
-	private: System::Windows::Forms::Label^ label7;
 
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::Label^ label14;
-	private: System::Windows::Forms::Label^ label13;
-	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ lbMon;
+	private: System::Windows::Forms::Label^ lbWed;
+	private: System::Windows::Forms::Label^ lbSun;
+
+
+
+
+	private: System::Windows::Forms::Label^ lbSat;
+
+	private: System::Windows::Forms::Label^ lbFri;
+
+	private: System::Windows::Forms::Label^ lbThur;
+
 	private: System::Windows::Forms::Label^ lbSunday;
 
 	private: System::Windows::Forms::Label^ lbSaturday;
@@ -91,6 +98,7 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ lbTuesday;
 
 	private: System::Windows::Forms::Label^ lbMonday;
+	private: System::Windows::Forms::Button^ btSave;
 
 
 
@@ -105,25 +113,62 @@ namespace HospitalManagement {
 
 
 
-	private: System::Windows::Forms::Button^ button14;
-	private: System::Windows::Forms::Panel^ panel9;
-	private: System::Windows::Forms::TextBox^ tbSun;
 
-	private: System::Windows::Forms::Panel^ panel8;
-	private: System::Windows::Forms::TextBox^ tbSat;
 
-	private: System::Windows::Forms::Panel^ panel7;
-	private: System::Windows::Forms::TextBox^ tbFri;
 
-	private: System::Windows::Forms::Panel^ panel6;
-	private: System::Windows::Forms::TextBox^ tbThur;
 
-	private: System::Windows::Forms::Panel^ panel5;
-	private: System::Windows::Forms::TextBox^ tbWed;
 
-	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::TextBox^ tbTue;
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::Button^ btMon;
+private: System::Windows::Forms::Button^ btSun;
+
+
+private: System::Windows::Forms::Button^ btSat;
+
+private: System::Windows::Forms::Button^ btFri;
+
+private: System::Windows::Forms::Button^ btThur;
+
+private: System::Windows::Forms::Button^ btWed;
+
+private: System::Windows::Forms::Button^ btTue;
+
+private: System::Windows::Forms::Panel^ panel3;
+private: System::Windows::Forms::Label^ label5;
+private: System::Windows::Forms::Label^ lbEdit;
+private: System::Windows::Forms::DomainUpDown^ start;
+
+
+
+private: System::Windows::Forms::DomainUpDown^ startTime;
+private: System::Windows::Forms::DomainUpDown^ end;
+
+
+
+private: System::Windows::Forms::DomainUpDown^ endTime;
+
+private: System::Windows::Forms::Label^ label6;
+private: System::Windows::Forms::Button^ btConfirm;
+private: System::Windows::Forms::Button^ btDiscard;
+private: System::Windows::Forms::CheckBox^ cbNotAvailable;
+
+
+
+
+
 
 
 
@@ -150,20 +195,26 @@ namespace HospitalManagement {
 			this->btProfile = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->button14 = (gcnew System::Windows::Forms::Button());
-			this->panel9 = (gcnew System::Windows::Forms::Panel());
-			this->tbSun = (gcnew System::Windows::Forms::TextBox());
-			this->panel8 = (gcnew System::Windows::Forms::Panel());
-			this->tbSat = (gcnew System::Windows::Forms::TextBox());
-			this->panel7 = (gcnew System::Windows::Forms::Panel());
-			this->tbFri = (gcnew System::Windows::Forms::TextBox());
-			this->panel6 = (gcnew System::Windows::Forms::Panel());
-			this->tbThur = (gcnew System::Windows::Forms::TextBox());
-			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->tbWed = (gcnew System::Windows::Forms::TextBox());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->tbTue = (gcnew System::Windows::Forms::TextBox());
+			this->cbNotAvailable = (gcnew System::Windows::Forms::CheckBox());
+			this->btDiscard = (gcnew System::Windows::Forms::Button());
+			this->btConfirm = (gcnew System::Windows::Forms::Button());
+			this->end = (gcnew System::Windows::Forms::DomainUpDown());
+			this->endTime = (gcnew System::Windows::Forms::DomainUpDown());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->start = (gcnew System::Windows::Forms::DomainUpDown());
+			this->startTime = (gcnew System::Windows::Forms::DomainUpDown());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->lbEdit = (gcnew System::Windows::Forms::Label());
+			this->btSun = (gcnew System::Windows::Forms::Button());
+			this->btSat = (gcnew System::Windows::Forms::Button());
+			this->btFri = (gcnew System::Windows::Forms::Button());
+			this->btThur = (gcnew System::Windows::Forms::Button());
+			this->btWed = (gcnew System::Windows::Forms::Button());
+			this->btTue = (gcnew System::Windows::Forms::Button());
+			this->btMon = (gcnew System::Windows::Forms::Button());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->btSave = (gcnew System::Windows::Forms::Button());
 			this->lbSunday = (gcnew System::Windows::Forms::Label());
 			this->lbSaturday = (gcnew System::Windows::Forms::Label());
 			this->lbFriday = (gcnew System::Windows::Forms::Label());
@@ -171,26 +222,18 @@ namespace HospitalManagement {
 			this->lbWednesday = (gcnew System::Windows::Forms::Label());
 			this->lbTuesday = (gcnew System::Windows::Forms::Label());
 			this->lbMonday = (gcnew System::Windows::Forms::Label());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->tbMon = (gcnew System::Windows::Forms::TextBox());
+			this->lbSun = (gcnew System::Windows::Forms::Label());
+			this->lbSat = (gcnew System::Windows::Forms::Label());
+			this->lbFri = (gcnew System::Windows::Forms::Label());
+			this->lbThur = (gcnew System::Windows::Forms::Label());
+			this->lbWed = (gcnew System::Windows::Forms::Label());
+			this->lbTue = (gcnew System::Windows::Forms::Label());
+			this->lbMon = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel2->SuspendLayout();
-			this->panel9->SuspendLayout();
-			this->panel8->SuspendLayout();
-			this->panel7->SuspendLayout();
-			this->panel6->SuspendLayout();
-			this->panel5->SuspendLayout();
 			this->panel3->SuspendLayout();
-			this->panel4->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -267,16 +310,19 @@ namespace HospitalManagement {
 			// 
 			// panel2
 			// 
+			this->panel2->BackColor = System::Drawing::Color::SteelBlue;
 			this->panel2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel2.BackgroundImage")));
 			this->panel2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->panel2->Controls->Add(this->label2);
-			this->panel2->Controls->Add(this->button14);
-			this->panel2->Controls->Add(this->panel9);
-			this->panel2->Controls->Add(this->panel8);
-			this->panel2->Controls->Add(this->panel7);
-			this->panel2->Controls->Add(this->panel6);
-			this->panel2->Controls->Add(this->panel5);
 			this->panel2->Controls->Add(this->panel3);
+			this->panel2->Controls->Add(this->btSun);
+			this->panel2->Controls->Add(this->btSat);
+			this->panel2->Controls->Add(this->btFri);
+			this->panel2->Controls->Add(this->btThur);
+			this->panel2->Controls->Add(this->btWed);
+			this->panel2->Controls->Add(this->btTue);
+			this->panel2->Controls->Add(this->btMon);
+			this->panel2->Controls->Add(this->label2);
+			this->panel2->Controls->Add(this->btSave);
 			this->panel2->Controls->Add(this->lbSunday);
 			this->panel2->Controls->Add(this->lbSaturday);
 			this->panel2->Controls->Add(this->lbFriday);
@@ -284,20 +330,357 @@ namespace HospitalManagement {
 			this->panel2->Controls->Add(this->lbWednesday);
 			this->panel2->Controls->Add(this->lbTuesday);
 			this->panel2->Controls->Add(this->lbMonday);
-			this->panel2->Controls->Add(this->label14);
-			this->panel2->Controls->Add(this->label13);
-			this->panel2->Controls->Add(this->label12);
-			this->panel2->Controls->Add(this->label11);
-			this->panel2->Controls->Add(this->label10);
-			this->panel2->Controls->Add(this->label7);
-			this->panel2->Controls->Add(this->label1);
-			this->panel2->Controls->Add(this->panel4);
+			this->panel2->Controls->Add(this->lbSun);
+			this->panel2->Controls->Add(this->lbSat);
+			this->panel2->Controls->Add(this->lbFri);
+			this->panel2->Controls->Add(this->lbThur);
+			this->panel2->Controls->Add(this->lbWed);
+			this->panel2->Controls->Add(this->lbTue);
+			this->panel2->Controls->Add(this->lbMon);
 			this->panel2->Controls->Add(this->label8);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->panel2->ForeColor = System::Drawing::Color::Black;
 			this->panel2->Location = System::Drawing::Point(0, 70);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(1264, 611);
 			this->panel2->TabIndex = 1;
+			// 
+			// panel3
+			// 
+			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->panel3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"panel3.BackgroundImage")));
+			this->panel3->Controls->Add(this->cbNotAvailable);
+			this->panel3->Controls->Add(this->btDiscard);
+			this->panel3->Controls->Add(this->btConfirm);
+			this->panel3->Controls->Add(this->end);
+			this->panel3->Controls->Add(this->endTime);
+			this->panel3->Controls->Add(this->label6);
+			this->panel3->Controls->Add(this->start);
+			this->panel3->Controls->Add(this->startTime);
+			this->panel3->Controls->Add(this->label5);
+			this->panel3->Controls->Add(this->lbEdit);
+			this->panel3->Location = System::Drawing::Point(723, 3);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(538, 608);
+			this->panel3->TabIndex = 52;
+			this->panel3->Visible = false;
+			// 
+			// cbNotAvailable
+			// 
+			this->cbNotAvailable->AutoSize = true;
+			this->cbNotAvailable->BackColor = System::Drawing::Color::Transparent;
+			this->cbNotAvailable->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cbNotAvailable->ForeColor = System::Drawing::Color::White;
+			this->cbNotAvailable->Location = System::Drawing::Point(190, 387);
+			this->cbNotAvailable->Name = L"cbNotAvailable";
+			this->cbNotAvailable->Size = System::Drawing::Size(148, 29);
+			this->cbNotAvailable->TabIndex = 55;
+			this->cbNotAvailable->Text = L"Not Available";
+			this->cbNotAvailable->UseVisualStyleBackColor = false;
+			// 
+			// btDiscard
+			// 
+			this->btDiscard->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->btDiscard->FlatAppearance->BorderSize = 0;
+			this->btDiscard->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btDiscard->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
+			this->btDiscard->ForeColor = System::Drawing::Color::Silver;
+			this->btDiscard->Location = System::Drawing::Point(164, 497);
+			this->btDiscard->Name = L"btDiscard";
+			this->btDiscard->Size = System::Drawing::Size(203, 33);
+			this->btDiscard->TabIndex = 54;
+			this->btDiscard->Text = L"Discard";
+			this->btDiscard->UseVisualStyleBackColor = false;
+			this->btDiscard->Click += gcnew System::EventHandler(this, &Schedule::btDiscard_Click);
+			// 
+			// btConfirm
+			// 
+			this->btConfirm->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(86)), static_cast<System::Int32>(static_cast<System::Byte>(206)),
+				static_cast<System::Int32>(static_cast<System::Byte>(222)));
+			this->btConfirm->FlatAppearance->BorderSize = 0;
+			this->btConfirm->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btConfirm->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
+			this->btConfirm->ForeColor = System::Drawing::Color::Black;
+			this->btConfirm->Location = System::Drawing::Point(164, 447);
+			this->btConfirm->Name = L"btConfirm";
+			this->btConfirm->Size = System::Drawing::Size(203, 33);
+			this->btConfirm->TabIndex = 53;
+			this->btConfirm->Text = L"Confirm";
+			this->btConfirm->UseVisualStyleBackColor = false;
+			this->btConfirm->Click += gcnew System::EventHandler(this, &Schedule::btConfirm_Click);
+			// 
+			// end
+			// 
+			this->end->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->end->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->end->ForeColor = System::Drawing::Color::Silver;
+			this->end->Items->Add(L"AM");
+			this->end->Items->Add(L"PM");
+			this->end->Location = System::Drawing::Point(284, 333);
+			this->end->Name = L"end";
+			this->end->ReadOnly = true;
+			this->end->SelectedIndex = 0;
+			this->end->Size = System::Drawing::Size(120, 29);
+			this->end->TabIndex = 6;
+			this->end->Text = L"AM";
+			this->end->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->end->Wrap = true;
+			// 
+			// endTime
+			// 
+			this->endTime->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->endTime->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->endTime->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->endTime->ForeColor = System::Drawing::Color::Silver;
+			this->endTime->Items->Add(L"1");
+			this->endTime->Items->Add(L"2");
+			this->endTime->Items->Add(L"3");
+			this->endTime->Items->Add(L"4");
+			this->endTime->Items->Add(L"5");
+			this->endTime->Items->Add(L"6");
+			this->endTime->Items->Add(L"7");
+			this->endTime->Items->Add(L"8");
+			this->endTime->Items->Add(L"9");
+			this->endTime->Items->Add(L"10");
+			this->endTime->Items->Add(L"11");
+			this->endTime->Items->Add(L"12");
+			this->endTime->Location = System::Drawing::Point(132, 333);
+			this->endTime->Name = L"endTime";
+			this->endTime->ReadOnly = true;
+			this->endTime->SelectedIndex = 0;
+			this->endTime->Size = System::Drawing::Size(120, 29);
+			this->endTime->TabIndex = 5;
+			this->endTime->Text = L"1";
+			this->endTime->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->endTime->Wrap = true;
+			// 
+			// label6
+			// 
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::Color::White;
+			this->label6->Location = System::Drawing::Point(111, 276);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(322, 47);
+			this->label6->TabIndex = 4;
+			this->label6->Text = L"Ending Time:";
+			this->label6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// start
+			// 
+			this->start->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->start->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->start->ForeColor = System::Drawing::Color::Silver;
+			this->start->Items->Add(L"AM");
+			this->start->Items->Add(L"PM");
+			this->start->Location = System::Drawing::Point(281, 214);
+			this->start->Name = L"start";
+			this->start->ReadOnly = true;
+			this->start->SelectedIndex = 0;
+			this->start->Size = System::Drawing::Size(120, 29);
+			this->start->TabIndex = 3;
+			this->start->Text = L"AM";
+			this->start->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->start->Wrap = true;
+			// 
+			// startTime
+			// 
+			this->startTime->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
+				static_cast<System::Int32>(static_cast<System::Byte>(69)));
+			this->startTime->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->startTime->Font = (gcnew System::Drawing::Font(L"Segoe UI Semibold", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->startTime->ForeColor = System::Drawing::Color::Silver;
+			this->startTime->Items->Add(L"1");
+			this->startTime->Items->Add(L"2");
+			this->startTime->Items->Add(L"3");
+			this->startTime->Items->Add(L"4");
+			this->startTime->Items->Add(L"5");
+			this->startTime->Items->Add(L"6");
+			this->startTime->Items->Add(L"7");
+			this->startTime->Items->Add(L"8");
+			this->startTime->Items->Add(L"9");
+			this->startTime->Items->Add(L"10");
+			this->startTime->Items->Add(L"11");
+			this->startTime->Items->Add(L"12");
+			this->startTime->Location = System::Drawing::Point(129, 214);
+			this->startTime->Name = L"startTime";
+			this->startTime->ReadOnly = true;
+			this->startTime->SelectedIndex = 0;
+			this->startTime->Size = System::Drawing::Size(120, 29);
+			this->startTime->TabIndex = 2;
+			this->startTime->Text = L"1";
+			this->startTime->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->startTime->Wrap = true;
+			// 
+			// label5
+			// 
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Segoe UI", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::White;
+			this->label5->Location = System::Drawing::Point(108, 157);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(322, 47);
+			this->label5->TabIndex = 1;
+			this->label5->Text = L"Starting Time:";
+			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// lbEdit
+			// 
+			this->lbEdit->BackColor = System::Drawing::Color::Transparent;
+			this->lbEdit->Font = (gcnew System::Drawing::Font(L"Segoe UI Black", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbEdit->ForeColor = System::Drawing::Color::White;
+			this->lbEdit->Location = System::Drawing::Point(108, 87);
+			this->lbEdit->Name = L"lbEdit";
+			this->lbEdit->Size = System::Drawing::Size(322, 47);
+			this->lbEdit->TabIndex = 0;
+			this->lbEdit->Text = L"Edit ";
+			this->lbEdit->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// btSun
+			// 
+			this->btSun->BackColor = System::Drawing::Color::Transparent;
+			this->btSun->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btSun.BackgroundImage")));
+			this->btSun->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btSun->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btSun->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btSun->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btSun->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btSun->Location = System::Drawing::Point(790, 500);
+			this->btSun->Name = L"btSun";
+			this->btSun->Size = System::Drawing::Size(53, 55);
+			this->btSun->TabIndex = 51;
+			this->btSun->UseVisualStyleBackColor = false;
+			this->btSun->Click += gcnew System::EventHandler(this, &Schedule::btSun_Click_1);
+			// 
+			// btSat
+			// 
+			this->btSat->BackColor = System::Drawing::Color::Transparent;
+			this->btSat->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btSat.BackgroundImage")));
+			this->btSat->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btSat->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btSat->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btSat->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btSat->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btSat->Location = System::Drawing::Point(790, 440);
+			this->btSat->Name = L"btSat";
+			this->btSat->Size = System::Drawing::Size(53, 55);
+			this->btSat->TabIndex = 50;
+			this->btSat->UseVisualStyleBackColor = false;
+			this->btSat->Click += gcnew System::EventHandler(this, &Schedule::btSat_Click);
+			// 
+			// btFri
+			// 
+			this->btFri->BackColor = System::Drawing::Color::Transparent;
+			this->btFri->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btFri.BackgroundImage")));
+			this->btFri->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btFri->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btFri->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btFri->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btFri->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btFri->Location = System::Drawing::Point(790, 380);
+			this->btFri->Name = L"btFri";
+			this->btFri->Size = System::Drawing::Size(53, 55);
+			this->btFri->TabIndex = 49;
+			this->btFri->UseVisualStyleBackColor = false;
+			this->btFri->Click += gcnew System::EventHandler(this, &Schedule::btFri_Click_1);
+			// 
+			// btThur
+			// 
+			this->btThur->BackColor = System::Drawing::Color::Transparent;
+			this->btThur->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btThur.BackgroundImage")));
+			this->btThur->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btThur->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btThur->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btThur->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btThur->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btThur->Location = System::Drawing::Point(790, 320);
+			this->btThur->Name = L"btThur";
+			this->btThur->Size = System::Drawing::Size(53, 55);
+			this->btThur->TabIndex = 48;
+			this->btThur->UseVisualStyleBackColor = false;
+			this->btThur->Click += gcnew System::EventHandler(this, &Schedule::btThur_Click_1);
+			// 
+			// btWed
+			// 
+			this->btWed->BackColor = System::Drawing::Color::Transparent;
+			this->btWed->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btWed.BackgroundImage")));
+			this->btWed->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btWed->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btWed->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btWed->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btWed->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btWed->Location = System::Drawing::Point(790, 260);
+			this->btWed->Name = L"btWed";
+			this->btWed->Size = System::Drawing::Size(53, 55);
+			this->btWed->TabIndex = 47;
+			this->btWed->UseVisualStyleBackColor = false;
+			this->btWed->Click += gcnew System::EventHandler(this, &Schedule::btWed_Click);
+			// 
+			// btTue
+			// 
+			this->btTue->BackColor = System::Drawing::Color::Transparent;
+			this->btTue->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btTue.BackgroundImage")));
+			this->btTue->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btTue->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btTue->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btTue->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btTue->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btTue->Location = System::Drawing::Point(790, 200);
+			this->btTue->Name = L"btTue";
+			this->btTue->Size = System::Drawing::Size(53, 55);
+			this->btTue->TabIndex = 46;
+			this->btTue->UseVisualStyleBackColor = false;
+			this->btTue->Click += gcnew System::EventHandler(this, &Schedule::btTue_Click);
+			// 
+			// btMon
+			// 
+			this->btMon->BackColor = System::Drawing::Color::Transparent;
+			this->btMon->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btMon.BackgroundImage")));
+			this->btMon->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btMon->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btMon->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->btMon->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btMon->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btMon->Location = System::Drawing::Point(790, 140);
+			this->btMon->Name = L"btMon";
+			this->btMon->Size = System::Drawing::Size(53, 55);
+			this->btMon->TabIndex = 45;
+			this->btMon->UseVisualStyleBackColor = false;
+			this->btMon->Click += gcnew System::EventHandler(this, &Schedule::btMon_Click);
 			// 
 			// label2
 			// 
@@ -306,180 +689,30 @@ namespace HospitalManagement {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(1099, 82);
+			this->label2->Location = System::Drawing::Point(14, 567);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(129, 25);
 			this->label2->TabIndex = 44;
 			this->label2->Text = L"Save Changes";
 			// 
-			// button14
+			// btSave
 			// 
-			this->button14->BackColor = System::Drawing::Color::Transparent;
-			this->button14->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button14.BackgroundImage")));
-			this->button14->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->button14->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btSave->BackColor = System::Drawing::Color::Transparent;
+			this->btSave->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btSave.BackgroundImage")));
+			this->btSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->btSave->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->button14->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
+			this->btSave->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->button14->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
+			this->btSave->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
-			this->button14->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button14->Location = System::Drawing::Point(1126, 15);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(73, 78);
-			this->button14->TabIndex = 43;
-			this->button14->UseVisualStyleBackColor = false;
-			this->button14->Click += gcnew System::EventHandler(this, &Schedule::button14_Click);
-			// 
-			// panel9
-			// 
-			this->panel9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel9->Controls->Add(this->tbSun);
-			this->panel9->Location = System::Drawing::Point(706, 481);
-			this->panel9->Name = L"panel9";
-			this->panel9->Size = System::Drawing::Size(312, 36);
-			this->panel9->TabIndex = 26;
-			// 
-			// tbSun
-			// 
-			this->tbSun->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbSun->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbSun->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 18.25F));
-			this->tbSun->ForeColor = System::Drawing::Color::Silver;
-			this->tbSun->Location = System::Drawing::Point(30, 1);
-			this->tbSun->Name = L"tbSun";
-			this->tbSun->Size = System::Drawing::Size(262, 33);
-			this->tbSun->TabIndex = 0;
-			this->tbSun->Text = L"Time (eg 10am - 4pm)";
-			this->tbSun->Enter += gcnew System::EventHandler(this, &Schedule::tbSun_Enter);
-			this->tbSun->Leave += gcnew System::EventHandler(this, &Schedule::tbSun_Leave);
-			// 
-			// panel8
-			// 
-			this->panel8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel8->Controls->Add(this->tbSat);
-			this->panel8->Location = System::Drawing::Point(706, 429);
-			this->panel8->Name = L"panel8";
-			this->panel8->Size = System::Drawing::Size(312, 36);
-			this->panel8->TabIndex = 26;
-			// 
-			// tbSat
-			// 
-			this->tbSat->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbSat->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbSat->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 18.25F));
-			this->tbSat->ForeColor = System::Drawing::Color::Silver;
-			this->tbSat->Location = System::Drawing::Point(30, 1);
-			this->tbSat->Name = L"tbSat";
-			this->tbSat->Size = System::Drawing::Size(262, 33);
-			this->tbSat->TabIndex = 0;
-			this->tbSat->Text = L"Time (eg 10am - 4pm)";
-			this->tbSat->Enter += gcnew System::EventHandler(this, &Schedule::tbSat_Enter);
-			this->tbSat->Leave += gcnew System::EventHandler(this, &Schedule::tbSat_Leave);
-			// 
-			// panel7
-			// 
-			this->panel7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel7->Controls->Add(this->tbFri);
-			this->panel7->Location = System::Drawing::Point(706, 378);
-			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(312, 36);
-			this->panel7->TabIndex = 26;
-			// 
-			// tbFri
-			// 
-			this->tbFri->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbFri->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbFri->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 18.25F));
-			this->tbFri->ForeColor = System::Drawing::Color::Silver;
-			this->tbFri->Location = System::Drawing::Point(30, 1);
-			this->tbFri->Name = L"tbFri";
-			this->tbFri->Size = System::Drawing::Size(262, 33);
-			this->tbFri->TabIndex = 0;
-			this->tbFri->Text = L"Time (eg 10am - 4pm)";
-			this->tbFri->Enter += gcnew System::EventHandler(this, &Schedule::tbFri_Enter);
-			this->tbFri->Leave += gcnew System::EventHandler(this, &Schedule::tbFri_Leave);
-			// 
-			// panel6
-			// 
-			this->panel6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel6->Controls->Add(this->tbThur);
-			this->panel6->Location = System::Drawing::Point(706, 327);
-			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(312, 36);
-			this->panel6->TabIndex = 26;
-			// 
-			// tbThur
-			// 
-			this->tbThur->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbThur->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbThur->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 18.25F));
-			this->tbThur->ForeColor = System::Drawing::Color::Silver;
-			this->tbThur->Location = System::Drawing::Point(30, 1);
-			this->tbThur->Name = L"tbThur";
-			this->tbThur->Size = System::Drawing::Size(262, 33);
-			this->tbThur->TabIndex = 0;
-			this->tbThur->Text = L"Time (eg 10am - 4pm)";
-			this->tbThur->Enter += gcnew System::EventHandler(this, &Schedule::tbThur_Enter);
-			this->tbThur->Leave += gcnew System::EventHandler(this, &Schedule::tbThur_Leave);
-			// 
-			// panel5
-			// 
-			this->panel5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel5->Controls->Add(this->tbWed);
-			this->panel5->Location = System::Drawing::Point(706, 276);
-			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(312, 36);
-			this->panel5->TabIndex = 26;
-			// 
-			// tbWed
-			// 
-			this->tbWed->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbWed->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbWed->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 18.25F));
-			this->tbWed->ForeColor = System::Drawing::Color::Silver;
-			this->tbWed->Location = System::Drawing::Point(30, 1);
-			this->tbWed->Name = L"tbWed";
-			this->tbWed->Size = System::Drawing::Size(262, 33);
-			this->tbWed->TabIndex = 0;
-			this->tbWed->Text = L"Time (eg 10am - 4pm)";
-			this->tbWed->Enter += gcnew System::EventHandler(this, &Schedule::tbWed_Enter);
-			this->tbWed->Leave += gcnew System::EventHandler(this, &Schedule::tbWed_Leave);
-			// 
-			// panel3
-			// 
-			this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel3->Controls->Add(this->tbTue);
-			this->panel3->Location = System::Drawing::Point(706, 224);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(312, 36);
-			this->panel3->TabIndex = 26;
-			// 
-			// tbTue
-			// 
-			this->tbTue->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbTue->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbTue->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 18.25F));
-			this->tbTue->ForeColor = System::Drawing::Color::Silver;
-			this->tbTue->Location = System::Drawing::Point(30, 1);
-			this->tbTue->Name = L"tbTue";
-			this->tbTue->Size = System::Drawing::Size(262, 33);
-			this->tbTue->TabIndex = 0;
-			this->tbTue->Text = L"Time (eg 10am - 4pm)";
-			this->tbTue->Enter += gcnew System::EventHandler(this, &Schedule::tbTue_Enter);
-			this->tbTue->Leave += gcnew System::EventHandler(this, &Schedule::tbTue_Leave);
+			this->btSave->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btSave->Location = System::Drawing::Point(41, 500);
+			this->btSave->Name = L"btSave";
+			this->btSave->Size = System::Drawing::Size(73, 78);
+			this->btSave->TabIndex = 43;
+			this->btSave->UseVisualStyleBackColor = false;
+			this->btSave->Click += gcnew System::EventHandler(this, &Schedule::btSave_Click);
 			// 
 			// lbSunday
 			// 
@@ -487,7 +720,7 @@ namespace HospitalManagement {
 			this->lbSunday->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbSunday->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbSunday->Location = System::Drawing::Point(454, 482);
+			this->lbSunday->Location = System::Drawing::Point(578, 510);
 			this->lbSunday->Name = L"lbSunday";
 			this->lbSunday->Size = System::Drawing::Size(200, 36);
 			this->lbSunday->TabIndex = 31;
@@ -500,7 +733,7 @@ namespace HospitalManagement {
 			this->lbSaturday->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbSaturday->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbSaturday->Location = System::Drawing::Point(454, 430);
+			this->lbSaturday->Location = System::Drawing::Point(578, 450);
 			this->lbSaturday->Name = L"lbSaturday";
 			this->lbSaturday->Size = System::Drawing::Size(200, 36);
 			this->lbSaturday->TabIndex = 32;
@@ -513,7 +746,7 @@ namespace HospitalManagement {
 			this->lbFriday->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbFriday->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbFriday->Location = System::Drawing::Point(454, 379);
+			this->lbFriday->Location = System::Drawing::Point(578, 390);
 			this->lbFriday->Name = L"lbFriday";
 			this->lbFriday->Size = System::Drawing::Size(200, 36);
 			this->lbFriday->TabIndex = 33;
@@ -526,7 +759,7 @@ namespace HospitalManagement {
 			this->lbThursday->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbThursday->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbThursday->Location = System::Drawing::Point(454, 328);
+			this->lbThursday->Location = System::Drawing::Point(578, 330);
 			this->lbThursday->Name = L"lbThursday";
 			this->lbThursday->Size = System::Drawing::Size(200, 36);
 			this->lbThursday->TabIndex = 34;
@@ -539,7 +772,7 @@ namespace HospitalManagement {
 			this->lbWednesday->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbWednesday->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbWednesday->Location = System::Drawing::Point(454, 277);
+			this->lbWednesday->Location = System::Drawing::Point(578, 270);
 			this->lbWednesday->Name = L"lbWednesday";
 			this->lbWednesday->Size = System::Drawing::Size(200, 36);
 			this->lbWednesday->TabIndex = 35;
@@ -552,7 +785,7 @@ namespace HospitalManagement {
 			this->lbTuesday->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbTuesday->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbTuesday->Location = System::Drawing::Point(454, 225);
+			this->lbTuesday->Location = System::Drawing::Point(578, 210);
 			this->lbTuesday->Name = L"lbTuesday";
 			this->lbTuesday->Size = System::Drawing::Size(200, 36);
 			this->lbTuesday->TabIndex = 36;
@@ -565,121 +798,96 @@ namespace HospitalManagement {
 			this->lbMonday->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbMonday->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->lbMonday->Location = System::Drawing::Point(454, 171);
+			this->lbMonday->Location = System::Drawing::Point(578, 150);
 			this->lbMonday->Name = L"lbMonday";
 			this->lbMonday->Size = System::Drawing::Size(200, 36);
 			this->lbMonday->TabIndex = 30;
 			this->lbMonday->Text = L"10am - 4pm";
 			this->lbMonday->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// label14
+			// lbSun
 			// 
-			this->label14->BackColor = System::Drawing::Color::Transparent;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
-			this->label14->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label14->Location = System::Drawing::Point(266, 482);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(182, 36);
-			this->label14->TabIndex = 28;
-			this->label14->Text = L"Sunday :";
-			this->label14->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lbSun->BackColor = System::Drawing::Color::Transparent;
+			this->lbSun->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
+			this->lbSun->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->lbSun->Location = System::Drawing::Point(390, 510);
+			this->lbSun->Name = L"lbSun";
+			this->lbSun->Size = System::Drawing::Size(182, 36);
+			this->lbSun->TabIndex = 28;
+			this->lbSun->Text = L"Sunday :";
+			this->lbSun->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
-			// label13
+			// lbSat
 			// 
-			this->label13->BackColor = System::Drawing::Color::Transparent;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
-			this->label13->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label13->Location = System::Drawing::Point(266, 430);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(182, 36);
-			this->label13->TabIndex = 28;
-			this->label13->Text = L"Saturday :";
-			this->label13->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lbSat->BackColor = System::Drawing::Color::Transparent;
+			this->lbSat->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
+			this->lbSat->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->lbSat->Location = System::Drawing::Point(390, 450);
+			this->lbSat->Name = L"lbSat";
+			this->lbSat->Size = System::Drawing::Size(182, 36);
+			this->lbSat->TabIndex = 28;
+			this->lbSat->Text = L"Saturday :";
+			this->lbSat->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
-			// label12
+			// lbFri
 			// 
-			this->label12->BackColor = System::Drawing::Color::Transparent;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
-			this->label12->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label12->Location = System::Drawing::Point(266, 379);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(182, 36);
-			this->label12->TabIndex = 28;
-			this->label12->Text = L"Friday :";
-			this->label12->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lbFri->BackColor = System::Drawing::Color::Transparent;
+			this->lbFri->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
+			this->lbFri->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->lbFri->Location = System::Drawing::Point(390, 390);
+			this->lbFri->Name = L"lbFri";
+			this->lbFri->Size = System::Drawing::Size(182, 36);
+			this->lbFri->TabIndex = 28;
+			this->lbFri->Text = L"Friday :";
+			this->lbFri->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
-			// label11
+			// lbThur
 			// 
-			this->label11->BackColor = System::Drawing::Color::Transparent;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
-			this->label11->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label11->Location = System::Drawing::Point(266, 328);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(182, 36);
-			this->label11->TabIndex = 28;
-			this->label11->Text = L"Thursday :";
-			this->label11->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lbThur->BackColor = System::Drawing::Color::Transparent;
+			this->lbThur->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
+			this->lbThur->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->lbThur->Location = System::Drawing::Point(390, 330);
+			this->lbThur->Name = L"lbThur";
+			this->lbThur->Size = System::Drawing::Size(182, 36);
+			this->lbThur->TabIndex = 28;
+			this->lbThur->Text = L"Thursday :";
+			this->lbThur->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
-			// label10
+			// lbWed
 			// 
-			this->label10->BackColor = System::Drawing::Color::Transparent;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
-			this->label10->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label10->Location = System::Drawing::Point(266, 277);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(182, 36);
-			this->label10->TabIndex = 28;
-			this->label10->Text = L"Wednesday :";
-			this->label10->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lbWed->BackColor = System::Drawing::Color::Transparent;
+			this->lbWed->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
+			this->lbWed->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->lbWed->Location = System::Drawing::Point(390, 270);
+			this->lbWed->Name = L"lbWed";
+			this->lbWed->Size = System::Drawing::Size(182, 36);
+			this->lbWed->TabIndex = 28;
+			this->lbWed->Text = L"Wednesday :";
+			this->lbWed->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
-			// label7
+			// lbTue
 			// 
-			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
-			this->label7->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label7->Location = System::Drawing::Point(266, 225);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(182, 36);
-			this->label7->TabIndex = 28;
-			this->label7->Text = L"Tuesday :";
-			this->label7->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lbTue->BackColor = System::Drawing::Color::Transparent;
+			this->lbTue->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
+			this->lbTue->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->lbTue->Location = System::Drawing::Point(390, 210);
+			this->lbTue->Name = L"lbTue";
+			this->lbTue->Size = System::Drawing::Size(182, 36);
+			this->lbTue->TabIndex = 28;
+			this->lbTue->Text = L"Tuesday :";
+			this->lbTue->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
-			// label1
+			// lbMon
 			// 
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
-			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label1->Location = System::Drawing::Point(266, 171);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(182, 36);
-			this->label1->TabIndex = 26;
-			this->label1->Text = L"Monday :";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
-			// 
-			// panel4
-			// 
-			this->panel4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->panel4->Controls->Add(this->tbMon);
-			this->panel4->Location = System::Drawing::Point(706, 170);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(312, 36);
-			this->panel4->TabIndex = 25;
-			// 
-			// tbMon
-			// 
-			this->tbMon->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(15)), static_cast<System::Int32>(static_cast<System::Byte>(50)),
-				static_cast<System::Int32>(static_cast<System::Byte>(69)));
-			this->tbMon->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->tbMon->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Text", 18.25F));
-			this->tbMon->ForeColor = System::Drawing::Color::Silver;
-			this->tbMon->Location = System::Drawing::Point(30, 1);
-			this->tbMon->Name = L"tbMon";
-			this->tbMon->Size = System::Drawing::Size(262, 33);
-			this->tbMon->TabIndex = 0;
-			this->tbMon->Text = L"Time (eg 10am - 4pm)";
-			this->tbMon->Enter += gcnew System::EventHandler(this, &Schedule::tbMon_Enter);
-			this->tbMon->Leave += gcnew System::EventHandler(this, &Schedule::tbMon_Leave);
+			this->lbMon->BackColor = System::Drawing::Color::Transparent;
+			this->lbMon->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 20, System::Drawing::FontStyle::Bold));
+			this->lbMon->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->lbMon->Location = System::Drawing::Point(390, 150);
+			this->lbMon->Name = L"lbMon";
+			this->lbMon->Size = System::Drawing::Size(182, 36);
+			this->lbMon->TabIndex = 26;
+			this->lbMon->Text = L"Monday :";
+			this->lbMon->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			// 
 			// label8
 			// 
@@ -688,7 +896,7 @@ namespace HospitalManagement {
 			this->label8->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label8->Location = System::Drawing::Point(290, 60);
+			this->label8->Location = System::Drawing::Point(280, 40);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(700, 64);
 			this->label8->TabIndex = 19;
@@ -702,6 +910,7 @@ namespace HospitalManagement {
 			this->ClientSize = System::Drawing::Size(1264, 681);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"Schedule";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Schedule";
@@ -710,25 +919,75 @@ namespace HospitalManagement {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
-			this->panel9->ResumeLayout(false);
-			this->panel9->PerformLayout();
-			this->panel8->ResumeLayout(false);
-			this->panel8->PerformLayout();
-			this->panel7->ResumeLayout(false);
-			this->panel7->PerformLayout();
-			this->panel6->ResumeLayout(false);
-			this->panel6->PerformLayout();
-			this->panel5->ResumeLayout(false);
-			this->panel5->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
-			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+		String^ connString = "Data Source=localhost\\sqlexpress;Initial Catalog=test;Integrated Security=True;";
+		SqlConnection^ sqlConn = gcnew SqlConnection(connString);
+
+		void ShowEditor(String^ choice) {
+			lbMon->Location = Point(140, 150);
+			lbTue->Location = Point(140, 210);
+			lbWed->Location = Point(140, 270);
+			lbThur->Location = Point(140, 330);
+			lbFri->Location = Point(140, 390);
+			lbSat->Location = Point(140, 450);
+			lbSun->Location = Point(140, 510);
+			lbMonday->Location = Point(348, 150);
+			lbTuesday->Location = Point(348, 210);
+			lbWednesday->Location = Point(348, 270);
+			lbThursday->Location = Point(348, 330);
+			lbFriday->Location = Point(348, 390);
+			lbSaturday->Location = Point(348, 450);
+			lbSunday->Location = Point(348, 510);
+			btMon->Location = Point(540, 140);
+			btTue->Location = Point(540, 200);
+			btWed->Location = Point(540, 260);
+			btThur->Location = Point(540, 320);
+			btFri->Location = Point(540, 380);
+			btSat->Location = Point(540, 440);
+			btSun->Location = Point(540, 500);
+
+			label8->Location = Point(30, 40);
+
+			lbEdit->Text += choice;
+
+			panel3->Visible = true;
+		}
+		void HideEditor() {
+			lbMon->Location = Point(140+250, 150);
+			lbTue->Location = Point(140 + 250, 210);
+			lbWed->Location = Point(140 + 250, 270);
+			lbThur->Location = Point(140 + 250, 330);
+			lbFri->Location = Point(140 + 250, 390);
+			lbSat->Location = Point(140 + 250, 450);
+			lbSun->Location = Point(140 + 250, 510);
+			lbMonday->Location = Point(348 + 250, 150);
+			lbTuesday->Location = Point(348 + 250, 210);
+			lbWednesday->Location = Point(348 + 250, 270);
+			lbThursday->Location = Point(348 + 250, 330);
+			lbFriday->Location = Point(348 + 250, 390);
+			lbSaturday->Location = Point(348 + 250, 450);
+			lbSunday->Location = Point(348 + 250, 510);
+			btMon->Location = Point(540 + 250, 140);
+			btTue->Location = Point(540 + 250, 200);
+			btWed->Location = Point(540 + 250, 260);
+			btThur->Location = Point(540 + 250, 320);
+			btFri->Location = Point(540 + 250, 380);
+			btSat->Location = Point(540 + 250, 440);
+			btSun->Location = Point(540 + 250, 500);
+
+			label8->Location = Point(280, 40);
+
+			lbEdit->Text = "Edit ";
+
+			panel3->Visible = false;
+		}
 	private:
+		String^ choice = nullptr;
 		String^ mon = nullptr;
 		String^ tue = nullptr;
 		String^ wed = nullptr;
@@ -736,137 +995,30 @@ namespace HospitalManagement {
 		String^ fri = nullptr;
 		String^ sat = nullptr;
 		String^ sun = nullptr;
-	private: System::Void tbMon_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (tbMon->Text == "Time (eg 10am - 4pm)") {
-			tbMon->Text = "";
-		}
-	}	
-	private: System::Void tbMon_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (tbMon->Text == "") {
-			tbMon->Text = "Time (eg 10am - 4pm)";
-		}
-	}
-	private: System::Void tbTue_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (tbTue->Text == "Time (eg 10am - 4pm)") {
-			tbTue->Text = "";
-		}
-	}
-	private: System::Void tbTue_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (tbTue->Text == "") {
-			tbTue->Text = "Time (eg 10am - 4pm)";
-		}
-	}
-	private: System::Void tbWed_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (tbWed->Text == "Time (eg 10am - 4pm)") {
-			tbWed->Text = "";
-		}
-	}
-	private: System::Void tbWed_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (tbWed->Text == "") {
-			tbWed->Text = "Time (eg 10am - 4pm)";
-		}
-	}
-	private: System::Void tbThur_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (tbThur->Text == "Time (eg 10am - 4pm)") {
-			tbThur->Text = "";
-		}
-	}
-	private: System::Void tbThur_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (tbThur->Text == "") {
-			tbThur->Text = "Time (eg 10am - 4pm)";
-		}
-	}
-	private: System::Void tbFri_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (tbFri->Text == "Time (eg 10am - 4pm)") {
-			tbFri->Text = "";
-		}
-	}
-	private: System::Void tbFri_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (tbFri->Text == "") {
-			tbFri->Text = "Time (eg 10am - 4pm)";
-		}
-	}
-	private: System::Void tbSat_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (tbSat->Text == "Time (eg 10am - 4pm)") {
-			tbSat->Text = "";
-		}
-	}
-	private: System::Void tbSat_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (tbSat->Text == "") {
-			tbSat->Text = "Time (eg 10am - 4pm)";
-		}
-	}
-	private: System::Void tbSun_Enter(System::Object^ sender, System::EventArgs^ e) {
-		if (tbSun->Text == "Time (eg 10am - 4pm)") {
-			tbSun->Text = "";
-		}
-	}
-	private: System::Void tbSun_Leave(System::Object^ sender, System::EventArgs^ e) {
-		if (tbSun->Text == "") {
-			tbSun->Text = "Time (eg 10am - 4pm)";
-		}
-	}
 	private: System::Void btProfile_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ connString = "Data Source=localhost\\sqlexpress;Initial Catalog=test;Integrated Security=True;";
-		SqlConnection^ sqlConn = gcnew SqlConnection(connString);
+	private: System::Void btSave_Click(System::Object^ sender, System::EventArgs^ e) {
+		mon = lbMonday->Text;
+		tue = lbTuesday->Text;
+		wed = lbWednesday->Text;
+		thur = lbThursday->Text;
+		fri = lbFriday->Text;
+		sat = lbSaturday->Text;
+		sun = lbSunday->Text;
+		try{
+			String^ sqlQuery = "UPDATE Doctor SET monday = @mon, tuesday = @tue, wednesday = @wed, thursday = @thur, friday = @fri, saturday = @sat, sunday = @sun WHERE Id = @id";
+			SqlCommand^ command = gcnew SqlCommand(sqlQuery, sqlConn);
 
-		try {
 			sqlConn->Open();
 
-			String^ sqlQuery = "UPDATE Doctor SET ";
-			List<String^>^ updates = gcnew List<String^>();
-
-			SqlCommand^ command = gcnew SqlCommand();
-			command->Connection = sqlConn;
-
-			if (tbMon->Text != "Time (eg 10am - 4pm)") {
-				updates->Add("monday = @mon");
-				command->Parameters->AddWithValue("@mon", tbMon->Text);
-				currentDoctor->mon = tbMon->Text;
-			}
-			if (tbTue->Text != "Time (eg 10am - 4pm)") {
-				updates->Add("tuesday = @tue");
-				command->Parameters->AddWithValue("@tue", tbTue->Text);
-				currentDoctor->tue = tbTue->Text;
-			}
-			if (tbWed->Text != "Time (eg 10am - 4pm)") {
-				updates->Add("wednesday = @wed");
-				command->Parameters->AddWithValue("@wed", tbWed->Text);
-				currentDoctor->wed = tbWed->Text;
-			}
-			if (tbThur->Text != "Time (eg 10am - 4pm)") {
-				updates->Add("thursday = @thur");
-				command->Parameters->AddWithValue("@thur", tbThur->Text);
-				currentDoctor->thur = tbThur->Text;
-			}
-			if (tbFri->Text != "Time (eg 10am - 4pm)") {
-				updates->Add("friday = @fri");
-				command->Parameters->AddWithValue("@fri", tbFri->Text);
-				currentDoctor->fri = tbFri->Text;
-			}
-			if (tbSat->Text != "Time (eg 10am - 4pm)") {
-				updates->Add("saturday = @sat");
-				command->Parameters->AddWithValue("@sat", tbSat->Text);
-				currentDoctor->sat = tbSat->Text;
-			}
-			if (tbSun->Text != "Time (eg 10am - 4pm)") {
-				updates->Add("sunday = @sun");
-				command->Parameters->AddWithValue("@sun", tbSun->Text);
-				currentDoctor->sun = tbSun->Text;
-			}
-
-			if (updates->Count == 0) {
-				MessageBox::Show("No fields changed.");
-				sqlConn->Close();
-				return;
-			}
-
-			sqlQuery += String::Join(", ", updates);
-			sqlQuery += " WHERE Id = @id";
-			command->CommandText = sqlQuery;
+			command->Parameters->AddWithValue("@mon", mon);
+			command->Parameters->AddWithValue("@tue", tue);
+			command->Parameters->AddWithValue("@wed", wed);
+			command->Parameters->AddWithValue("@thur", thur);
+			command->Parameters->AddWithValue("@fri", fri);
+			command->Parameters->AddWithValue("@sat", sat);
+			command->Parameters->AddWithValue("@sun", sun);
 			command->Parameters->AddWithValue("@id", currentDoctor->id);
 
 			command->ExecuteNonQuery();
@@ -874,16 +1026,71 @@ namespace HospitalManagement {
 			sqlConn->Close();
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show("Couldn't Connect to DataBase.\n" + ex->Message);
+			MessageBox::Show("Couldn't Connect to Database");
 		}
+		currentDoctor->mon = mon;
+		currentDoctor->tue = tue;
+		currentDoctor->wed = wed;
+		currentDoctor->thur = thur;
+		currentDoctor->fri = fri;
+		currentDoctor->sat = sat;
+		currentDoctor->sun = sun;
 
-		lbMonday->Text = currentDoctor->mon;
-		lbTuesday->Text = currentDoctor->tue;
-		lbWednesday->Text = currentDoctor->wed;
-		lbThursday->Text = currentDoctor->thur;
-		lbFriday->Text = currentDoctor->fri;
-		lbSaturday->Text = currentDoctor->sat;
-		lbSunday->Text = currentDoctor->sun;
+	}
+	private: System::Void btMon_Click(System::Object^ sender, System::EventArgs^ e) {
+		choice = "Monday";
+		ShowEditor(choice);
+	}
+	private: System::Void btTue_Click(System::Object^ sender, System::EventArgs^ e) {
+		choice = "Tuesday";
+		ShowEditor(choice);
+	}
+	private: System::Void btWed_Click(System::Object^ sender, System::EventArgs^ e) {
+		choice = "Wednesday";
+		ShowEditor(choice);
+	}
+	private: System::Void btThur_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		choice = "Thursday";
+		ShowEditor(choice);
+	}
+	private: System::Void btFri_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		choice = "Friday";
+		ShowEditor(choice);
+	}
+	private: System::Void btSat_Click(System::Object^ sender, System::EventArgs^ e) {
+		choice = "Saturday";
+		ShowEditor(choice);
+	}
+	private: System::Void btSun_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		choice = "Sunday";
+		ShowEditor(choice);
+	}
+	private: System::Void btConfirm_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ time = startTime->SelectedItem->ToString() + start->SelectedItem->ToString() + " - " + endTime->SelectedItem->ToString() + end->SelectedItem->ToString();
+
+		if (cbNotAvailable->Checked == true)
+			time = "N/A";
+
+		if (choice == "Monday")
+			lbMonday->Text = time;
+		else if (choice == "Tuesday")
+			lbTuesday->Text = time;
+		else if (choice == "Wednesday")
+			lbWednesday->Text = time;
+		else if (choice == "Thursday")
+			lbThursday->Text = time;
+		else if (choice == "Friday")
+			lbFriday->Text = time;
+		else if (choice == "Saturday")
+			lbSaturday->Text = time;
+		else if (choice == "Sunday")
+			lbSunday->Text = time;
+
+		HideEditor();
+	}
+	private: System::Void btDiscard_Click(System::Object^ sender, System::EventArgs^ e) {
+		choice = nullptr;
+		HideEditor();
 	}
 };
 }

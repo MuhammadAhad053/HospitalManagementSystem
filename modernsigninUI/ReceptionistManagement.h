@@ -364,12 +364,21 @@ namespace HospitalManagement {
 
 		void LoadData() {
 			sqlConn->Open();
-			adapter = gcnew SqlDataAdapter("SELECT * FROM Doctor", sqlConn);
+			adapter = gcnew SqlDataAdapter("SELECT firstName, lastName, gender, dateofBirth, phoneNumber, email FROM Receptionist", sqlConn);
 			SqlCommandBuilder^ builder = gcnew SqlCommandBuilder(adapter);
 
 			table = gcnew DataTable();
 			adapter->Fill(table);
 			dataView->DataSource = table;
+
+			dataView->Columns["firstName"]->HeaderText = "First Name";
+			dataView->Columns["lastName"]->HeaderText = "Last Name";
+			dataView->Columns["gender"]->HeaderText = "Gender";
+			dataView->Columns["dateofBirth"]->HeaderText = "Date of Birth";
+			dataView->Columns["phoneNumber"]->HeaderText = "Phone Number";
+			dataView->Columns["email"]->HeaderText = "Email";
+
+			dataView->ClearSelection();
 
 			sqlConn->Close();
 		}
