@@ -68,7 +68,7 @@ namespace HospitalManagement {
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Button^ buttonBalance;
 
-	private: System::Windows::Forms::Button^ buttonPatients;
+
 
 	private: System::Windows::Forms::Label^ labelName;
 
@@ -124,7 +124,6 @@ namespace HospitalManagement {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->buttonBalance = (gcnew System::Windows::Forms::Button());
 			this->buttonAppointments = (gcnew System::Windows::Forms::Button());
-			this->buttonPatients = (gcnew System::Windows::Forms::Button());
 			this->panelProfile = (gcnew System::Windows::Forms::Panel());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->labelUserID = (gcnew System::Windows::Forms::Label());
@@ -223,7 +222,6 @@ namespace HospitalManagement {
 			this->panelMain->Controls->Add(this->panel1);
 			this->panelMain->Controls->Add(this->buttonBalance);
 			this->panelMain->Controls->Add(this->buttonAppointments);
-			this->panelMain->Controls->Add(this->buttonPatients);
 			this->panelMain->Location = System::Drawing::Point(0, 70);
 			this->panelMain->Name = L"panelMain";
 			this->panelMain->Size = System::Drawing::Size(1264, 611);
@@ -293,7 +291,7 @@ namespace HospitalManagement {
 			this->buttonBalance->ForeColor = System::Drawing::Color::White;
 			this->buttonBalance->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonBalance.Image")));
 			this->buttonBalance->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonBalance->Location = System::Drawing::Point(414, 357);
+			this->buttonBalance->Location = System::Drawing::Point(413, 270);
 			this->buttonBalance->Name = L"buttonBalance";
 			this->buttonBalance->Size = System::Drawing::Size(785, 115);
 			this->buttonBalance->TabIndex = 0;
@@ -315,34 +313,12 @@ namespace HospitalManagement {
 			this->buttonAppointments->ForeColor = System::Drawing::Color::White;
 			this->buttonAppointments->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonAppointments.Image")));
 			this->buttonAppointments->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonAppointments->Location = System::Drawing::Point(415, 199);
+			this->buttonAppointments->Location = System::Drawing::Point(414, 112);
 			this->buttonAppointments->Name = L"buttonAppointments";
 			this->buttonAppointments->Size = System::Drawing::Size(785, 115);
 			this->buttonAppointments->TabIndex = 0;
 			this->buttonAppointments->Text = L"View booked Appointments";
 			this->buttonAppointments->UseVisualStyleBackColor = false;
-			// 
-			// buttonPatients
-			// 
-			this->buttonPatients->BackColor = System::Drawing::Color::Transparent;
-			this->buttonPatients->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->buttonPatients->FlatAppearance->BorderSize = 2;
-			this->buttonPatients->FlatAppearance->MouseDownBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(25)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(79)));
-			this->buttonPatients->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(20)),
-				static_cast<System::Int32>(static_cast<System::Byte>(55)), static_cast<System::Int32>(static_cast<System::Byte>(74)));
-			this->buttonPatients->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonPatients->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
-			this->buttonPatients->ForeColor = System::Drawing::Color::White;
-			this->buttonPatients->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonPatients.Image")));
-			this->buttonPatients->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonPatients->Location = System::Drawing::Point(415, 43);
-			this->buttonPatients->Name = L"buttonPatients";
-			this->buttonPatients->Size = System::Drawing::Size(785, 115);
-			this->buttonPatients->TabIndex = 0;
-			this->buttonPatients->Text = L"View list of scheduled Patients";
-			this->buttonPatients->UseVisualStyleBackColor = false;
 			// 
 			// panelProfile
 			// 

@@ -334,7 +334,7 @@ namespace HospitalManagement {
 			this->buttonBookAppointment->Name = L"buttonBookAppointment";
 			this->buttonBookAppointment->Size = System::Drawing::Size(773, 115);
 			this->buttonBookAppointment->TabIndex = 0;
-			this->buttonBookAppointment->Text = L"Book an Appointment with available Doctors";
+			this->buttonBookAppointment->Text = L"View your Booked Appointments";
 			this->buttonBookAppointment->UseVisualStyleBackColor = false;
 			// 
 			// buttonDoctorList
