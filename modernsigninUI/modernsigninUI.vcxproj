@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClCompile Include="AdminDashboard.cpp" />
     <ClCompile Include="Appointment.cpp" />
+    <ClCompile Include="BookAppointment.cpp" />
     <ClCompile Include="DoctorDashboard.cpp" />
     <ClCompile Include="DoctorList.cpp" />
     <ClCompile Include="DoctorManagement.cpp" />
@@ -145,6 +146,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Appointment.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BookAppointment.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Doctor.h" />
@@ -200,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Appointment.resx">
       <DependentUpon>Appointment.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookAppointment.resx">
+      <DependentUpon>BookAppointment.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorDashboard.resx">
       <DependentUpon>DoctorDashboard.h</DependentUpon>

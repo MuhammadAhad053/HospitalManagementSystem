@@ -371,11 +371,11 @@ namespace HospitalManagement {
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
 			this->button5->ForeColor = System::Drawing::Color::Black;
-			this->button5->Location = System::Drawing::Point(355, 65);
+			this->button5->Location = System::Drawing::Point(307, 65);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(69, 32);
+			this->button5->Size = System::Drawing::Size(117, 32);
 			this->button5->TabIndex = 40;
-			this->button5->Text = L"Book";
+			this->button5->Text = L"View Timings";
 			this->button5->UseVisualStyleBackColor = false;
 			// 
 			// label23
@@ -453,11 +453,11 @@ namespace HospitalManagement {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
 			this->button2->ForeColor = System::Drawing::Color::Black;
-			this->button2->Location = System::Drawing::Point(355, 65);
+			this->button2->Location = System::Drawing::Point(307, 65);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(69, 32);
+			this->button2->Size = System::Drawing::Size(117, 32);
 			this->button2->TabIndex = 40;
-			this->button2->Text = L"Book";
+			this->button2->Text = L"View Timings";
 			this->button2->UseVisualStyleBackColor = false;
 			// 
 			// label14
@@ -535,11 +535,11 @@ namespace HospitalManagement {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
 			this->button4->ForeColor = System::Drawing::Color::Black;
-			this->button4->Location = System::Drawing::Point(355, 65);
+			this->button4->Location = System::Drawing::Point(307, 65);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(69, 32);
+			this->button4->Size = System::Drawing::Size(117, 32);
 			this->button4->TabIndex = 40;
-			this->button4->Text = L"Book";
+			this->button4->Text = L"View Timings";
 			this->button4->UseVisualStyleBackColor = false;
 			// 
 			// label20
@@ -617,11 +617,11 @@ namespace HospitalManagement {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
 			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(355, 65);
+			this->button1->Location = System::Drawing::Point(307, 65);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(69, 32);
+			this->button1->Size = System::Drawing::Size(117, 32);
 			this->button1->TabIndex = 40;
-			this->button1->Text = L"Book";
+			this->button1->Text = L"View Timings";
 			this->button1->UseVisualStyleBackColor = false;
 			// 
 			// label10
@@ -699,11 +699,11 @@ namespace HospitalManagement {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
 			this->button3->ForeColor = System::Drawing::Color::Black;
-			this->button3->Location = System::Drawing::Point(355, 65);
+			this->button3->Location = System::Drawing::Point(307, 65);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(69, 32);
+			this->button3->Size = System::Drawing::Size(117, 32);
 			this->button3->TabIndex = 40;
-			this->button3->Text = L"Book";
+			this->button3->Text = L"View Timings";
 			this->button3->UseVisualStyleBackColor = false;
 			// 
 			// label17
@@ -781,11 +781,11 @@ namespace HospitalManagement {
 			this->btnSignIn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnSignIn->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 11.25F));
 			this->btnSignIn->ForeColor = System::Drawing::Color::Black;
-			this->btnSignIn->Location = System::Drawing::Point(355, 65);
+			this->btnSignIn->Location = System::Drawing::Point(307, 65);
 			this->btnSignIn->Name = L"btnSignIn";
-			this->btnSignIn->Size = System::Drawing::Size(69, 32);
+			this->btnSignIn->Size = System::Drawing::Size(117, 32);
 			this->btnSignIn->TabIndex = 40;
-			this->btnSignIn->Text = L"Book";
+			this->btnSignIn->Text = L"View Timings";
 			this->btnSignIn->UseVisualStyleBackColor = false;
 			// 
 			// label8

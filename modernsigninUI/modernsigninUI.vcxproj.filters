@@ -66,6 +66,9 @@
     <ClCompile Include="Appointment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BookAppointment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Appointment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BookAppointment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
