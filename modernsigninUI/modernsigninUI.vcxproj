@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdminDashboard.cpp" />
+    <ClCompile Include="Appointment Management.cpp" />
     <ClCompile Include="Appointment.cpp" />
     <ClCompile Include="BookAppointment.cpp" />
     <ClCompile Include="DoctorDashboard.cpp" />
@@ -129,6 +130,8 @@
     <ClCompile Include="DoctorManagement.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="LoginForm.cpp" />
+    <ClCompile Include="MyAppointments.cpp" />
+    <ClCompile Include="PatientAppointments.cpp" />
     <ClCompile Include="PatientDashboard.cpp" />
     <ClCompile Include="PatientManagement.cpp" />
     <ClCompile Include="ReceptionistDashboard.cpp" />
@@ -145,10 +148,13 @@
     <ClInclude Include="AdminDashboard.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Appointment.h">
+    <ClInclude Include="AppointmentManagement.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="BookAppointment.h">
+    <ClInclude Include="Appointments.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AvailableAppointments.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Doctor.h" />
@@ -159,6 +165,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DoctorManagement.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DoctorAppointments.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PatientAppointments.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PatientList.h">
@@ -202,11 +214,14 @@
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Appointment.resx">
-      <DependentUpon>Appointment.h</DependentUpon>
+    <EmbeddedResource Include="AppointmentManagement.resx">
+      <DependentUpon>AppointmentManagement.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookAppointment.resx">
-      <DependentUpon>BookAppointment.h</DependentUpon>
+    <EmbeddedResource Include="Appointments.resx">
+      <DependentUpon>Appointments.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvailableAppointments.resx">
+      <DependentUpon>AvailableAppointments.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorDashboard.resx">
       <DependentUpon>DoctorDashboard.h</DependentUpon>
@@ -216,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorManagement.resx">
       <DependentUpon>DoctorManagement.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorAppointments.resx">
+      <DependentUpon>DoctorAppointments.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientAppointments.resx">
+      <DependentUpon>PatientAppointments.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientList.resx">
       <DependentUpon>PatientList.h</DependentUpon>
