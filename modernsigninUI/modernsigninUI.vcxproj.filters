@@ -78,6 +78,12 @@
     <ClCompile Include="PatientAppointments.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DoctorPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DoctorSchedule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LoginForm.h">
@@ -140,10 +146,10 @@
     <ClInclude Include="ScheduleManagement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Appointments.h">
+    <ClInclude Include="Appointment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AvailableAppointments.h">
+    <ClInclude Include="BookAppointment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DoctorAppointments.h">
@@ -153,6 +159,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PatientAppointments.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoctorPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoctorSchedule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

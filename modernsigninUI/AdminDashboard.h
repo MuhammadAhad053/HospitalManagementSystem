@@ -273,9 +273,9 @@ namespace HospitalManagement {
 			this->label7->ForeColor = System::Drawing::Color::White;
 			this->label7->Location = System::Drawing::Point(438, 56);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(119, 19);
+			this->label7->Size = System::Drawing::Size(310, 19);
 			this->label7->TabIndex = 6;
-			this->label7->Text = L"Danish is a charya\r\n";
+			this->label7->Text = L"Admin can manage every aspect of all User Types";
 			// 
 			// button6
 			// 

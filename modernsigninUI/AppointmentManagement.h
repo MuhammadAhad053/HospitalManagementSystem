@@ -76,6 +76,9 @@ namespace HospitalManagement {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AppointmentManagement::typeid));
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->rdPatient2 = (gcnew System::Windows::Forms::RadioButton());
+			this->rdDoctor2 = (gcnew System::Windows::Forms::RadioButton());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->panel8 = (gcnew System::Windows::Forms::Panel());
@@ -94,9 +97,6 @@ namespace HospitalManagement {
 			this->btProfile = (gcnew System::Windows::Forms::Button());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->rdPatient2 = (gcnew System::Windows::Forms::RadioButton());
-			this->rdDoctor2 = (gcnew System::Windows::Forms::RadioButton());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel3->SuspendLayout();
 			this->panel8->SuspendLayout();
 			this->panel5->SuspendLayout();
@@ -126,6 +126,50 @@ namespace HospitalManagement {
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(1264, 516);
 			this->panel3->TabIndex = 6;
+			// 
+			// rdPatient2
+			// 
+			this->rdPatient2->AutoSize = true;
+			this->rdPatient2->BackColor = System::Drawing::Color::Transparent;
+			this->rdPatient2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdPatient2->ForeColor = System::Drawing::Color::White;
+			this->rdPatient2->Location = System::Drawing::Point(718, 116);
+			this->rdPatient2->Name = L"rdPatient2";
+			this->rdPatient2->Size = System::Drawing::Size(77, 25);
+			this->rdPatient2->TabIndex = 44;
+			this->rdPatient2->TabStop = true;
+			this->rdPatient2->Text = L"Patient";
+			this->rdPatient2->UseVisualStyleBackColor = false;
+			// 
+			// rdDoctor2
+			// 
+			this->rdDoctor2->AutoSize = true;
+			this->rdDoctor2->BackColor = System::Drawing::Color::Transparent;
+			this->rdDoctor2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->rdDoctor2->ForeColor = System::Drawing::Color::White;
+			this->rdDoctor2->Location = System::Drawing::Point(635, 116);
+			this->rdDoctor2->Name = L"rdDoctor2";
+			this->rdDoctor2->Size = System::Drawing::Size(77, 25);
+			this->rdDoctor2->TabIndex = 43;
+			this->rdDoctor2->TabStop = true;
+			this->rdDoctor2->Text = L"Doctor";
+			this->rdDoctor2->UseVisualStyleBackColor = false;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
+			this->label1->Location = System::Drawing::Point(454, 116);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(158, 26);
+			this->label1->TabIndex = 42;
+			this->label1->Text = L"Select user type:";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// button2
 			// 
@@ -380,50 +424,6 @@ namespace HospitalManagement {
 			this->label4->Text = L"HMS\r\n";
 			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
-			// rdPatient2
-			// 
-			this->rdPatient2->AutoSize = true;
-			this->rdPatient2->BackColor = System::Drawing::Color::Transparent;
-			this->rdPatient2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->rdPatient2->ForeColor = System::Drawing::Color::White;
-			this->rdPatient2->Location = System::Drawing::Point(718, 116);
-			this->rdPatient2->Name = L"rdPatient2";
-			this->rdPatient2->Size = System::Drawing::Size(77, 25);
-			this->rdPatient2->TabIndex = 44;
-			this->rdPatient2->TabStop = true;
-			this->rdPatient2->Text = L"Patient";
-			this->rdPatient2->UseVisualStyleBackColor = false;
-			// 
-			// rdDoctor2
-			// 
-			this->rdDoctor2->AutoSize = true;
-			this->rdDoctor2->BackColor = System::Drawing::Color::Transparent;
-			this->rdDoctor2->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->rdDoctor2->ForeColor = System::Drawing::Color::White;
-			this->rdDoctor2->Location = System::Drawing::Point(635, 116);
-			this->rdDoctor2->Name = L"rdDoctor2";
-			this->rdDoctor2->Size = System::Drawing::Size(77, 25);
-			this->rdDoctor2->TabIndex = 43;
-			this->rdDoctor2->TabStop = true;
-			this->rdDoctor2->Text = L"Doctor";
-			this->rdDoctor2->UseVisualStyleBackColor = false;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Variable Display", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::ControlLight;
-			this->label1->Location = System::Drawing::Point(454, 116);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(158, 26);
-			this->label1->TabIndex = 42;
-			this->label1->Text = L"Select user type:";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			// 
 			// AppointmentManagement
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -433,6 +433,7 @@ namespace HospitalManagement {
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"AppointmentManagement";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"AppointmentManagement";
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();

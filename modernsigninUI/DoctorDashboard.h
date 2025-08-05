@@ -229,9 +229,9 @@ namespace HospitalManagement {
 			this->label7->ForeColor = System::Drawing::Color::White;
 			this->label7->Location = System::Drawing::Point(439, 58);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(119, 19);
+			this->label7->Size = System::Drawing::Size(278, 19);
 			this->label7->TabIndex = 6;
-			this->label7->Text = L"Danish is a charya\r\n";
+			this->label7->Text = L"You can view the list of all Schduled Patients";
 			// 
 			// buttonWallet
 			// 

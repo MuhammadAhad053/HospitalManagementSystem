@@ -1,6 +1,7 @@
 #pragma once
 #include "Wallet.h"
 #include "Patient.h"
+#include "Appointment.h"
 
 namespace HospitalManagement {
 
@@ -288,9 +289,9 @@ namespace HospitalManagement {
 			this->label7->ForeColor = System::Drawing::Color::White;
 			this->label7->Location = System::Drawing::Point(439, 71);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(119, 19);
+			this->label7->Size = System::Drawing::Size(460, 19);
 			this->label7->TabIndex = 6;
-			this->label7->Text = L"Danish is a charya";
+			this->label7->Text = L"You can book appointment with the best Doctors available in the Hospital";
 			// 
 			// buttonViewWallet
 			// 
@@ -336,6 +337,7 @@ namespace HospitalManagement {
 			this->buttonBookAppointment->TabIndex = 0;
 			this->buttonBookAppointment->Text = L"View your Booked Appointments";
 			this->buttonBookAppointment->UseVisualStyleBackColor = false;
+			this->buttonBookAppointment->Click += gcnew System::EventHandler(this, &PatientDashboard::buttonBookAppointment_Click);
 			// 
 			// buttonDoctorList
 			// 
@@ -358,6 +360,7 @@ namespace HospitalManagement {
 			this->buttonDoctorList->TabIndex = 0;
 			this->buttonDoctorList->Text = L"View list of available Doctors\r\n";
 			this->buttonDoctorList->UseVisualStyleBackColor = false;
+			this->buttonDoctorList->Click += gcnew System::EventHandler(this, &PatientDashboard::buttonDoctorList_Click);
 			// 
 			// panelProfile
 			// 
@@ -568,6 +571,18 @@ namespace HospitalManagement {
 
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
+	}
+	private: System::Void buttonDoctorList_Click(System::Object^ sender, System::EventArgs^ e) {
+		Appointment^ appointment = gcnew Appointment();
+		this->Hide();
+		appointment->ShowDialog();
+		this->Show();
+	}
+	private: System::Void buttonBookAppointment_Click(System::Object^ sender, System::EventArgs^ e) {
+		Appointment^ appointment = gcnew Appointment();
+		this->Hide();
+		appointment->ShowDialog();
+		this->Show();
 	}
 };
 }

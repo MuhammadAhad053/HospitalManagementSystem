@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Receptionist.h"
+#include "WalletManagement.h"
+#include "AppointmentManagement.h"
 
 namespace HospitalManagement {
 
@@ -272,9 +274,9 @@ namespace HospitalManagement {
 			this->label7->ForeColor = System::Drawing::Color::White;
 			this->label7->Location = System::Drawing::Point(439, 56);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(119, 19);
+			this->label7->Size = System::Drawing::Size(272, 19);
 			this->label7->TabIndex = 6;
-			this->label7->Text = L"Danish is a charya\r\n";
+			this->label7->Text = L"Receptionist is the core role in any Hospital";
 			// 
 			// buttonBalance
 			// 
@@ -297,6 +299,7 @@ namespace HospitalManagement {
 			this->buttonBalance->TabIndex = 0;
 			this->buttonBalance->Text = L"Manage account Balance\r\n";
 			this->buttonBalance->UseVisualStyleBackColor = false;
+			this->buttonBalance->Click += gcnew System::EventHandler(this, &ReceptionistDashboard::buttonBalance_Click);
 			// 
 			// buttonAppointments
 			// 
@@ -319,6 +322,7 @@ namespace HospitalManagement {
 			this->buttonAppointments->TabIndex = 0;
 			this->buttonAppointments->Text = L"View booked Appointments";
 			this->buttonAppointments->UseVisualStyleBackColor = false;
+			this->buttonAppointments->Click += gcnew System::EventHandler(this, &ReceptionistDashboard::buttonAppointments_Click);
 			// 
 			// panelProfile
 			// 
@@ -503,6 +507,7 @@ namespace HospitalManagement {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximumSize = System::Drawing::Size(1280, 720);
 			this->Name = L"ReceptionistDashboard";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"ReceptionistDashboard";
 			this->panelTop->ResumeLayout(false);
 			this->panelTop->PerformLayout();
@@ -522,5 +527,18 @@ namespace HospitalManagement {
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+private: System::Void buttonBalance_Click(System::Object^ sender, System::EventArgs^ e) {
+	WalletManagement^ walletManagement = gcnew WalletManagement();
+	this->Hide();
+	walletManagement->ShowDialog();
+	this->Show();
+}
+
+private: System::Void buttonAppointments_Click(System::Object^ sender, System::EventArgs^ e) {
+	AppointmentManagement^ appointment = gcnew AppointmentManagement();
+	this->Hide();
+	appointment->ShowDialog();
+	this->Show();
+}
 };
 }

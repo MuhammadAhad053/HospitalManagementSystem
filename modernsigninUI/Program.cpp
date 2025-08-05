@@ -3,6 +3,7 @@
 #include "Patient.h"
 #include "Doctor.h"
 #include "Schedule.h"
+#include "Appointment.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
